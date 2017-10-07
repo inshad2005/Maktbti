@@ -1,0 +1,103 @@
+<!--
+  Generated template for the ContactUs page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!-- - - - - - - - - - - - - - - - - - - arabic - - - - - - - - - - - - - - - - - - - - - -  -->
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="nav">
+	<button ion-button menuToggle>
+    	<ion-icon name="menu"></ion-icon>
+	</button>
+    <ion-title>{{"menu.titleContactUs" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+	 <form (ngSubmit)="onSubmit()" #contactUsForm="ngForm" novalidate >
+          <ion-list  class = "maindiv">
+              <div class="imagecenter">
+                 <img src="img/slidelogo.png" class="image1"> 
+               </div>
+               <ion-item class="class2">
+               		<ion-input  name="username" type="text" placeholder="{{'contactus.name' | translate}}" [(ngModel)]="contactUsData.name" #username="ngModel" required></ion-input>
+               </ion-item>
+               <p padding style="color:#D23839" [hidden]="username.valid || !username.touched"> {{'contactus.usernameError' | translate}} </p>
+               <ion-item class="class2">
+               		<ion-input name="contactno" type="number"  placeholder="{{'contactus.contactnumber' | translate}}" minlength="10" maxlength="12" [(ngModel)]="contactUsData.phone_no" #contactno="ngModel"  required  ></ion-input>
+               </ion-item>
+                <p padding style="color:#D23839" [hidden]="contactno.valid || !contactno.touched"> {{'contactus.contactnumberError' | translate}} </p>
+               
+               <ion-item class="class2">
+               		<ion-input name="email" type="email" placeholder="{{'login.email'|translate}}" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" [(ngModel)]="contactUsData.email" #email="ngModel" required></ion-input >
+               </ion-item>
+               <p padding style="color:#D23839" [hidden]="email.valid || !email.touched">{{'login.emailError'|translate}}</p>
+               <ion-item class="class2">
+                  <ion-textarea name="description" type="text" placeholder= "{{'contactus.description' | translate}}" [(ngModel)]="contactUsData.message" #description="ngModel"  required></ion-textarea>
+               </ion-item> 
+               <p padding style="color:#D23839" [hidden]="description.valid || !description.touched"> {{'contactus.descriptionError' | translate}} </p>
+          </ion-list>
+
+           <div style="width: 100%;float: left;text-align: center;">
+              <div style="width:58%; border-bottom: 1px solid #fff;margin:-4px auto"></div>
+           </div>
+
+           <div style="position:relative;margin-top:18px ">       
+                <div class="signup-div text-center">
+                    <button ion-button type="submit"  class="class5"  [disabled]="contactUsForm.form.invalid" >{{"contactus.submit" | translate}}
+                    </button>
+                </div>
+           </div>
+   </form>
+</ion-content>
+
+
+<!-- - - - - - - - - - - - - - - - - - - english - - - - - - - - - - - - - - - - - - - - - -  -->
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="nav">
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+    <ion-title>{{"menu.titleContactUs" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+   <form (ngSubmit)="onSubmit()" #contactUsForm="ngForm" novalidate >
+          <ion-list  class = "maindiv">
+              <div class="imagecenter">
+                 <img src="img/slidelogo.png" class="image1"> 
+               </div>
+               <ion-item class="class2">
+                  <ion-input  name="username" type="text" placeholder="{{'contactus.name' | translate}}" [(ngModel)]="contactUsData.name" #username="ngModel" required></ion-input>
+               </ion-item>
+               <p padding style="color:#D23839" [hidden]="username.valid || !username.touched"> {{'contactus.usernameError' | translate}} </p>
+               <ion-item class="class2">
+                  <ion-input name="contactno" type="number"  placeholder="{{'contactus.contactnumber' | translate}}" minlength="10" maxlength="12" [(ngModel)]="contactUsData.phone_no" #contactno="ngModel"  required  ></ion-input>
+               </ion-item>
+                <p padding style="color:#D23839" [hidden]="contactno.valid || !contactno.touched"> {{'contactus.contactnumberError' | translate}} </p>
+               
+               <ion-item class="class2">
+                  <ion-input name="email" type="email" placeholder="{{'login.email'|translate}}" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" [(ngModel)]="contactUsData.email" #email="ngModel" required></ion-input >
+               </ion-item>
+               <p padding style="color:#D23839" [hidden]="email.valid || !email.touched">{{'login.emailError'|translate}}</p>
+               <ion-item class="class2">
+                  <ion-textarea name="description" type="text" placeholder= "{{'contactus.description' | translate}}" [(ngModel)]="contactUsData.message" #description="ngModel"  required></ion-textarea>
+               </ion-item> 
+               <p padding style="color:#D23839" [hidden]="description.valid || !description.touched"> {{'contactus.descriptionError' | translate}} </p>
+          </ion-list>
+
+           <div style="width: 100%;float: left;text-align: center;">
+              <div style="width:58%; border-bottom: 1px solid #fff;margin:-4px auto"></div>
+           </div>
+
+           <div style="position:relative;margin-top:18px ">       
+                <div class="signup-div text-center">
+                    <button ion-button type="submit"  class="class5"  [disabled]="contactUsForm.form.invalid" >{{"contactus.submit" | translate}}
+                    </button>
+                </div>
+           </div>
+   </form>
+</ion-content>

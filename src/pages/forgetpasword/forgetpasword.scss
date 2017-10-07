@@ -1,0 +1,120 @@
+page-forgetpasword {
+
+.toolbar-ios ion-title {
+  height: 100%;
+  left: 0;
+  padding: 0 50px 1px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0px);
+  width: 100%;
+}
+.toolbar-md ion-title {
+  height: 100%;
+  left: 0;
+  padding: 0 74px 1px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0px);
+  width: 100%;
+}
+
+.imagecenter{
+text-align: center;
+position: relative;
+}
+.image1{
+
+width: 299px;
+margin-top: 2px
+
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent!important;
+  box-shadow: none !important;
+}
+
+.class1{
+    background: url("img/Fpswd.png") ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.maindiv {
+  background-color: #e6eaea;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  margin: 8px 10px 0;
+  opacity: 0.84;
+}
+
+.maindiv1{
+  
+
+color:#fff;
+border:1px solid #fff;
+background-color: #E6EAEA;
+border-radius: 4px;
+opacity:0.84;
+margin:8px 10px 0;
+
+}
+
+
+.class2{
+background:transparent;
+color: #666666;
+margin-top:30px;
+border-top: 1px solid #CFCFD1;
+border-bottom: 1px solid #CFCFD1
+
+}
+
+.class5{
+
+    height: 40px;
+ 
+    margin-top: 12px;
+   width: 58%;
+padding-left: 12px;
+    padding-top: 4px;
+    background-color: #2ABFDB
+
+
+}
+.class8{
+
+    height: 40px;
+
+    margin-top: 10px;
+   width: 58%;
+padding-left: 12px;
+    padding-top: 4px;
+    background-color: #2ABFDB
+
+
+}
+
+
+
+.class6{
+background:transparent;
+color: #666666;
+margin-top:27px;
+border-top: 1px solid #CFCFD1;
+border-bottom: 1px solid #CFCFD1;
+
+}
+
+.class7{
+background:transparent;
+color: #666666;
+margin-bottom: 22px;
+border-bottom: 1px solid #CFCFD1;
+
+}
+}

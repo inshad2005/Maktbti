@@ -1,0 +1,157 @@
+page-review {
+
+  .class1{
+      // background-image: url("/img/Login.png") ;
+      // background-repeat: no-repeat;
+      // background-size: 100% 100%;
+
+  }
+  .checkbox .checkbox-checked .checkbox-inner {
+  border-color: #2ABFDB;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  height: 10px;
+  left: 4px;
+  position: absolute;
+  top: 0;
+  transform: rotate(45deg);
+  width: 5px;
+}
+  .list-ios > .item-block:first-child {
+      border-top: none;
+  }
+  .imagecenter{
+   text-align: center;
+   
+  }
+  .image1{
+   width: 121px;
+   margin-top: 15px
+  }
+  .maindiv{
+
+   color:#fff;
+   border:1px solid #fff;
+   background-color: #E6EAEA;
+   border-radius: 4px;
+   opacity:0.84;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top:5px;
+  }
+  .class5{
+      height: 40px;
+      padding-left: 12px;
+      padding-top: 4px;
+      background-color: #2ABFDB;
+      width:70%
+  }
+  .class2{
+   background:transparent;
+   color: #666666
+  }
+
+  .chekboxclass{
+      background:transparent;
+      color: #666666;
+      
+    }
+
+  .signup-div{
+   float: left;
+   width: 100%;
+   position: absolute; 
+            text-align: center;
+  }
+  // .item-md.item-input.input-has-focus .item-inner {
+  //    border-bottom-color: transparent;
+  //    box-shadow:none;
+  // }
+  // .item-md.item-input.input-has-focus .item-inner {
+  //   border-bottom-color: transparent!important;
+  //   box-shadow: none!important;
+  // }
+  .list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: transparent!important;
+    box-shadow: none!important;
+}
+.list-md :last-child {
+  border-bottom-color: transparent!important;
+    box-shadow: none!important;
+}
+
+
+.item.item-md .checkbox-md {
+    display: block;
+    margin: 5px 16px 9px -3px;
+    position: static;
+}
+.item.item-ios .checkbox-md {
+    display: block;
+    margin: 5px 16px 9px -3px !important;
+    position: static;
+}
+
+.checkbox-md .checkbox-icon {
+    background-color: #fff;
+    border-color: #787878;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 2px;
+    height: 13px;
+    position: relative;
+    transition-duration: 280ms;
+    transition-property: background;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 12px;
+}
+
+.checkbox-ios .checkbox-icon {
+    background-color: #fff;
+    border-color: #787878;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 2px;
+    height: 13px;
+    position: relative;
+    transition-duration: 280ms;
+    transition-property: background;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 12px;
+}
+.checkbox-md + .item-inner ion-label {
+    margin-left: 9px;
+  
+}
+.star-div{
+    display:inline;
+    text-align:center;
+    color:#fff;
+    width: 100%;
+    float: left;
+    margin: 20px 0px;
+    font-size: 35px; 
+  }
+  .text-input {
+    -moz-appearance: none;
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid;
+    border-radius: 0;
+    display: inline-block;
+    flex: 1 1 0;
+    width: calc(100% - 10px);
+    padding: 9px!important;
+}
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent;
+  box-shadow:none;
+}
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+}

@@ -1,0 +1,291 @@
+
+
+{
+	"translation": {
+	"en": "English"
+	},
+	 
+	"loading": "...جار التحميل",
+
+	"home": {
+		"signIn": "تسجيل الدخول",
+		"signUp": "سجل"
+	},
+	 
+
+	"login": {
+		"header": "تسجيل الدخول",
+		"email": "عنوان البريد الإلكتروني",
+		"emailError": "* الرجاء إدخال معرف بريد إلكتروني صالح",
+		"password": "كلمة المرور",
+		"passwordError": "* الرجاء إدراج كلمة المرور",
+		"forgot": "هل نسيت كلمة المرور ؟",
+		"login": "تسجيل الدخول",
+		"msg": "ليس لديك حساب؟ سجل هنا",
+		"errorMsg": " البريد الإلكتروني أو كلمة المرور خاطئة"
+	},
+
+	"forgot": {
+		"title": "هل نسيت كلمة المرور",
+		"msg": "إذا كنت قد نسيت كلمة المرور الخاصة بك، لا تقلق! فقط أدخل عنوان البريد الإلكتروني الخاص بك أدناه وسوف نرسل لك رابط يمكنك استخدامه لاختيار كلمة مرور جديدة",
+		"email": "ادخل بريدك الإلكتروني",
+		"emailError": "الرجاء إدخال معرف بريد إلكتروني صالح ",
+		"resetpassword": "إعادة تعيين كلمة المرور",
+		"otpmsg": "اختر كلمة مرور جديدة لحساب المستخدم هذا. ستحل كلمة المرور هذه محل كلمة المرور القديمة؛ ويبقى كل شيء عن الحساب نفسه",
+		"otp": " كلمة مرور لمرة واحدة",
+		"otpError1":"رجاء إدراج كلمة المرور ",
+		"otpError2": "* يرجى إدراج كلمة مرور صالحة",
+		"newpassword": "كلمة المرور الجديدة",
+		"passwordinsert": "* الرجاء إدخال كلمة المرور ",
+		"confirmpassword": "تأكيد كلمة المرور",
+		"confirmpasswordinsert": "* الرجاء إدراج تأكيد كلمة المرور",
+		"paswordconfirmpassword": "* كلمة المرور وتأكيد كلمة المرور يجب أن يكون نفسه",
+		"done": "نُفذ ",
+		"checkotp": "تحقق من البريد الوارد لكلمة المرور المرسلة ",
+		"error":"فشلت العملية",
+		"errorAlert":"البريد الالكتروني غير مسجل"
+	},
+
+	"signup": {
+		"title": "التسجيل",
+		"firstNameError": "* الرجاء إدخال الاسم الأول",
+		"lastNameError": "* الرجاء إدخال الاسم الأخير",
+		"emailError": "* الرجاء إدخال معرف بريد إلكتروني صالح",
+		"passwordError": "* الرجاء إدراج كلمة المرور",
+		"confirmPasswordError": "* كلمة المرور وتأكيد كلمة المرور يجب أن يكون نفسه",
+		"signUp": "سجل",
+		"alreadyRegistered": "بالفعل لديَ  حساب ! تسجيل الدخول هنا",
+		"login":"ادخل من هنا",
+		"message1": "من خلال إنشاء حساب، أوافق على",
+		"termCondition": "شروط وخصوصية",
+		"message2": " مكتبتي",
+		"placeholderFirstname": "الاسم الأول",
+		"placeholderLastname": "الكنية",
+		"placeholderEmail": "البريد الإلكتروني",
+		"placeholderPassword": "كلمة المرور",
+		"placeholderConfPassword": "تأكيد كلمة المرور"
+	},
+
+	"menu": {
+		"titleHome": "الصفحة الرئيسية",
+		"titleMyAccount": "حسابي",
+		"titleMyLibrary": "مكتبتي",
+		"titleRecommended": "موصى به",
+		"titleBrowseAll": "تصفح الكل",
+		"titleCategory": "التصنيف",
+		"titleAboutUs":"معلومات عنا",
+		"titleContactUs":"اتصل بنا",
+		"logout": "الخروج"
+	},
+
+	"message": {
+		"success": "نجاح",
+		"messageSignup": " نجح الاشتراك. فضلا تفقد بريدك الالكتروني .",
+		"alreadyRegistered": "مسجل بالفعل",
+		"messageAlreadyRegistered": "تم إدخال عنوان البريد الإلكتروني الذي تم إدخاله بالفعل من قبلنا.",
+		"error": "خطأ",
+		"somethingWentWrong": "حدث خطأ ما. أعد المحاولة من فضلك",
+		"ok": "حسنا",
+		"search":"بحث",
+		"nothingToShow":"لا يوجد كتب ",
+		"messagepayment":"لديك اشتراكُ كتابٍ ناجح ",
+		"messagepaymentfailed":"فشل الدفع الرجاء أعد المحاولة مرة أخرى !!",
+		"payment":"دفع ",
+		"paymentSubscription":"لقد اشتركت بنجاح في خطة الاشتراك",
+		"subscriptionalert":"يجب عليك الاشتراك قبل  بدء التشغيل",
+        "alert":"تنبيه",
+        "promo":"رمز الخصم",
+        "expire":"انتهت صلاحية رمز الخصم"
+	},
+
+	"listening-time": {
+		"title": " وقت الاستماع ",
+		"hours": "ساعات",
+		"days": "أيام",
+		"minutes": "الدقائق",
+		"seconds": "ثواني",
+		"total listening-time": "مجموع وقت الاستماع"
+	},
+
+	"payment-history": {
+		"title": "سجل الدفعات",
+		"paid": "دفع",
+		"oF": "من",
+		"payment-method": "طريقة الدفع أو السداد",
+		"ordered-by": "طلب بواسطة",
+		"remaining-balance": "الرصيد المتبقي",
+		"your-plan": "خطتك",
+		"starting-date": "تاريخ البدء",
+		"expiry-date": "تاريخ الانتهاء",
+		"transactionid":" معرف المعاملة "
+	},
+
+	"subscription-plan": {
+		"title": "خُطط الاشتراك",
+		"subheader": "اختيار خطة الاشتراك التي تناسب أفضل متطلباتكم",
+		"plan": "خطة",
+		"sar": " ريال سعودي",
+		"duration": "المدة الزمنية",
+		"purchase": "شراء"
+	},
+
+	"feedback": {
+		"title": "ارسل رأيك",
+		"aboutexperience": "كيف كانت تجربتك مع مكتبتي؟",
+		"subjectvalidationmsg": " * يرجى إدراج الموضوع",
+		"descptnvalidationmsg": "* يرجى إدراج الوصف",
+		"buttontext": "إرسال تعليقات",
+		"subject": "موضوع",
+		"description": "وصف",
+		"alerttitle": "نجاح",
+		"alertsubtitle": "شكرا لملاحظاتك",
+		"alertok": "حسنا"
+	},
+
+	"mylibrary": {
+		"title": "مكتبتي",
+		"by": "بواسطة",
+		"description": "وصف",
+		"alerttitle": "منبه",
+		"alertmessage": "هل توافق على إزالة",
+		"alertagree": "أوافق ",
+		"alertdisagree": " غير موافق "
+	},
+
+	"homepage-category": {
+		"title": "الصفحة الرئيسية",
+		"featured": "مميز",
+		"categories": "الأقسام",
+		"view-more": "عرض المزيد",
+		"rating": "تقييم",
+		"newbooks": "كتب جديدة",
+		"booksforsale": "كتب للبيع",
+		"freebook": "كتب مجانية",
+		"by": "بواسطة",
+		"mysubscribedbook":" كتب الاشتراك "
+	},
+
+	"listen-library": {
+		"listen": "استمع",
+		"content": "المحتوى",
+		"description": "وصف",
+		"similar": "مشابه",
+		"add-to-library": "إضافة إلى مكتبتي",
+		"subscribe-now": "اشترك الآن",
+		"buy-now": "شراء كتاب",
+		"by":"بواسطة",
+		"rating":"تقييم",
+		"audio-duration": "مدة الصوت",
+		"summary": "ملخص",
+		"share": "مشاركة",
+		"review-ratings": "التقييمات والتصنيفات ",
+		"write-review": "اكتب مراجعة",
+		"about-author": "نبذة عن الكاتب",
+		"download-book": "تحميل هذا الكتاب",
+		"table_of_content": "قائمة المحتويات",
+		"alertSuccess":"نجاح",
+		"alertmessage":"تم إضافة هذا الكتاب لمكتبتك بنجاح",
+		"alertUnsuccess":"منبه",
+		"alertUnsuccessMessage":"لقد قمت بإضافة هذا الكتاب مسبقًا",
+		"alertLogin":"الرجاء تسجيل الدخول لإضافة هذا الكتاب لمكتبتك",
+		"socialSharingMessage":"انظر ماذا يتوفر في مكتبتي",
+		"part":"جزء",
+        "of":"من",
+        "streaming":"تدفق"
+	},
+	"recomend": {
+		"title": "موصى به",
+		"by": "بواسطة",
+		"rating": "تقييم"
+	},
+
+	"mybook": {
+		"title": "جميع الكتب",
+		"by": "بواسطة",
+		"rating": " تقييم"
+	},
+
+	"category-books": {
+		"title": " تصنيف الكتب",
+		"view-more": "عرض المزيد",
+		"rating": "تقييم",
+		"by": "بواسطة"
+	},
+
+	"my-account": {
+		"my_account": "حسابي",
+		"payment_history": "سجل الدفعات",
+		"listening_time": "وقت الاستماع",
+		"subscription_plans": "خطط الاشتراك",
+		"send_eedback": "ارسل رأيك",
+		"account_settings": "إعدادات الحساب",
+		"pre_order": "طلب مسبق",
+		"myPurchagedBook":"كتب تم شراؤها"
+	},
+
+	"view-more": {
+		"rating": "تقييم",
+		"by": "بواسطة"
+	},
+
+	"review":{
+		"cancel":"ألغ العملية",
+		"review":" مراجعة ",
+		"writeReview":"اكتب مراجعة",
+		"reviewField":"يرجى عدم ترك حقل المراجعة فارغ",
+		"submit":"التأكيد على المراجعة"
+	},
+
+	"contactus":{
+		"description":"أدخل وصفًا",
+		"submit":"التأكيد",
+		"name":"الاسم",
+		"contactnumber":"رقم التواصل",
+		"usernameError":"الرجاء ادخال الاسم",
+		"contactnumberError":"رقم التواصل يجب أن يتكون من 10-12 رقم",
+		"descriptionError":"الرجاء إدراج وصفاً مناسباً",
+		"successMessage":"تم إرسال تساؤلك بنجاح، سيتم الرد عليه في أقصر وقت. شكرًا لك"
+	},
+
+	"accountSettings":{
+		"account":" إعدادات الحساب ",
+		"capture":" التقط صورة ",
+		"select":" اختر من معرض الصور ",
+		"editFirstName":" الاسم الأول ",
+		"editLastName":" الاسم الاخير  ",
+		"changePassword":"غير كلمة المرور ",
+		"newpassword":"كلمة المرور الجديدة",
+		"confirmPassword":"تأكيد كلمة المرور ",
+		"submit":"عرض ",
+		"updateImage":"تحميل الصورة ",
+		"information":"تغيير الاسم ",
+		"profileSuccess":" تم تحديث الملف الشخصي بنجاح",
+		"passwordSuccess":" تم تحديث كلمة المرور بنجاح", 
+		"imageSuccess":" تم تحديث صورة الملف الشخصي بنجاح",
+		"imageError":" أخفق تحميل الصورة رجاء أعد المحاولة لاحقا"
+	},
+	
+  "thanksPage":{
+        "great":"!عظيم",
+        "message1":"كلمة المرور الخاصة بك",
+        "message2":"تغيرت الان يمكنك الدخول مع",
+        "message3":"كلمة المرور الجديدة",
+        "messageSignin":"تسجيل الدخول"
+    },
+
+    "paymentForm":{
+        "paymentform":"نموذج الدفع  ",
+        "havePromo":"هل لديك قسيمة خصم؟",
+        "bookCost":"تكلفة الكتاب",
+        "plandiscount":"خصم للمشتركين",
+        "promotionalDiscount":"كوبون الخصم",
+        "total":"المجموع",
+        "pay" :"دفع",
+        "cancel":"الغاء ",
+        "apply":"تطبيق ",
+        "paymentFormForSubscription":"نموذج الدفع للاشتراك في التطبيق",
+        "paymentFormForbyBook":"نموذج دفع شراء كتاب"
+    }
+}
+
+

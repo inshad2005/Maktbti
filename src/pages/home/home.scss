@@ -1,0 +1,80 @@
+.blue-color{
+	color:#2AC1D8
+}
+.font-st{
+	font-family: Poppins-Light; 
+}
+.toolbar-ios ion-title {
+  height: 100%;
+  left: 0;
+  padding: 0 50px 1px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0px);
+  width: 100%;
+}
+.toolbar-md ion-title {
+  height: 100%;
+  left: 0;
+  padding: 0 50px 1px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0px);
+  width: 100%;
+}
+page-home {
+	.button-div{
+		z-index: 1
+	}
+.footer-but-st{
+	opacity: 0.5;
+	background-color:#ffffff;
+	width:100% 
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+}
+.custom-border{
+	border:1px solid;
+	border-color:#2ABFDB;
+	float: left;
+	height: 30px;
+	margin-top: 10px;
+	padding-top: 14px;
+}
+.div-but2 {
+	 float:left;
+	 width: 50%
+}
+.div-but1{
+	 float:left;
+	 width: 49%
+}
+.button.activated {
+  background-color:  #2ABFDB;
+  opacity: 1;
+}
+.swiper-pagination-bullet {
+  background: transparent none repeat scroll 0 0 ;
+  border-radius: 100%;
+  display: inline-block;
+  height: 12px !important;
+  pointer-events: auto;
+  width: 12px !important;
+  opacity:1 !important;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  border: 1px solid #2ABFDB ;
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+    background: #2ABFDB none repeat scroll 0 0;
+    opacity: 1;
+}
+
+
+}

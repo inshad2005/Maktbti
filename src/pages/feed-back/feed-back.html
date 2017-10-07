@@ -1,0 +1,106 @@
+<!--
+  Generated template for the FeedBack page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<!-- - - - - - - - - - - - - - - -arabic - - -  - - - - - - - - - - - - - - -->
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="nav">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="text-center font-st">{{'feedback.title'|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+   <form (ngSubmit)="onSubmit()" #feedBackRequest="ngForm" novalidate >  
+      
+        <ion-list  class = "maindiv">
+          <div class="imagecenter">
+            <img src="img/feedback.png" class="image1"> 
+        </div>
+            <div class="div-st">{{'feedback.aboutexperience'|translate}} </div>
+            <div class="smileys">
+            	<img src="img/smiling-emoticon-square-face.png">
+            	<img src="img/surprised.png">
+            	<img src="img/sad.png">
+            </div>
+               <ion-item class="class2">
+                <ion-input type="text" placeholder= "{{'feedback.subject'|translate}}" [(ngModel)]="feedback.subject" name="subject" #subject="ngModel" required></ion-input>
+                <ion-icon item-left >
+                    <img src="img/message-1.png"   >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!subject.touched || subject.valid">  {{'feedback.subjectvalidationmsg'|translate}}</p>
+            <ion-item class="class2">
+                <ion-textarea type="text" placeholder= "{{'feedback.description'|translate}}" [(ngModel)]="feedback.description" name="description" #description="ngModel" required></ion-textarea>
+                <ion-icon item-left >
+                    <img src="img/edit-document(1).png">
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!description.touched || description.valid">{{'feedback.descptnvalidationmsg'|translate}} </p>
+        </ion-list>
+        <div style="position:relative;">       
+         <div class="signup-div text-center">
+        <button ion-button type="submit"   class="class5" [disabled]="feedBackRequest.form.invalid">{{'feedback.buttontext'|translate}}
+        </button>
+       
+      
+    </div>
+   </div>
+  </form>
+</ion-content>
+
+<!-- - - - - - - - - - - -  - - - - - - - - - - -english - - - - - - - - - - -  - - - - - - - - - - - - - - -->
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="nav">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="text-center font-st">{{'feedback.title'|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+   <form (ngSubmit)="onSubmit()" #feedBackRequest="ngForm" novalidate >  
+      
+        <ion-list  class = "maindiv">
+          <div class="imagecenter">
+            <img src="img/feedback.png" class="image1"> 
+        </div>
+            <div class="div-st">{{'feedback.aboutexperience'|translate}} </div>
+            <div class="smileys">
+              <img src="img/smiling-emoticon-square-face.png">
+              <img src="img/surprised.png">
+              <img src="img/sad.png">
+            </div>
+               <ion-item class="class2">
+                <ion-input type="text" placeholder= "{{'feedback.subject'|translate}}" [(ngModel)]="feedback.subject" name="subject" #subject="ngModel" required></ion-input>
+                <ion-icon item-left >
+                    <img src="img/message-1.png"   >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!subject.touched || subject.valid">  {{'feedback.subjectvalidationmsg'|translate}}</p>
+            <ion-item class="class2">
+                <ion-textarea type="text" placeholder= "{{'feedback.description'|translate}}" [(ngModel)]="feedback.description" name="description" #description="ngModel" required></ion-textarea>
+                <ion-icon item-left >
+                    <img src="img/edit-document(1).png">
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!description.touched || description.valid">{{'feedback.descptnvalidationmsg'|translate}} </p>
+        </ion-list>
+        <div style="position:relative;">       
+         <div class="signup-div text-center">
+        <button ion-button type="submit"   class="class5" [disabled]="feedBackRequest.form.invalid">{{'feedback.buttontext'|translate}}
+        </button>
+       
+      
+    </div>
+   </div>
+  </form>
+</ion-content>
+

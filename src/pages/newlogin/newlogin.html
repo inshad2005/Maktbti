@@ -1,0 +1,91 @@
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="myorange" >
+    <ion-title >{{"login.header" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content  padding dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+    <form (ngSubmit)="onSignIn()" #loginForm="ngForm" novalidate >
+        <div class="imagecenter">
+          <img src="img/slidelogo.png" class="image1"> 
+        </div>
+        <ion-list no-lines class="div1" >
+            <ion-item class="class2">
+                <ion-input type="email" placeholder="{{'login.email'|translate}}" [(ngModel)]="logindata.email"  name="email" #email="ngModel"  pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required ></ion-input>
+                <ion-icon item-left >
+                  <img src="img/message-1.png">
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="email.valid || !email.touched">{{'login.emailError'|translate}}</p>
+            <ion-item class="class3">
+                <ion-input type="Password" placeholder="{{'login.password'|translate}}" [(ngModel)]="logindata.password" name="password" #password="ngModel" required></ion-input>
+                <ion-icon item-left >
+                  <img src="img/key-1.png">
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="password.valid || !password.touched">{{"login.passwordError"|translate}}</p>
+        </ion-list>
+        <div style="width: 100%; float: left">
+          <span  (click)="forgtpaswd()"  style= "color: #AEAEAE;float: right;margin-right: 5px">{{"login.forgot"|translate}}</span>
+        </div>
+        <div style="width: 100%;float: left;text-align: center;">
+            <hr style=" background-color: white;width: 125px;">
+        </div>
+
+        <div style="position:relative;top:15px">       
+            <div class="signup-div text-center">
+                <button ion-button class="class5" type="submit" [disabled]="loginForm.form.invalid" >
+                {{"login.login"|translate}}
+                </button>
+                <div class="spacer" style="height: 24px"></div>
+                <div style="text-align: center"> <u (click)="signup()"  style="color: #fff ">{{"login.msg"|translate}}</u></div>
+            </div>
+        </div> 
+    </form>    
+</ion-content>
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="myorange" >
+    <ion-title >{{"login.header" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  padding  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+    <form (ngSubmit)="onSignIn()" #loginForm="ngForm" novalidate >
+        <div class="imagecenter">
+          <img src="img/slidelogo.png" class="image1"> 
+        </div>
+        <ion-list no-lines class="div1" >
+            <ion-item class="class2">
+                <ion-input type="email" placeholder="{{'login.email'|translate}}" [(ngModel)]="logindata.email"  name="email" #email="ngModel"  pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required ></ion-input>
+                <ion-icon item-left >
+                  <img src="img/message-1.png">
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="email.valid || !email.touched">{{'login.emailError'|translate}}</p>
+            <ion-item class="class3">
+                <ion-input type="Password" placeholder="{{'login.password'|translate}}" [(ngModel)]="logindata.password" name="password" #password="ngModel" required></ion-input>
+                <ion-icon item-left >
+                  <img src="img/key-1.png">
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="password.valid || !password.touched">{{"login.passwordError"|translate}}</p>
+        </ion-list>
+        <div style="width: 100%; float: left">
+          <span  (click)="forgtpaswd()"  style= "color: #AEAEAE;float: right;margin-right: 5px">{{"login.forgot"|translate}}</span>
+        </div>
+        <div style="width: 100%;float: left;text-align: center;">
+            <hr style=" background-color: white;width: 125px;">
+        </div>
+
+        <div style="position:relative;top:15px">       
+            <div class="signup-div text-center">
+                <button ion-button class="class5" type="submit" [disabled]="loginForm.form.invalid" >
+                {{"login.login"|translate}}
+                </button>
+                <div class="spacer" style="height: 24px"></div>
+                <div style="text-align: center"> <u (click)="signup()"  style="color: #fff ">{{"login.msg"|translate}}</u></div>
+            </div>
+        </div> 
+    </form>    
+</ion-content>

@@ -1,0 +1,96 @@
+
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+ <ion-navbar color="nav">
+ <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title class="text-center font-st">{{'listening-time.title'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="content-st" dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+	<ion-list class="list-st" no-lines>
+		<ion-item>
+			<img src="img/clndr.png" class="img-cal">
+			<p class="p-style">{{'listening-time.days'|translate}}</p>
+			<span class="span-style">{{days}}</span>
+		</ion-item>
+		<ion-item>
+			<img src="img/clndr.png" class="img-cal">
+			<p class="p-style">{{'listening-time.hours'|translate}}</p>
+			<span class="span-style">{{hours}}</span>
+		</ion-item>
+		<ion-item  class="items-enclosure">
+			<ion-item style="width:40%;float:left;text-align:center">
+				<img src="img/clck.png" class="img-clock">
+				<span class="span-style1">{{minutes}}</span>
+				<p class="p-style1">{{'listening-time.minutes'|translate}}</p>
+			</ion-item>
+			<ion-item style="width:40%;float:right;text-align:center;box-shadow: 2px 2px 2px #7d7d7d!important;">
+				<img src="img/clck.png" class="img-clock">
+				<span class="span-style1">{{seconds}}</span>
+				<p class="p-style1">{{'listening-time.seconds'|translate}}</p>
+			</ion-item>
+				<div  class="colon1">
+				</div>
+				<div class="colon2">
+				</div>
+			
+		</ion-item>
+		<div class="spacer" style="height:20px"></div>
+		<ion-item>
+			<p class="p-style-listening">{{'listening-time.total listening-time'|translate}}</p>
+			<span class="span-style-listening">{{days}} {{'listening-time.days'|translate}},{{hours}} {{'listening-time.hours'|translate}},{{minutes}} {{'listening-time.minutes'|translate}},{{seconds}} {{'listening-time.seconds'|translate}}</span>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+ <ion-navbar color="nav">
+ <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title class="text-center font-st">{{'listening-time.title'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content  class="content-st"  *ngIf="appProvider.current.currentLanguage=='en'">
+	<ion-list class="list-st" no-lines>
+		<ion-item>
+			<img src="img/clndr.png" class="img-cal">
+			<p class="p-style">{{'listening-time.days'|translate}}</p>
+			<span class="span-style">{{days}}</span>
+		</ion-item>
+		<ion-item>
+			<img src="img/clndr.png" class="img-cal">
+			<p class="p-style">{{'listening-time.hours'|translate}}</p>
+			<span class="span-style">{{hours}}</span>
+		</ion-item>
+		<ion-item  class="items-enclosure">
+			<ion-item style="width:40%;float:left;text-align:center">
+				<img src="img/clck.png" class="img-clock">
+				<span class="span-style1">{{minutes}}</span>
+				<p class="p-style1">{{'listening-time.minutes'|translate}}</p>
+			</ion-item>
+			<ion-item style="width:40%;float:right;text-align:center;box-shadow: 2px 2px 2px #7d7d7d!important;">
+				<img src="img/clck.png" class="img-clock">
+				<span class="span-style1">{{seconds}}</span>
+				<p class="p-style1">{{'listening-time.seconds'|translate}}</p>
+			</ion-item>
+				<div  class="colon1">
+				</div>
+				<div class="colon2">
+				</div>
+			
+		</ion-item>
+		<div class="spacer" style="height:20px"></div>
+		<ion-item>
+			<p class="p-style-listening">{{'listening-time.total listening-time'|translate}}</p>
+			<span class="span-style-listening">{{days}} {{'listening-time.days'|translate}},{{hours}} {{'listening-time.hours'|translate}},{{minutes}} {{'listening-time.minutes'|translate}},{{seconds}} {{'listening-time.seconds'|translate}}</span>
+		</ion-item>
+	</ion-list>
+
+</ion-content>

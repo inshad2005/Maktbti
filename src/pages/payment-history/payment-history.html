@@ -1,0 +1,67 @@
+
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="text-center font-st">{{'payment-history.title'|translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background-color: #fff">
+    <div class="div1" *ngFor="let pay of paymentHistory">
+        <div class="div2">  
+            <ion-label style="margin-left: 9px;margin-top: 4px;color:#000;font-size: 1.8rem;">{{pay.created_at | dateMomentFormat}}</ion-label>
+            <ion-icon name ="checkmark" style="color:#2AC1D8;margin-left: 4px;margin-top: -12px;"></ion-icon>
+            <ion-label class="label1_arb">{{'payment-history.paid'|translate}} {{pay.amount}} {{pay.currency}}</ion-label>
+            <ion-label class="label2_arb">{{'payment-history.payment-method'|translate}}: {{pay.brand}}</ion-label>
+            <ion-label text-wrap class="label3_arb">{{'payment-history.transactionid'|translate}}: {{pay.transac_id}}</ion-label>
+        </div>
+
+        <div style="width:50%;height: 100%;float:right">    
+            <ion-label class="divmy_arb">{{'payment-history.your-plan'|translate}}: </ion-label>
+            <ion-label left class="divmy2_arb">Starter</ion-label>
+            <hr class="amazonline1_arb">
+            <ion-label class="divmy3_arb">{{'payment-history.starting-date'|translate}}:</ion-label>
+            <ion-label class="divmy2_arb">{{pay.start_on | dateMomentFormat}}</ion-label>
+            <hr class="amazonline1_arb">
+            <ion-label class="divmy4_arb">{{'payment-history.expiry-date'|translate}}: </ion-label>
+            <ion-label class="divmy2_arb">{{pay.expiry_on | dateMomentFormat}}</ion-label>
+        </div>
+    </div>
+
+
+</ion-content>
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="text-center font-st">{{'payment-history.title'|translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'" style="background-color: #fff">
+    <div class="div1" *ngFor="let pay of paymentHistory">
+        <div class="div2">  
+            <ion-label style="margin-left: 9px;margin-top: 4px;color:#000;font-size: 1.8rem;">{{pay.created_at | dateMomentFormat}}</ion-label>
+            <ion-icon name ="checkmark" style="color:#2AC1D8;margin-left: 4px;margin-top: -12px;"></ion-icon>
+            <ion-label class="label1">{{'payment-history.paid'|translate}} {{pay.amount}} {{pay.currency}}</ion-label>
+            <ion-label class="label2">{{'payment-history.payment-method'|translate}}: {{pay.brand}}</ion-label>
+            <ion-label text-wrap class="label3">{{'payment-history.transactionid'|translate}}: {{pay.transac_id}}</ion-label>
+        </div>
+
+        <div style="width:50%;height: 100%;float:right">    
+            <ion-label class="divmy">{{'payment-history.your-plan'|translate}}: </ion-label>
+            <ion-label class="divmy2">Starter</ion-label>
+            <hr class="amazonline1">
+            <ion-label class="divmy3">{{'payment-history.starting-date'|translate}}:</ion-label>
+            <ion-label class="divmy2">{{pay.start_on | dateMomentFormat}}</ion-label>
+            <hr class="amazonline1">
+            <ion-label class="divmy4">{{'payment-history.expiry-date'|translate}}: </ion-label>
+            <ion-label class="divmy2">{{pay.expiry_on | dateMomentFormat}}</ion-label>
+        </div>
+    </div>
+
+</ion-content>

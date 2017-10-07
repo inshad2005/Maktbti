@@ -1,0 +1,82 @@
+page-acount-setting {
+	
+
+  .list-ios > .item-block:first-child {
+      border-top: none;
+  }
+  .imagecenter{
+   text-align: center;
+   
+  }
+  .image1{
+   width: 120px;
+   height: 120px;
+   margin-top: 15px;
+   border-radius:100%; 
+  }
+  .maindiv{
+
+   color:#fff;
+   border:1px solid #fff;
+   background-color: #E6EAEA;
+   border-radius: 4px;
+   opacity:0.84;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top:5px;
+  }
+  .class5{
+      height: 40px;
+      padding-left: 12px;
+      padding-top: 4px;
+      background-color: #2ABFDB;
+      width:70%
+
+
+  }
+  .class2{
+   background:transparent;
+   color: #666666
+  }
+
+  .chekboxclass{
+      background:transparent;
+      color: #666666;
+      
+    }
+
+  .signup-div{
+   float: left;
+   width: 100%;
+   position: absolute; 
+            text-align: center;
+  }
+  // .item-md.item-input.input-has-focus .item-inner {
+  //    border-bottom-color: transparent;
+  //    box-shadow:none;
+  // }
+  // .item-md.item-input.input-has-focus .item-inner {
+  //   border-bottom-color: transparent!important;
+  //   box-shadow: none!important;
+  // }
+
+  .icon-st{
+  	font-size: 40px;
+  }
+  .inner-div{
+  	display: inline-flex;
+  }
+  .span-text{
+  	align-self:center;
+  	 margin-left: 13px;
+  }
+  .list {
+    margin: 73px 0 5px!important;
+ }
+
+
+
+
+
+
+}

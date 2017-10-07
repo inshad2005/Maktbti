@@ -1,0 +1,44 @@
+<!--
+  Generated template for the AboutUs page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!-- - - - - -  - - - - - -  - - - - - arabic  -  - - - - - - - - - - - - - - - - - - - -  - - -->
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="nav">
+	<button ion-button menuToggle>
+    	<ion-icon name="menu"></ion-icon>
+	</button>
+    <ion-title>{{"menu.titleAboutUs" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+	<ion-list  class = "maindiv" *ngIf="about">
+		<p class="content-st" ><span innerHtml="{{about.description_arabic}}" class="span-st"></span></p>
+	</ion-list>	
+
+</ion-content>
+
+
+
+<!-- - - - - -  - - - - - -  - - - - - english  -  - - - - - - - - - - - - - - - - - - - -  - - -->
+
+<ion-header *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="nav">
+	<button ion-button menuToggle>
+    	<ion-icon name="menu"></ion-icon>
+	</button>
+    <ion-title>{{"menu.titleAboutUs" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+	<ion-list  class = "maindiv" *ngIf="about">
+		<p class="content-st" ><span innerHtml="{{about.description_english}}" class="span-st"></span></p>
+	</ion-list>	
+
+</ion-content>

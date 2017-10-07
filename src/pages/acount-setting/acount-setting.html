@@ -1,0 +1,181 @@
+<!--
+  Generated template for the AcountSetting page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<!-- - - - - - -  - - - - - arabic  -  - - - - - - - - - - - - - - - - - -  - - -->
+<ion-header >
+  <ion-navbar  hideBackButton="true" color="nav" dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+       <button  ion-button  style="background-color: transparent;" (click)="onBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+       </button>
+    <ion-title>{{'accountSettings.account' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+	<ion-list  class = "maindiv">
+          <div class="imagecenter">
+          	<img src="img/slide4.jpg" class="image1" *ngIf="!pic" >
+            <img src="{{pic}}" class="image1" *ngIf="pic"> 
+          </div>
+          <ion-item class="class2" (click)="onChangeImage()" *ngIf="showChangeImage">
+            	<div class="inner-div">
+	                <ion-icon class="icon-st" name="images" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.updateImage' | translate}}</span> 
+            	</div>
+	      </ion-item>
+          <div *ngIf="!showChangeImage">
+	          	<ion-item class="class2" (click)="onCapturePicture()">
+	            	<div class="inner-div">
+	            		<ion-icon class="icon-st" name= "camera"></ion-icon>
+	               		<span class="span-text">{{'accountSettings.capture' | translate}}</span> 
+	            	</div>
+	            </ion-item>
+	            <ion-item class="class2" (click)="onSelectPicture()">
+	            	<div class="inner-div">
+	                <ion-icon class="icon-st" name="images" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.select' | translate}}</span> 
+	            	</div>
+	            </ion-item>
+          </div>
+          <ion-item class="class2" (click)="onChangeName()" *ngIf="showChangeName">
+	            <div class="inner-div">
+	                <ion-icon class="icon-st" name="contact" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.information' | translate}}</span> 
+	            </div>
+	       </ion-item>
+	        <div *ngIf="!showChangeName">
+	          	<ion-item class="class2">
+	            	<ion-input   type="text" placeholder= "{{'accountSettings.editFirstName' | translate}}" [(ngModel)]="accountSettingData.first_name"></ion-input>
+	                <ion-icon class="icon-st" item-left name="contact"></ion-icon>
+	            </ion-item>
+	            <ion-item class="class2">
+	            	<ion-input   type="text" placeholder= "{{'accountSettings.editLastName' | translate}}" [(ngModel)]="accountSettingData.last_name"></ion-input>
+	                <ion-icon class="icon-st" item-left name="contact"></ion-icon>
+	            </ion-item>
+           </div>
+           <ion-item class="class2" (click)="onChangePassword()" *ngIf="showChangePassword">
+	            <div class="inner-div">
+	                <ion-icon class="icon-st" name="key" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.changePassword' | translate}}</span> 
+	            </div>
+	       </ion-item>
+	       <div *ngIf="!showChangePassword">
+	            <ion-item class="class2" >
+	            	<ion-input   type="password" placeholder= "{{'accountSettings.newpassword' | translate}}" [(ngModel)]="accountSettingData.password"></ion-input>
+	                <ion-icon class="icon-st" item-left name="key"></ion-icon>
+	            </ion-item>
+	            <ion-item class="class2" >
+	            	<ion-input   type="password" placeholder= "{{'accountSettings.confirmPassword' | translate}}" [(ngModel)]="confirm_password"></ion-input>
+	                <ion-icon class="icon-st" item-left name="key"></ion-icon>
+	            </ion-item>   
+           </div>
+        </ion-list>
+        <div style="position:relative;margin-top:10px ">       
+	        <div class="signup-div text-center">
+	            <button ion-button class="class5" (click)="onSubmit()" *ngIf="!showChangePassword || !showChangeName">
+	            	{{"accountSettings.submit" | translate}}
+	            </button>
+	            <button ion-button class="class5" (click)="onUploadImage()" *ngIf="!showChangeImage" [disabled]="!uploadButton">
+					{{"accountSettings.updateImage" | translate}}
+	            </button>
+	            <div class="spacer" style="height: 12px"></div>
+	   		</div>
+   		</div>
+</ion-content>
+
+
+<!-- - - - - -  -   - - - - - english  -  - - - - - - - - - - - - - - -  - - -->
+<ion-header>
+  <ion-navbar hideBackButton="true" color="nav" *ngIf="appProvider.current.currentLanguage=='en'">
+  <button  ion-button style="background-color: transparent;" (click)="onBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    <ion-title>{{'accountSettings.account' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;" >
+	<ion-list  class = "maindiv">
+          <div class="imagecenter">
+          	<img src="img/slide4.jpg" class="image1" *ngIf="!pic" >
+            <img src="{{pic}}" class="image1" *ngIf="pic"> 
+          </div>
+
+          <ion-item class="class2" (click)="onChangeImage()" *ngIf="showChangeImage">
+            	<div class="inner-div">
+	                <ion-icon class="icon-st" name="images" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.updateImage' | translate}}</span> 
+            	</div>
+	      </ion-item>
+
+          <div *ngIf="!showChangeImage">
+	          	<ion-item class="class2" (click)="onCapturePicture()">
+	            	<div class="inner-div">
+	            		<ion-icon class="icon-st" name= "camera"></ion-icon>
+	               		<span class="span-text">{{'accountSettings.capture' | translate}}</span> 
+	            	</div>
+	            </ion-item>
+	            <ion-item class="class2" (click)="onSelectPicture()">
+	            	<div class="inner-div">
+	                <ion-icon class="icon-st" name="images" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.select' | translate}}</span> 
+	            	</div>
+	            </ion-item>
+          </div>
+
+          <ion-item class="class2" (click)="onChangeName()" *ngIf="showChangeName">
+	            <div class="inner-div">
+	                <ion-icon class="icon-st" name="contact" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.information' | translate}}</span> 
+	            </div>
+	       </ion-item>
+
+	        <div *ngIf="!showChangeName">
+	          	<ion-item class="class2">
+	            	<ion-input   type="text" placeholder= "{{'accountSettings.editFirstName' | translate}}" [(ngModel)]="accountSettingData.first_name"></ion-input>
+	                <ion-icon class="icon-st" item-left name="contact"></ion-icon>
+	            </ion-item>
+	            <ion-item class="class2">
+	            	<ion-input   type="text" placeholder= "{{'accountSettings.editLastName' | translate}}" [(ngModel)]="accountSettingData.last_name"></ion-input>
+	                <ion-icon class="icon-st" item-left name="contact"></ion-icon>
+	            </ion-item>
+           </div>
+
+           <ion-item class="class2" (click)="onChangePassword()" *ngIf="showChangePassword">
+	            <div class="inner-div">
+	                <ion-icon class="icon-st" name="key" ></ion-icon>
+	                <span class="span-text">{{'accountSettings.changePassword' | translate}}</span> 
+	            </div>
+	       </ion-item>
+
+	       <div *ngIf="!showChangePassword">
+	            <ion-item class="class2" >
+	            	<ion-input   type="password" placeholder= "{{'accountSettings.newpassword' | translate}}" [(ngModel)]="accountSettingData.password"></ion-input>
+	                <ion-icon class="icon-st" item-left name="key"></ion-icon>
+	            </ion-item>
+
+	            <ion-item class="class2" >
+	            	<ion-input   type="password" placeholder= "{{'accountSettings.confirmPassword' | translate}}" [(ngModel)]="confirm_password"></ion-input>
+	                <ion-icon class="icon-st" item-left name="key"></ion-icon>
+	            </ion-item>   
+           </div>
+        </ion-list>
+
+        <div style="position:relative;margin-top:10px ">       
+	        <div class="signup-div text-center">
+	            <button ion-button class="class5" (click)="onSubmit()" *ngIf="!showChangePassword || !showChangeName">
+	            	{{"accountSettings.submit" | translate}}
+	            </button>
+	            <button ion-button class="class5" (click)="onUploadImage()" *ngIf="!showChangeImage" [disabled]="!uploadButton">
+					{{"accountSettings.updateImage" | translate}}
+	            </button>
+	            <div class="spacer" style="height: 12px"></div>
+	   		</div>
+   		</div>
+</ion-content>

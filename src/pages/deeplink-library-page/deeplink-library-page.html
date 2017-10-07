@@ -1,0 +1,346 @@
+
+
+<!--
+    Generated template for the ListenLibrary page.
+    
+    See http://ionicframework.com/docs/components/#navigation for more info on
+    Ionic pages and navigation.
+    -->
+
+ <!-- - - - - - - - - - - - - - - - - - - arabic - - - - - - - - - - - - - - - - - - - - - -  -->
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title style="float:left" *ngIf="bookdata">
+            <span class="text-center" *ngIf="appProvider.current.currentLanguage=='arb'">{{bookdata.book_name_arabic}}</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content dir=rtl *ngIf="bookdata && appProvider.current.currentLanguage=='arb'">
+    <ion-segment class="segment-st" [(ngModel)]="segment">
+        <ion-segment-button value="listen">{{'listen-library.listen'|translate}}</ion-segment-button>
+        <ion-segment-button value="content" >{{'listen-library.content'|translate}}</ion-segment-button>
+        <ion-segment-button value="description">{{'listen-library.description'|translate}}</ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="segment" class="segment_div">
+        <div *ngSwitchCase="'listen'">
+            <ion-card id="backid">
+                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 260px; filter: blur(3px);width: 100%;">
+                <div class="card-title image-div-st"> 
+                    <img class="badi-img" src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" >
+                </div>       
+            </ion-card>
+            <div>
+                <div class="div-lib-bt" style="width:49%;float: left;" (click)="onAddLibrary()">
+                    <button ion-button clear class="bu-st" [disabled]="bookdata.Subscription=='Yes' || addLibraryButton=='disable'">
+                    <img src="img/add.png" class="icon-bu-st" height="20px" width="20px">{{'listen-library.add-to-library'|translate}}</button>
+                </div>
+                <div class="custom_border" style="float: left;"></div>
+                <div class="div-sub-bt" style="width:50%;float: left;">
+                    <button ion-button clear class="bu-st" (click)="onSubscribed()" >
+                    <img  src="img/subscribe-rss-button(1).png" class="icon-bu-st" height="20px" width="20px" >
+                    {{'listen-library.subscribe-now'|translate}}
+                    </button>
+                </div>
+            </div>
+            <div class="spacer" style="height:45px"></div>
+            <div class="text-center music-button-st">
+                <div class="player-div">
+                    <div style="width:100%;float:left; display:inline" >
+                        <ion-range (ionChange)="onPositionChange(aa)" min="0" max="{{fullDuration}}" step='1' debounce [(ngModel)]="aa" color="secondary" >
+                          <ion-label range-left  class="timer-label">{{aa | timer}}</ion-label>
+                          <ion-label range-right class="timer-label">{{fullDuration | timer}}</ion-label>
+                        </ion-range>
+                    </div>
+                    <img src="img/previous-step-circular-button.png" class="icon-pr" (click)="onPrevious()">
+                    <ion-icon  name="play" class="play-icon" *ngIf="playButton=='true' && playButton1=='true'" (click)="onCreateMediaInsatnce()" ></ion-icon>
+                    <ion-icon  name="play" class="play-icon" *ngIf="playButton=='true' && playButton1=='false'" (click)="onCreateMediaInsatnce()" ></ion-icon>
+                    <ion-icon name="pause" class="play-icon" *ngIf="playButton=='false'" (click)="onPause()"> </ion-icon>
+                    <ion-icon name="square" class="play-icon" *ngIf="playButton=='false'" (click)="onStop()"></ion-icon>
+                    <img src="img/next-step-circular-button.png" class="icon-pr" (click)="onForword()">
+                </div>
+            </div>
+            <div class="spacer" style="height:10px"></div>
+            <div padding class="div-summary">
+                <div class="text-center">
+                    <h5 *ngIf="appProvider.current.currentLanguage=='arb'">{{bookdata.book_name_arabic}}</h5>
+                    <span>{{'listen-library.by'|translate}}:</span>
+                    <span *ngIf="appProvider.current.currentLanguage=='arb' && bookdata.author" style="text-decoration:underline;color:#2AC1D8">{{bookdata.author.author_name_arabic}}</span>
+                    <div class="spacer" style="height:10px"></div>
+                    <div class="star-div1" style="" *ngIf="bookdata.average_rating ">
+                        <ion-icon *ngIf ="bookdata.average_rating>=1" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=2" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=3" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=4" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=5" name="star"></ion-icon>
+                    </div>
+                    <div class="star-div1" style="" *ngIf="!bookdata.average_rating ">
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                    </div>
+                    <div class="spacer" style="height:10px"></div> 
+                    <span *ngIf="appProvider.current.currentLanguage=='arb'">        {{'listen-library.audio-duration'|translate}}:{{bookdata.audio_length_arabic}} hr</span>  
+                </div>
+                <div class="spacer" style="height:10px; border-bottom:1px solid #cecece"></div>
+                <span class="span-summary">{{'listen-library.summary'|translate }}:</span>
+                <p class="text-left" *ngIf="appProvider.current.currentLanguage=='arb'">{{bookdata.description_arabic}} </p>
+            </div>
+            <div class="spacer" style="height:10px"></div>
+            <div class="text-center">
+                <div class="social-div-st" style="text-align: center;">
+                    <div style="font-size:16px;float: left;margin-top: 10px; margin-left: 34px;">{{'listen-library.share'|translate}} :</div>
+                    <img src="img/twitter(2).png" (click)="onShareWithTwitter()" >
+                    <img src="img/facebook(2).png" (click)="onShareWithFacebook()" >
+                    
+                    <img src="img/plus(2).png" (click)="onShareViaAll()">
+                </div>
+            </div>
+            <div class="spacer" style="height:10px"></div>
+            <div  class="div-summary" style="float:left;padding: 0 10px;">
+                <div>
+                    <div style="width: 45%;float:left;margin-top: 8px">
+                        <span style="text-decoration: underline #2ABFDB;">{{'listen-library.review-ratings'|translate}}</span>
+                        <hr>
+                    </div>  
+                </div>  
+            <div *ngIf="review">
+              <div *ngFor="let m of review" style="border-bottom:solid 1px #2ABFDB;width:100%;float:left">
+                 <div *ngIf="m.user!=null" style=""><span>{{m.user.first_name}} {{m.user.last_name}}</span></div>
+                <div class="star-div1" >
+                    <ion-icon *ngIf ="m.rating>=1" name="star"></ion-icon>
+                    <ion-icon *ngIf ="m.rating>=2" name="star"></ion-icon>
+                    <ion-icon  *ngIf ="m.rating>=3" name="star"></ion-icon>
+                    <ion-icon *ngIf ="m.rating>=4" name="star"></ion-icon>
+                    <ion-icon *ngIf ="m.rating>=5" name="star"></ion-icon>
+                </div>
+                <div style="">
+                    <p>{{m.review}}
+                    </p>
+                </div>  
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'content'"  class="content_div">
+            <div id="back-div">
+                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" height="100%" width="100%" class="content-back-st">
+                <div class="left-div">
+                    <div class="text-center content-div">    
+                        <span>{{'listen-library.table_of_content'|translate}} </span>
+                    </div>
+                    <ul style="float:left" *ngIf="bookdata.content">
+                        <li  *ngFor="let data of bookdata.content.split(',') ">
+                            <span >{{data}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div  class="right-div">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}">
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="'description'">
+            <ion-list>
+                <ion-item>
+                    <ion-thumbnail style="margin-top:14px !important  "item-left>
+                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 153px ;width: 123px; margin-left: -7px">
+                    </ion-thumbnail>
+                    <p style="font-size:21px;color:#000" *ngIf="appProvider.current.currentLanguage=='arb'">{{bookdata.book_name_arabic}}</p>
+                    <p  style="font-size:19px;color:#000;margin-top: 6px" *ngIf="appProvider.current.currentLanguage=='arb' && bookdata.author">{{'listen-library.by'|translate}}:<u style="color:#2ABFDB">{{bookdata.author.author_name_arabic}} </u> </p>
+                    <p style="font-size:12px;color:#000;;margin-top: 6px"  *ngIf="appProvider.current.currentLanguage=='arb'">{{'listen-library.audio-duration'|translate}}:{{bookdata.audio_length.arabic}} hr</p>
+                    <p style="font-size:12px;color:#000;;margin-top: 6px">50+Reviews</p>
+                </ion-item>
+            </ion-list>
+            <div style="border:1px solid #B7B7B7 ;
+                margin:6px 16px !important; ">
+                <p style="margin-left:10px">{{'listen-library.description'|translate}}</p>
+                <p style="margin-left: 2px;font-family: Poppins-Light" *ngIf="appProvider.current.currentLanguage=='arb'">{{bookdata.description_arabic}}
+                </p>
+            </div>
+            <div style="border:1px solid #B7B7B7 ;
+                margin:0 16px !important; ">
+                <p style="margin-left:10px">{{'listen-library.about-author'|translate}}</p>
+                <p style="margin-left: 2px;font-family: Poppins-Light" *ngIf="appProvider.current.currentLanguage=='arb' && bookdata.author">{{bookdata.author.description_arabic}}
+                </p>
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - english - - - - - - - - - - - - - - - - - - - - - -  -->
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title style="float:left" *ngIf="bookdata">
+            <span class="text-center" *ngIf="appProvider.current.currentLanguage=='en'">{{bookdata.book_name}}</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="bookdata && appProvider.current.currentLanguage=='en'">
+    <ion-segment class="segment-st" [(ngModel)]="segment">
+        <ion-segment-button value="listen">{{'listen-library.listen'|translate}}</ion-segment-button>
+        <ion-segment-button value="content" >{{'listen-library.content'|translate}}</ion-segment-button>
+        <ion-segment-button value="description">{{'listen-library.description'|translate}}</ion-segment-button>
+       <!--  <ion-segment-button value="similar">{{'listen-library.similar'|translate}}</ion-segment-button> -->
+    </ion-segment>
+    <div [ngSwitch]="segment" class="segment_div">
+        <div *ngSwitchCase="'listen'">
+            <ion-card id="backid">
+                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 260px; filter: blur(3px);width: 100%;">
+                <div class="card-title image-div-st"> 
+                    <img class="badi-img" src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" >
+                </div>       
+            </ion-card>
+            <div>
+                <div class="div-lib-bt" style="width:49%;float: left;" (click)="onAddLibrary()">
+                    <button ion-button clear class="bu-st" [disabled]="bookdata.Subscription=='Yes' || addLibraryButton=='disable'">
+                    <img src="img/add.png" class="icon-bu-st" height="20px" width="20px">{{'listen-library.add-to-library'|translate}}</button>
+                </div>
+                <div class="custom_border" style="float: left;"></div>
+                <div class="div-sub-bt" style="width:50%;float: left;">
+                    <button ion-button clear class="bu-st" (click)="onSubscribed()" >
+                    <img  src="img/subscribe-rss-button(1).png" class="icon-bu-st" height="20px" width="20px" >
+                    {{'listen-library.subscribe-now'|translate}}
+                    </button>
+                </div>
+            </div>
+            <div class="spacer" style="height:45px"></div>
+            <div class="text-center music-button-st">
+                <div class="player-div">
+                    <div style="width:100%;float:left; display:inline" >
+                        <ion-range (ionChange)="onPositionChange(aa)" min="0" max="{{fullDuration}}" step='1' debounce [(ngModel)]="aa" color="secondary" >
+                          <ion-label range-left  class="timer-label">{{aa | timer}}</ion-label>
+                          <ion-label range-right class="timer-label">{{fullDuration | timer}}</ion-label>
+                        </ion-range>
+                    </div>
+                    <img src="img/previous-step-circular-button.png" class="icon-pr" (click)="onPrevious()">
+                    <ion-icon  name="play" class="play-icon" *ngIf="playButton=='true' && playButton1=='true'" (click)="onCreateMediaInsatnce()" ></ion-icon>
+                    <ion-icon  name="play" class="play-icon" *ngIf="playButton=='true' && playButton1=='false'" (click)="onCreateMediaInsatnce()" ></ion-icon>
+                    <ion-icon name="pause" class="play-icon" *ngIf="playButton=='false'" (click)="onPause()"> </ion-icon>
+                    <ion-icon name="square" class="play-icon" *ngIf="playButton=='false'" (click)="onStop()"></ion-icon>
+                    <img src="img/next-step-circular-button.png" class="icon-pr" (click)="onForword()">
+                </div>
+            </div>
+            <div class="spacer" style="height:10px"></div>
+            <div padding class="div-summary">
+                <div class="text-center">
+                    <h5 *ngIf="appProvider.current.currentLanguage=='en'">{{bookdata.book_name}}</h5>
+                    <span *ngIf="appProvider.current.currentLanguage=='en' && bookdata.author" style="text-decoration:underline;color:#2AC1D8">{{bookdata.author.author_name}}</span>
+                    <div class="spacer" style="height:10px"></div>
+                    <div class="star-div1" style="" *ngIf="bookdata.average_rating ">
+                        <ion-icon *ngIf ="bookdata.average_rating>=1" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=2" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=3" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=4" name="star"></ion-icon>
+                        <ion-icon *ngIf ="bookdata.average_rating>=5" name="star"></ion-icon>
+                    </div>
+                    <div class="star-div1" style="" *ngIf="!bookdata.average_rating ">
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                        <ion-icon  name="star-outline"></ion-icon>
+                    </div>
+                    <div class="spacer" style="height:10px"></div>
+                    <span *ngIf="appProvider.current.currentLanguage=='en'">        {{'listen-library.audio-duration'|translate}}:{{bookdata.audio_length}} hr</span> 
+                </div>
+                <div class="spacer" style="height:10px; border-bottom:1px solid #cecece"></div>
+                <span class="span-summary">{{'listen-library.summary'|translate }}:</span>
+                <p class="text-left" *ngIf="appProvider.current.currentLanguage=='en'">{{bookdata.description}} </p>
+            </div>
+            <div class="spacer" style="height:10px"></div>
+            <div class="text-center">
+                <div class="social-div-st" style="text-align: center;">
+                    <div style="font-size:16px;float: left;margin-top: 10px; margin-left: 34px;">{{'listen-library.share'|translate}} :</div>
+                    <img src="img/twitter(2).png" (click)="onShareWithTwitter()" >
+                    <img src="img/facebook(2).png" (click)="onShareWithFacebook()" >
+                    
+                    <img src="img/plus(2).png" (click)="onShareViaAll()">
+                </div>
+            </div>
+            <div class="spacer" style="height:10px"></div>
+            <div  class="div-summary" style="float:left;padding: 0 10px;">
+                <div>
+                    <div style="width: 45%;float:left;margin-top: 8px">
+                        <span style="text-decoration: underline #2ABFDB;">{{'listen-library.review-ratings'|translate}}</span>
+                        <hr>
+                    </div>
+                </div>  
+            <div *ngIf="review">
+              <div *ngFor="let m of review" style="border-bottom:solid 1px #2ABFDB;width:100%;float:left">
+                 <div *ngIf="m.user!=null" style=""><span>{{m.user.first_name}} {{m.user.last_name}}</span></div>
+                <div class="star-div1" >
+                    <ion-icon *ngIf ="m.rating>=1" name="star"></ion-icon>
+                    <ion-icon *ngIf ="m.rating>=2" name="star"></ion-icon>
+                    <ion-icon  *ngIf ="m.rating>=3" name="star"></ion-icon>
+                    <ion-icon *ngIf ="m.rating>=4" name="star"></ion-icon>
+                    <ion-icon *ngIf ="m.rating>=5" name="star"></ion-icon>
+                </div>
+                <div style="">
+                    <p>{{m.review}}
+                    </p>
+                </div>  
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'content'"  class="content_div">
+            <div id="back-div">
+                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" height="100%" width="100%" class="content-back-st">
+                <div class="left-div">
+                    <div class="text-center content-div">    
+                        <span>{{'listen-library.table_of_content'|translate}} </span>
+                    </div>
+                    <ul style="float:left" *ngIf="bookdata.content">
+                        <li  *ngFor="let data of bookdata.content.split(',') ">
+                            <span >{{data}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div  class="right-div">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}">
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="'description'">
+            <ion-list>
+                <ion-item>
+                    <ion-thumbnail style="margin-top:14px !important  "item-left>
+                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 153px ;width: 123px; margin-left: -7px">
+                    </ion-thumbnail>
+                    <p style="font-size:21px;color:#000" *ngIf="appProvider.current.currentLanguage=='en'">{{bookdata.book_name}}</p>
+                    <p  style="font-size:19px;color:#000;margin-top: 6px" *ngIf="appProvider.current.currentLanguage=='en' && bookdata.author">{{'listen-library.by'|translate}}:<u style="color:#2ABFDB">{{bookdata.author.author_name}} </u> </p>
+                    <p style="font-size:12px;color:#000;;margin-top: 6px"  *ngIf="appProvider.current.currentLanguage=='en'">{{'listen-library.audio-duration'|translate}}:{{bookdata.audio_length}} hr</p>
+                    <p style="font-size:12px;color:#000;;margin-top: 6px">50+Reviews</p>
+                </ion-item>
+            </ion-list>
+            <div style="border:1px solid #B7B7B7 ;
+                margin:6px 16px !important; ">
+                <p style="margin-left:10px">{{'listen-library.description'|translate}}</p>
+                <p style="margin-left: 2px;font-family: Poppins-Light" *ngIf="appProvider.current.currentLanguage=='en'">{{bookdata.description}}
+                </p>
+            </div>
+            <div style="border:1px solid #B7B7B7 ;
+                margin:0 16px !important; ">
+                <p style="margin-left:10px">{{'listen-library.about-author'|translate}}</p>
+                <p style="margin-left: 2px;font-family: Poppins-Light" *ngIf="appProvider.current.currentLanguage=='en' && bookdata.author">{{bookdata.author.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+
+

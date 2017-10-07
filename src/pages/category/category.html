@@ -1,0 +1,546 @@
+
+
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="nav" *ngIf="searchbar=='false'">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title >  {{'homepage-category.title'|translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button style="width: 44px" (click)="onSearch()" *ngIf="searchIcon=='true'">
+            <ion-icon name="search" ></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+     <ion-navbar *ngIf="searchbar=='true'">
+        <button ion-button menuToggle >
+            <ion-icon name="menu" style="color: #fff"></ion-icon>
+        </button>
+        <ion-item no-lines no-padding style="background: transparent;">
+            <ion-input  [(ngModel)]="myInput"  (input)="onSearch()" placeholder="{{'message.search'|translate}}" class="input-st" ></ion-input>
+            <ion-icon name="search"  (click)="onSearch()"  item-left class="input-search-icon"></ion-icon>
+        </ion-item>
+    </ion-navbar>
+</ion-header>
+<ion-content (click)="onContent()" dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+<div>
+    <ion-segment style="background-color: #DFDDDD;font-family: Poppins-Light;font-size: 15px" [(ngModel)]="segment"> 
+    <ion-segment-button value="featured" (click)="showSearchIcon()">
+        {{'homepage-category.featured'|translate}}
+    </ion-segment-button>
+    <ion-segment-button value="category" (click)="hideSearchIcon()" >
+        {{'homepage-category.categories'|translate}}
+    </ion-segment-button>
+    </ion-segment>
+</div>
+<div [ngSwitch]="segment">
+    <div *ngSwitchCase="'featured'">
+     <div *ngIf="searchbar=='false'">
+          <div style="height: 32px; margin-left: 11px; margin-top: 14px;" *ngIf="allBooklist">
+            <span style="color:#000;font-size: 16px">{{'homepage-category.newbooks'|translate}} </span>
+            <span style ="float: left;color:#2ABFDB;" (click)="onViewMore(allBooklist.recent,'New Books','كتب جديدة')">{{'homepage-category.view-more'|translate}}>></span>
+        </div>
+        <ion-scroll scrollX="true" class="mycustomrow">
+            <ion-row *ngIf="allBooklist">
+                <ion-col *ngFor="let data of allBooklist.recent; let i = index" [attr.data-index]="i">
+                <div class="smalldiv"  *ngIf="appProvider.current.currentLanguage=='arb'">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}" (click)="onBook(data)" class="img-slider" >
+                    <div class="price-div" *ngIf="data.subscription_book=='no'">
+                        SAR: <span style="color:#2ABFDB" >{{data.price_arabic}}</span>
+                    </div>
+                    <p style="margin-top:2px;color:#000; font-size: 12px" >{{data.book_name_arabic}}</p>
+                    <p  *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 12px" >{{'homepage-category.by'|translate}}: <u style="color:#2ABFDB"> {{data.author.author_name_arabic}} </u></p>
+                    <div style="display:inline-flex">
+                        <p style="margin-top:0px;color:#000; font-size: 12px" >{{'homepage-category.rating'|translate}}:</p>
+                        <div class="star-div" style="" *ngIf="data.average_rating">
+                            <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                        </div>
+                        <div class="star-div" style="" *ngIf="!data.average_rating">
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="allBooklist && allBooklist.recent.length==0">
+                <div class="outer-div">
+                    <div class="middle-div">
+                        <div class="inner-div">
+                            <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+        <div style="
+            height: 32px;
+            margin-left: 11px;
+            margin-top: 1px;">
+            <span style="color:#000;font-size: 16px" *ngIf="allBooklist">{{'homepage-category.freebook'|translate}} </span>
+            <span style ="float: left;color:#2ABFDB; " (click)="onViewMore(allBooklist.free,'Free Books','كتب مجانية')">{{'homepage-category.view-more'|translate}}>></span>
+        </div>
+        <ion-scroll scrollX="true" class="mycustomrow">
+            <ion-row *ngIf="allBooklist">
+                <ion-col *ngFor="let data of allBooklist.free; let i = index" [attr.data-index]="i">
+                <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb'">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                    <p style="margin-top:2px;color:#000; font-size: 12px" >{{data.book_name_arabic}}</p>
+                    <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 12px" >{{'homepage-category.by'|translate}}: <u style="color:#2ABFDB"> {{data.author.author_name_arabic}} </u></p>
+                    <div style="display:inline-flex">
+                        <p style="margin-top:0px;color:#000; font-size: 12px" >{{'homepage-category.rating'|translate}}:</p>
+                        <div class="star-div" style="" *ngIf="data.average_rating">
+                            <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                        </div>
+                        <div class="star-div" style="" *ngIf="!data.average_rating">
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="allBooklist && allBooklist.free.length==0">
+                <div class="outer-div">
+                    <div class="middle-div">
+                        <div class="inner-div">
+                            <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+        <div style=" height: 32px;margin-left: 11px; margin-top: 15px;" *ngIf="allBooklist">
+            <span style="color:#000;font-size: 16px"> {{'homepage-category.booksforsale'|translate}}  </span>
+            <span style ="float: left;color:#2ABFDB; " (click)="onViewMore(allBooklist.sale,'Books For Sale','كتب للبيع')">{{'homepage-category.view-more'|translate}}>></span>
+        </div>
+        <ion-scroll scrollX="true" class="mycustomrow">
+            <ion-row *ngIf="allBooklist">
+                <ion-col *ngFor="let data of allBooklist.sale; let i = index" [attr.data-index]="i">
+                <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb'">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                    <div class="price-div">
+                        SAR: <span style="color:#2ABFDB">{{data.price_arabic}}</span>
+                    </div>
+                    <p style="margin-top:2px;color:#000; font-size: 12px" >{{data.book_name_arabic}}</p>
+                    <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 12px" >{{'homepage-category.by'|translate}} : <u style="color:#2ABFDB"> {{data.author.author_name_arabic}} </u></p>
+                    <div style="display:inline-flex">
+                        <p style="margin-top:0px;color:#000; font-size: 12px" >{{'homepage-category.rating'|translate}}:</p>
+                        <div class="star-div" style="" *ngIf="data.average_rating">
+                            <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                        </div>
+                        <div class="star-div" style="" *ngIf="!data.average_rating">
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="allBooklist && allBooklist.sale.length==0">
+                <div class="outer-div">
+                    <div class="middle-div">
+                        <div class="inner-div">
+                            <p class="span-text-st"> {{'message.nothingToShow' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+        <div style=" height: 32px;margin-left: 11px; margin-top: 15px;" *ngIf="allBooklist">
+            <span style="color:#000;font-size: 16px">{{'homepage-category.mysubscribedbook'|translate}}</span>
+            <span style ="float: left;color:#2ABFDB; " (click)="onViewMore(allBooklist.bookforsubs,'My Subscribed Book','My Subscribed Book')">{{'homepage-category.view-more'|translate}}>></span>
+        </div>
+        <ion-scroll scrollX="true" class="mycustomrow">
+            <ion-row *ngIf="allBooklist">
+                <ion-col *ngFor="let data of allBooklist.bookforsubs; let i = index" [attr.data-index]="i">
+                <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb'">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                    <div class="price-div" *ngIf="data.subscription_book=='no'">
+                        SAR: <span style="color:#2ABFDB" >{{data.price_arabic}}</span>
+                    </div>
+                    <p style="margin-top:2px;color:#000; font-size: 12px" >{{data.book_name_arabic}}</p>
+                    <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 12px" >{{'homepage-category.by'|translate}} : <u style="color:#2ABFDB"> {{data.author.author_name_arabic}} </u></p>
+                    <div style="display:inline-flex">
+                        <p style="margin-top:0px;color:#000; font-size: 12px" >{{'homepage-category.rating'|translate}}:</p>
+                        <div class="star-div" style="" *ngIf="data.average_rating">
+                            <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                            <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                        </div>
+                        <div class="star-div" style="" *ngIf="!data.average_rating">
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="allBooklist && allBooklist.bookforsubs.length==0">
+                <div class="outer-div">
+                    <div class="middle-div">
+                        <div class="inner-div">
+                            <p class="span-text-st"> {{'message.nothingToShow' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+
+     </div>
+          <div *ngIf="searchbar=='true'">
+            <ion-grid class="searchall">
+                <ion-row class="text-center-search" *ngIf="dataforSearchAll">
+                    <ion-col style="width: 33%" *ngFor="let book of dataforSearchAll" >
+                        <div class="img-st-search" (click)="onBook(book)">
+                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}">
+                        </div>
+                        <div class="div-st-search">
+                            <span style="white-space: nowrap;">{{book.book_name_arabic}}</span>
+                            <br>
+                            <span>{{'mybook.by'|translate}}:</span> 
+                            <span style="text-decoration:underline;color:#2ABFDB" *ngIf="book.author">{{book.author.author_name_arabic}}</span>
+                            <br>
+                            <div class="star-div-search" style="" *ngIf="book.average_rating">
+                                <span style="color:white">{{'mybook.rating'|translate}}:</span>
+                                <ion-icon *ngIf ="book.average_rating>=1" name="star"></ion-icon>
+                                <ion-icon *ngIf ="book.average_rating>=2" name="star"></ion-icon>
+                                <ion-icon  *ngIf ="book.average_rating>=3" name="star"></ion-icon>
+                                <ion-icon *ngIf ="book.average_rating>=4" name="star"></ion-icon>
+                                <ion-icon *ngIf ="book.average_rating>=5" name="star"></ion-icon>
+                            </div>
+                            <div class="star-div-search" style="" *ngIf="!book.average_rating">
+                                <span style="color:white">{{'mybook.rating'|translate}}:</span>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="booklist && booklist.length==0">
+                    <div class="outer-div-search">
+                        <div class="middle-div-search">
+                            <div class="inner-div-search">
+                                <p class="span-text-st-search"> {{'message.nothingToShow' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </div>
+    </div>
+    <ion-list *ngSwitchCase="'category'" class="font-st">
+        <div *ngFor="let data of Category">
+            <ion-item no-lines class="class1" (click)="onCategory(data)">
+                <ion-label *ngIf="appProvider.current.currentLanguage=='arb'">
+                    <ion-icon class="iconclass"> <img src ="img/next.png" style="width: 16px;height:16px "></ion-icon>
+                    {{data.category_name_in_arabic}}
+                </ion-label>
+            </ion-item>
+        </div>
+    </ion-list>
+</div>
+</ion-content>
+<!--- - - - - - -   - - - -  english code - -  - - - - - - - -  - - -->
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="nav" *ngIf="searchbar=='false'">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title >  {{'homepage-category.title'|translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button style="width: 44px" (click)="onSearch()" *ngIf="searchIcon=='true'">
+            <ion-icon name="search" ></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-navbar *ngIf="searchbar=='true'">
+        <button ion-button menuToggle >
+            <ion-icon name="menu" style="color: #fff"></ion-icon>
+        </button>
+        <ion-item no-lines no-padding style="background: transparent;">
+            <ion-input  [(ngModel)]="myInput"  (input)="onSearch()" placeholder="{{'message.search'|translate}}" class="input-st" ></ion-input>
+            <ion-icon name="search"  (click)="onSearch()"  item-left class="input-search-icon"></ion-icon>
+        </ion-item>
+<!--         <ion-input  [(ngModel)]="myInput"  (input)="onSearch()" placeholder="{{'message.search'|translate}}" class="input-st" ></ion-input>
+        <ion-icon name="search"  (click)="onSearch()"  class="input-search-icon"></ion-icon> -->
+    </ion-navbar>
+    
+</ion-header>
+<ion-content (click)="onContent()"  *ngIf="appProvider.current.currentLanguage=='en'">
+<div>
+    <ion-segment style="background-color: #DFDDDD;font-family: Poppins-Light;font-size: 15px" [(ngModel)]="segment"> 
+    <ion-segment-button value="featured" (click)="showSearchIcon()">
+        {{'homepage-category.featured'|translate}}
+    </ion-segment-button>
+    <ion-segment-button value="category" (click)="hideSearchIcon()" >
+        {{'homepage-category.categories'|translate}}
+    </ion-segment-button>
+    </ion-segment>
+</div>
+<div [ngSwitch]="segment">
+    <div *ngSwitchCase="'featured'">
+        <div *ngIf="searchbar=='false'">
+            <div style="height: 32px; margin-left: 11px; margin-top: 14px;" *ngIf="allBooklist">
+                <span style="color:#000;font-size: 16px">{{'homepage-category.newbooks'|translate}} </span>
+                <span style ="float: right;margin-right: 2px;color:#2ABFDB;margin-top: 2px" (click)="onViewMore(allBooklist.recent,'New Books','كتب جديدة')">{{'homepage-category.view-more'|translate}}>></span>
+            </div>
+            <ion-scroll scrollX="true" class="mycustomrow">
+                <ion-row *ngIf="allBooklist">
+                    <ion-col *ngFor="let data of allBooklist.recent; let i = index" [attr.data-index]="i">
+                    <div class="smalldiv"  *ngIf="appProvider.current.currentLanguage=='en' && i<15">
+                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}" (click)="onBook(data)" class="img-slider" >
+                        <div class="price-div" *ngIf="data.subscription_book=='no'">
+                            SAR: <span style="color:#2ABFDB" >{{data.price}}</span>
+                        </div>
+                        <p style="margin-top:2px;color:#000; font-size: 10px" >{{data.book_name}}</p>
+                        <p  *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'homepage-category.by'|translate}}: <u style="color:#2ABFDB"> {{data.author.author_name}} </u></p>
+                        <div style="display:inline-flex">
+                            <p style="margin-top:3px;color:#000; font-size: 10px" >{{'homepage-category.rating'|translate}}:</p>
+                            <div class="star-div" style="" *ngIf="data.average_rating">
+                                <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                            </div>
+                            <div class="star-div" style="" *ngIf="!data.average_rating">
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="allBooklist && allBooklist.recent.length==0">
+                    <div class="outer-div">
+                        <div class="middle-div">
+                            <div class="inner-div">
+                                <p class="span-text-st"> {{'message.nothingToShow' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+            <div style="
+                height: 32px;
+                margin-left: 11px;
+                margin-top: 1px;">
+                <span style="color:#000;font-size: 16px" *ngIf="allBooklist">{{'homepage-category.freebook'|translate}} </span>
+                <span style ="float: right;margin-right: 2px;color:#2ABFDB;margin-top: 2px " (click)="onViewMore(allBooklist.free,'Free Books','كتب مجانية')">{{'homepage-category.view-more'|translate}}>></span>
+            </div>
+            <ion-scroll scrollX="true" class="mycustomrow">
+                <ion-row *ngIf="allBooklist">
+                    <ion-col *ngFor="let data of allBooklist.free; let i = index" [attr.data-index]="i">
+                    <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='en' &&  i<15">
+                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                        <p style="margin-top:2px;color:#000; font-size: 10px" >{{data.book_name}}</p>
+                        <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'homepage-category.by'|translate}} : <u style="color:#2ABFDB"> {{data.author.author_name}} </u></p>
+                        <div style="display:inline-flex">
+                            <p style="margin-top:3px;color:#000; font-size: 10px" >{{'homepage-category.rating'|translate}} :</p>
+                            <div class="star-div" style="" *ngIf="data.average_rating">
+                                <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                            </div>
+                            <div class="star-div" style="" *ngIf="!data.average_rating">
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="allBooklist && allBooklist.free.length==0">
+                    <div class="outer-div">
+                        <div class="middle-div">
+                            <div class="inner-div">
+                                <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+            <div style=" height: 32px;margin-left: 11px; margin-top: 15px;" *ngIf="allBooklist">
+                <span style="color:#000;font-size: 16px"> {{'homepage-category.booksforsale'|translate}}  </span>
+                <span style ="float: right;margin-right: 2px;color:#2ABFDB;margin-top: 2px " (click)="onViewMore(allBooklist.sale,'Books For Sale','كتب للبيع')">{{'homepage-category.view-more'|translate}}>></span>
+            </div>
+            <ion-scroll scrollX="true" class="mycustomrow">
+                <ion-row *ngIf="allBooklist">
+                    <ion-col *ngFor="let data of allBooklist.sale; let i = index" [attr.data-index]="i">
+                    <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='en' && i<15">
+                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                        <div class="price-div">
+                            SAR: <span style="color:#2ABFDB">{{data.price}}</span>
+                        </div>
+                        <p style="margin-top:2px;color:#000; font-size: 10px" >{{data.book_name}}</p>
+                        <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'homepage-category.by'|translate}} : <u style="color:#2ABFDB"> {{data.author.author_name}} </u></p>
+                        <div style="display:inline-flex">
+                            <p style="margin-top:3px;color:#000; font-size: 10px" >{{'homepage-category.rating'|translate}} :</p>
+                            <div class="star-div" style="" *ngIf="data.average_rating">
+                                <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                            </div>
+                            <div class="star-div" style="" *ngIf="!data.average_rating">
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="allBooklist && allBooklist.sale.length==0">
+                    <div class="outer-div">
+                        <div class="middle-div">
+                            <div class="inner-div">
+                                <p class="span-text-st"> {{'message.nothingToShow' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+            <div style=" height: 32px;margin-left: 11px; margin-top: 15px;" *ngIf="allBooklist">
+                <span style="color:#000;font-size: 16px"> My subscribe book </span>
+                <span style ="float: right;margin-right: 2px;color:#2ABFDB;margin-top: 2px " (click)="onViewMore(allBooklist.bookforsubs,'My subscribe book','كتب للبيع')">{{'homepage-category.view-more'|translate}}>></span>
+            </div>
+            <ion-scroll scrollX="true" class="mycustomrow">
+                <ion-row *ngIf="allBooklist">
+                    <ion-col *ngFor="let data of allBooklist.bookforsubs; let i = index" [attr.data-index]="i">
+                    <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='en' && i<15">
+                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                        <div class="price-div" *ngIf="data.subscription_book=='no'">
+                            SAR: <span style="color:#2ABFDB" >{{data.price}}</span>
+                        </div>
+                        <p style="margin-top:2px;color:#000; font-size: 10px" >{{data.book_name}}</p>
+                        <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'homepage-category.by'|translate}} : <u style="color:#2ABFDB"> {{data.author.author_name}} </u></p>
+                        <div style="display:inline-flex">
+                            <p style="margin-top:3px;color:#000; font-size: 10px" >{{'homepage-category.rating'|translate}} :</p>
+                            <div class="star-div" style="" *ngIf="data.average_rating">
+                                <ion-icon *ngIf ="data.average_rating>=1" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=2" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=3" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=4" name="star"></ion-icon>
+                                <ion-icon *ngIf ="data.average_rating>=5" name="star"></ion-icon>
+                            </div>
+                            <div class="star-div" style="" *ngIf="!data.average_rating">
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="allBooklist && allBooklist.bookforsubs.length==0">
+                    <div class="outer-div">
+                        <div class="middle-div">
+                            <div class="inner-div">
+                                <p class="span-text-st"> {{'message.nothingToShow' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+        <div *ngIf="searchbar=='true'">
+            <ion-grid class="searchall">
+                <ion-row class="text-center-search" *ngIf="dataforSearchAll">
+                    <ion-col style="width: 33%" *ngFor="let book of dataforSearchAll" >
+                        <div class="img-st-search" (click)="onBook(book)">
+                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}">
+                        </div>
+                        <div class="div-st-search">
+                            <span style="white-space: nowrap;">{{book.book_name}}</span>
+                            <br>
+                            <span>{{'mybook.by'|translate}}:</span> 
+                            <span style="text-decoration:underline;color:#2ABFDB" *ngIf="book.author">{{book.author.author_name}}</span>
+                            <br>
+                            <div class="star-div-search" style="" *ngIf="book.average_rating">
+                                <span style="color:white">{{'mybook.rating'|translate}}:</span>
+                                <ion-icon *ngIf ="book.average_rating>=1" name="star"></ion-icon>
+                                <ion-icon *ngIf ="book.average_rating>=2" name="star"></ion-icon>
+                                <ion-icon  *ngIf ="book.average_rating>=3" name="star"></ion-icon>
+                                <ion-icon *ngIf ="book.average_rating>=4" name="star"></ion-icon>
+                                <ion-icon *ngIf ="book.average_rating>=5" name="star"></ion-icon>
+                            </div>
+                            <div class="star-div-search" style="" *ngIf="!book.average_rating">
+                                <span style="color:white">{{'mybook.rating'|translate}}:</span>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                                <ion-icon  name="star-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="booklist && booklist.length==0">
+                    <div class="outer-div-search">
+                        <div class="middle-div-search">
+                            <div class="inner-div-search">
+                                <p class="span-text-st-search"> {{'message.nothingToShow' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </div>
+    </div>
+    <ion-list *ngSwitchCase="'category'" class="font-st">
+        <div *ngFor="let data of Category">
+            <ion-item no-lines class="class1" (click)="onCategory(data)">
+                <ion-label *ngIf="appProvider.current.currentLanguage=='en'">
+                    <ion-icon class="iconclass"> <img src ="img/next.png" style="width: 16px;height:16px " ></ion-icon>
+                    {{data.category_name_in_english}}
+                </ion-label>
+            </ion-item>
+        </div>
+    </ion-list>
+</div>
+</ion-content>
+

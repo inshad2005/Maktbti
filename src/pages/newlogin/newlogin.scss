@@ -1,0 +1,145 @@
+
+// .toolbar-title-md {
+//     color: #000;
+//     font-size: 1.7rem;
+//     font-weight: 600;
+//     pointer-events: auto;
+//     text-align: center;
+// }
+// .toolbar-title {
+//     display: block;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     width: 78%;
+// }
+page-newlogin {
+
+//  .toolbar-title {
+//     display: block;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     width: 100%;
+// }
+
+.list-md .item-input:last-child {
+    border-bottom: 1px solid #dedede;
+}
+
+.toolbar-background-md {
+    background: #E8512E none repeat scroll 0 0;
+    border-color: #b2b2b2;
+
+}
+.navbarclass{
+// text-align: center;
+color:#000 !important
+
+}
+.imagecenter{
+text-align: center
+}
+.image1{
+
+width: 150px;
+margin-top: 15px
+
+}
+
+.class1{
+    background-image: url("img/Login.png") ;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+// .logama{
+//   margin: auto;
+//     width: 57%;
+//     padding: 10px
+// }
+
+// @media only screen and (min-width: 500px)
+// {
+// .logama{
+//   margin: auto;
+//     width: 31%;
+//     padding: 10px
+// }
+// }
+
+    .list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: transparent!important;
+      box-shadow: none!important;
+}
+.list-md :last-child {
+  border-bottom-color: transparent!important;
+      box-shadow: none!important;
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent!important;
+  box-shadow: none !important;
+}
+
+.div1{
+
+// height: 100px !important   ;
+
+  border: 1px solid #fff;
+  background-color: #fff;
+    border-radius: 3px;
+    margin-top: 27px;
+
+  }
+  .iconclass{
+position: absolute;
+bottom:-6px;
+left:0px
+
+
+}
+.class2{
+background:transparent;
+color: #000;
+height: 60px;
+margin-top: -10px;
+border-bottom:1px solid #DAD8D4!important;
+}
+.class3{
+background:transparent;
+color: #000;
+height: 60px;
+
+margin-top: -10px;
+
+
+
+}
+
+  .class5{
+        height: 40px;
+      padding-left: 12px;
+        padding-top: 4px;
+        background-color: #2ABFDB;
+        width:70%
+    }
+.signup-div{
+      float: left;
+      width: 100%;
+      position: absolute; 
+      text-align: center;
+      top: 30px
+    }
+
+//    hr {
+//     border-bottom: 1px solid #fff;
+//     box-sizing: content-box;
+//     color: #fff !important;
+//     height: 0;
+//     width: 133px;
+//     padding-top: 34px;
+//      margin-left: 77px
+// }
+
+}

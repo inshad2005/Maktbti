@@ -1,0 +1,257 @@
+
+
+{
+    "translation": {
+        "en": "English"
+    },
+    
+    "loading": "...جار التحميل",
+
+    "home": {
+        "signIn": "تسجيل الدخول",
+        "signUp": "سجل"
+    },
+
+    "login": {
+        "header": "تسجيل الدخول",
+        "email": "عنوان البريد الإلكتروني",
+        "emailError": "* الرجاء إدخال معرف بريد إلكتروني صالح",
+        "password": "كلمه السر",
+        "passwordError": "* الرجاء إدراج كلمة المرور",
+        "forgot": "هل نسيت كلمة المرور ؟",
+        "login": "تسجيل الدخول",
+        "msg": "لا هافا حساب؟ سجل هنا",
+        "errorMsg": "Either Email Or Password is Invalid"
+    },
+
+    "forgot": {
+        "title": "هل نسيت كلمة المرور",
+        "msg": "إذا كنت قد نسيت كلمة المرور الخاصة بك، لا تقلق! فقط أدخل عنوان البريد الإلكتروني الخاص بك أدناه وسوف نرسل لك رابط يمكنك استخدامها لاختيار كلمة مرور جديدة",
+        "email": "أدخل بريدك الإلكتروني",
+        "emailError": "* الرجاء إدخال معرف بريد إ",
+        "resetpassword": "إعادة تعيين كلمة المرور",
+        "otpmsg": "اختر كلمة مرور جديدة لحساب المستخدم هذا. ستحل كلمة المرور هذه محل كلمة المرور القديمة؛ ويبقى كل شيء آخر عن الحساب نفسه",
+        "otp": "مكتب المدعي العام",
+        "otpError1": "* يرجى إدراج أوتب",
+        "otpError2": "* يرجى إدراج أوتب صالحة",
+        "newpassword": "كلمة السر الجديدة",
+        "passwordinsert": "* الرجاء إدخال كلمة المرور ",
+        "confirmpassword": "تأكيد كلمة المرور",
+        "confirmpasswordinsert": "* الرجاء إدراج تأكيد كلمة المرور",
+        "paswordconfirmpassword": "* كلمة السر وتأكيد كلمة المرور يجب أن يكون نفسه",
+        "done": "فعله",
+        "checkotp": "تحقق من البريد الوارد ل أوتب",
+        "error":"فشلت العملية",
+        "errorAlert":"البريد الالكتروني غير مسجل"
+    },
+
+    "signup": {
+        "title": "التسجيل",
+        "firstNameError": "* الرجاء إدخال الاسم الأول",
+        "lastNameError": "* الرجاء إدراج الاسم الأخير",
+        "emailError": "* الرجاء إدخال معرف بريد إلكتروني صالح",
+        "passwordError": "* الرجاء إدراج كلمة المرور",
+        "confirmPasswordError": "* كلمة السر وتأكيد كلمة المرور يجب أن يكون نفسه",
+        "signUp": "سجل",
+        "alreadyRegistered": "بالفعل هافا حساب؟ تسجيل الدخول هنا",
+        "login":"Login Here",
+        "message1": "من خلال إنشاء حساب، أوافق على",
+        "termCondition": "البنود و الظروف",
+        "message2": "من ماكتبتي",
+        "placeholderFirstname": "الاسم الاول",
+        "placeholderLastname": "الكنية",
+        "placeholderEmail": "البريد الإلكتروني",
+        "placeholderPassword": "كلمه السر",
+        "placeholderConfPassword": "تأكيد كلمة المرور"
+    },
+
+    "menu": {
+        "titleHome": "الصفحة الرئيسية",
+        "titleMyAccount": "حسابي",
+        "titleMyLibrary": "مكتبتي",
+        "titleRecommended": "موصى به",
+        "titleBrowseAll": "تصفح الكل",
+        "titleCategory": "الفئة",
+        "titleAboutUs":"معلومات عنا",
+        "titleContactUs":"اتصل بنا",
+        "logout": "الخروج"
+    },
+
+    "message": {
+        "success": "نجاح",
+        "messageSignup": "الاشتراك سوشسفول. تفقد بريدك الالكتروني من فضلك.",
+        "alreadyRegistered": "مسجل بالفعل",
+        "messageAlreadyRegistered": "تم إدخال عنوان البريد الإلكتروني الذي تم إدخاله بالفعل من قبلنا.",
+        "error": "خطأ",
+        "somethingWentWrong": "حدث خطأ ما. أعد المحاولة من فضلك",
+        "ok": "حسنا",
+        "search":"بحث",
+        "nothingToShow":"NO BOOK FOUND",
+        "messagepayment":"you have successfuly subdcribed book",
+        "messagepaymentfailed":"Payment failed please try again!!",
+        "payment":"Payment"
+    },
+
+    "listening-time": {
+        "title": "",
+        "hours": "ساعات",
+        "days": "أيام",
+        "minutes": "الدقائق",
+        "seconds": "ثواني",
+        "total listening-time": "مجموع وقت الاستماع"
+    },
+
+    "payment-history": {
+        "title": "سجل الدفعات",
+        "paid": "دفع",
+        "oF": "من",
+        "payment-method": "طريقة الدفع او السداد",
+        "ordered-by": "طلب بواسطة",
+        "remaining-balance": "الرصيد المتبقي",
+        "your-plan": "خطتك",
+        "starting-date": "تاريخ البدء",
+        "expiry-date": "تاريخ الانتهاء",
+         "transactionid":"Transaction ID"
+    },
+
+    "subscription-plan": {
+        "title": "خطط الاشتراك",
+        "subheader": "اختيار خطة الاشتراك التي تناسب أفضل لمتطلباتكم",
+        "plan": "خطة",
+        "sar": "خطة",
+        "duration": "المدة الزمنية",
+        "purchase": "شراء"
+    },
+
+    "feedback": {
+        "title": "ارسل رأيك",
+        "aboutexperience": "كيف كانت تجربتك مع ماكتبتي؟",
+        "subjectvalidationmsg": " * يرجى إدراج الموضوع",
+        "descptnvalidationmsg": "* يرجى إدراج الوصف",
+        "buttontext": "إرسال تعليقات",
+        "subject": "موضوع",
+        "description": "وصف",
+        "alerttitle": "نجاح",
+        "alertsubtitle": "شكرا لملاحظاتك",
+        "alertok": "حسنا"
+    },
+
+    "mylibrary": {
+        "title": "مكتبتي",
+        "by": "بواسطة",
+        "description": "وصف",
+        "alerttitle": "محزر",
+        "alertmessage": "هل توافق على إزالة",
+        "alertagree": "يوافق على",
+        "alertdisagree": "تعارض"
+    },
+
+    "homepage-category": {
+        "title": "الصفحة الرئيسية",
+        "featured": "متميز",
+        "categories": "الاقسام",
+        "view-more": "عرض المزيد",
+        "rating": "تقييم",
+        "newbooks": "كتب جديدة",
+        "booksforsale": "كتب للبيع",
+        "freebook": "كتب مجانية",
+        "by": "بواسطة",
+        "mysubscribedbook":"My Subscribed Book"
+    },
+
+    "listen-library": {
+        "listen": "استمع",
+        "content": "يحتوى",
+        "description": "وصف",
+        "similar": "مماثل",
+        "add-to-library": "إضافة إلى مكتبة",
+        "subscribe-now": "إشترك الآن",
+        "by":"بواسطة",
+        "rating":"تقييم",
+        "audio-duration": "مدة الصوت",
+        "summary": "ملخص",
+        "share": "مشاركة",
+        "review-ratings": "التقييمات والتصنيفات ",
+        "write-review": "أكتب مراجعة",
+        "about-author": "نبذة عن الكاتب",
+        "download-book": "تحميل هذا الكتاب",
+        "table_of_content": "قائمة المحتويات",
+        "alertSuccess":"نجاح",
+        "alertmessage":"تم إضافة هذا الكتاب لمكتبتك بنجاح",
+        "alertUnsuccess":"محزر",
+        "alertUnsuccessMessage":"لقد قمت بإضافة هذا الكتاب مسبقًا",
+        "alertLogin":"الرجاء تسجيل الدخول لإضافة هذا الكتاب لمكتبتك",
+        "socialSharingMessage":"انظر ماذا يتوفر في مكتبتيi"
+    },
+    "recomend": {
+        "title": "موصى به",
+        "by": "بواسطة",
+        "rating": "تقييم"
+    },
+
+    "mybook": {
+        "title": "جميع الكتب",
+        "by": "بواسطة",
+        "rating": "بواسطة"
+    },
+
+    "category-books": {
+        "title": "الفئة كتب",
+        "view-more": "عرض المزيد",
+        "rating": "تقييم",
+        "by": "بواسطة"
+    },
+
+    "my-account": {
+        "my_account": "حسابي",
+        "payment_history": "سجل الدفعات",
+        "listening_time": "وقت الاستماع",
+        "subscription_plans": "خطط الاشتراك",
+        "send_eedback": "ارسل رأيك",
+        "account_settings": "إعدادت الحساب",
+        "pre_order": "طلب مسبق"
+    },
+
+    "view-more": {
+        "rating": "تقييم",
+        "by": "بواسطة"
+    },
+
+    "review":{
+        "cancel":"ألغ العملية",
+        "review":"اعرض",
+        "writeReview":"اكتب ملاحظاتك",
+        "reviewField":"يرجى عدم ترك حقل الملاحظات فارغ",
+        "submit":"التأكيد على الملاحظة"
+    },
+
+    "contactus":{
+        "description":"أدخل وصفًا",
+        "submit":"التأكيد",
+        "name":"الاسم",
+        "contactnumber":"رقم التواصل",
+        "usernameError":"الرجاء ادخال الاسم",
+        "contactnumberError":"رقم التواصل يجب أن يتكون من 10-12 رقم",
+        "descriptionError":"الرجاء إدراج وصف مناسب",
+        "successMessage":"تم إرسال تساؤلك بنجاح، سيتم الرد عليه في أقصر وقت. شكرًا لك"
+    },
+
+    "accountSettings":{
+        "account":"Account Settings",
+        "capture":"Capture image",
+        "select":"Select From Gallery",
+        "editFirstName":"First Name",
+        "editLastName":"Last Name",
+        "changePassword":"Change Password",
+        "newpassword":"New Password",
+        "confirmPassword":"Confirm Password",
+        "submit":"Submit",
+        "updateImage":"Upload Image",
+        "information":"Change Name",
+        "profileSuccess":"Profile Succesfully Updated",
+        "passwordSuccess":"Password Succesfully Updated", 
+        "imageSuccess":"Profile Image Updated Succesfully",
+        "imageError":"Failed to Upload Image Please Try Again Later"
+    }
+}
+

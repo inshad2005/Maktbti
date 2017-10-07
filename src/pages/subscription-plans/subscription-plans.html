@@ -1,0 +1,153 @@
+
+
+<!--
+    Generated template for the SubscriptionPlans page.
+    
+    See http://ionicframework.com/docs/components/#navigation for more info on
+    Ionic pages and navigation.
+    -->
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="text-center font-st">{{'subscription-plan.title'|translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-header *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="text-center font-st">{{'subscription-plan.title'|translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <div class="image-st">
+        <img src="img/Subscr-Plans.png" >
+        <div class="text-st">
+            <span>{{'subscription-plan.title'|translate}}</span>
+            <br>
+            <p style="font-size:16px">{{'subscription-plan.subheader'|translate}}</p>
+        </div>
+    </div>
+       <div *ngIf="showdiv1">
+       	<ion-list padding class="list-st" no-lines *ngFor="let data of paymentData">
+            <ion-item >
+                <p class="large-font">{{data.package_name_arabic}}</p>
+                <div class="price-div-arabic">SAR : <span> {{data.amount_in_arabic}} </span></div>
+            </ion-item>
+            <ion-item>
+                <span style="font-size:14px">{{'subscription-plan.duration'|translate}} : </span> <span style="color:#2ABFDB;font-size:14px;">{{data.duration_arabic}}</span>
+                <button ion-button item-right class="button-st" [disabled]="userdetails.membership_plan_status=='Active'" (click)="makePayment(data)">{{'subscription-plan.purchase'|translate}}</button>
+            </ion-item>
+        </ion-list>
+       </div>
+        
+        <div *ngIf="showdiv2">
+            <ion-card >
+                <ion-card-header class="paymentCardMain">
+                    <i>Payment Form</i>
+                </ion-card-header>
+                <form (ngSubmit)="payment()" #paymentForm="ngForm" novalidate >
+                <ion-list>
+                    <ion-item class="paymentItem firstItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/envelope.png"></ion-icon>
+                        <ion-input placeholder="E-mail address"  name="email" type="text"  [(ngModel)]='PaymentDetails.email' #email="ngModel" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="!email.touched || email.valid" src="./img/error.png"><img *ngIf="email.touched && email.valid" src="./img/check-mark.png"></ion-icon>
+                    </ion-item>
+                    <ion-item class="paymentItem secondItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/credit-card.png"></ion-icon>
+                        <ion-input placeholder="Card Number" name="cardNumber" type="text" minlength="15" maxlength="16" [(ngModel)]='PaymentDetails.number' #cardNumber="ngModel" required (keyup)="cardCheck(PaymentDetails.number)"></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="!cardNumber.touched || cardNumber.valid" src="./img/error.png"></ion-icon>
+                        <ion-icon  *ngIf="cardImage" item-end class="paymentCard"><img [hidden]="cardNumber.touched  && !cardNumber.valid" src="./img/{{cardImage}}"></ion-icon>
+                    </ion-item>
+                    <ion-item class="paymentItem thirdItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/clndr.png"></ion-icon>
+                        <ion-input placeholder="MM/YY" name="expireDate" type="text" minlength="5" maxlength="5" [(ngModel)]='PaymentDetails.expireDate' #expireDate="ngModel" required (keyup)="dateCheck(PaymentDetails.expireDate)"></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="(!expireDate.touched || expireDate.valid ) && !dateError" src="./img/error.png"><img *ngIf="expireDate.touched && expireDate.valid &&  !dateError" src="./img/check-mark.png"></ion-icon>
+                    </ion-item>
+                    <ion-item class="paymentItem fourthItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/padlock.png"></ion-icon>
+                        <ion-input placeholder="CVC"  name="CVC" type="text" maxlength="4" minlength="3" [(ngModel)]='PaymentDetails.cvc' #CVC="ngModel" required></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="!CVC.touched || CVC.valid" src="./img/error.png"><img *ngIf="CVC.touched && CVC.valid" src="./img/check-mark.png"></ion-icon>
+                    </ion-item>
+                    <div class="buttondiv">
+                        <button ion-button color="payButtonFirst" type="submit" [disabled]="paymentForm.form.invalid || dateError">
+                        Pay SAR 38.00
+                        </button>
+                        <button ion-button color="payButtonSecond" (click)="onCancel()">
+                        Cancel
+                        </button>
+                    </div>
+                </ion-list>
+                </form>
+            </ion-card>
+        </div>
+
+</ion-content>
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'">
+    <div class="image-st">
+        <img src="img/Subscr-Plans.png" >
+        <div class="text-st">
+            <span>{{'subscription-plan.title'|translate}}</span>
+            <br>
+            <p style="font-size:16px">{{'subscription-plan.subheader'|translate}}</p>
+        </div>
+    </div>
+        <div *ngIf="showdiv1">
+            <ion-list padding class="list-st" no-lines *ngFor="let data of paymentData">
+                <ion-item >
+                    <p class="large-font">{{data.package_name}}</p>
+                    <div class="price-div">SAR : <span> {{data.amount}} </span></div>
+                </ion-item>
+                <ion-item>	
+                    <span style="font-size:14px"> {{'subscription-plan.duration'|translate}}: </span> <span style="color:#2ABFDB;font-size:14px;">{{data.duration_in_days}}</span>
+                    <button ion-button item-right class="button-st" [disabled]="userdetails.membership_plan_status=='Active'"  (click)="makePayment(data)">{{'subscription-plan.purchase'|translate}}</button>
+                </ion-item>
+            </ion-list>
+        </div>
+        <div *ngIf="showdiv2">
+            <ion-card >
+                <ion-card-header class="paymentCardMain">
+                    <i>Payment Form</i>
+                </ion-card-header>
+                <form (ngSubmit)="payment()" #paymentForm="ngForm" novalidate >
+                <ion-list>
+                    <ion-item class="paymentItem firstItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/envelope.png"></ion-icon>
+                        <ion-input placeholder="E-mail address"  name="email" type="text"  [(ngModel)]='PaymentDetails.email' #email="ngModel" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="!email.touched || email.valid" src="./img/error.png"><img *ngIf="email.touched && email.valid" src="./img/check-mark.png"></ion-icon>
+                    </ion-item>
+                    <ion-item class="paymentItem secondItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/credit-card.png"></ion-icon>
+                        <ion-input placeholder="Card Number" name="cardNumber" type="text" minlength="15" maxlength="16" [(ngModel)]='PaymentDetails.number' #cardNumber="ngModel" required (keyup)="cardCheck(PaymentDetails.number)"></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="!cardNumber.touched || cardNumber.valid" src="./img/error.png"></ion-icon>
+                        <ion-icon  *ngIf="cardImage" item-end class="paymentCard"><img [hidden]="cardNumber.touched  && !cardNumber.valid" src="./img/{{cardImage}}"></ion-icon>
+                    </ion-item>
+                    <ion-item class="paymentItem thirdItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/clndr.png"></ion-icon>
+                        <ion-input placeholder="MM/YY" name="expireDate" type="text" minlength="5" maxlength="5" [(ngModel)]='PaymentDetails.expireDate' #expireDate="ngModel" required (keyup)="dateCheck(PaymentDetails.expireDate)"></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="(!expireDate.touched || expireDate.valid ) && !dateError" src="./img/error.png"><img *ngIf="expireDate.touched && expireDate.valid &&  !dateError" src="./img/check-mark.png"></ion-icon>
+                    </ion-item>
+                    <ion-item class="paymentItem fourthItem">
+                        <ion-icon  item-start class="paymentIcon"><img src="./img/padlock.png"></ion-icon>
+                        <ion-input placeholder="CVC"  name="CVC" type="text" maxlength="4" minlength="3" [(ngModel)]='PaymentDetails.cvc' #CVC="ngModel" required></ion-input>
+                        <ion-icon   item-end class="paymentIcon"><img [hidden]="!CVC.touched || CVC.valid" src="./img/error.png"><img *ngIf="CVC.touched && CVC.valid" src="./img/check-mark.png"></ion-icon>
+                    </ion-item>
+                    <div class="buttondiv">
+                        <button ion-button color="payButtonFirst" type="submit" [disabled]="paymentForm.form.invalid || dateError">
+                        Pay SAR 38.00
+                        </button>
+                        <button ion-button color="payButtonSecond" (click)="onCancel()">
+                        Cancel
+                        </button>
+                    </div>
+                </ion-list>
+                </form>
+            </ion-card>
+        </div>
+
+
+</ion-content>
+

@@ -1,0 +1,251 @@
+
+
+{
+    "translation": {
+        "en": "English"
+    },
+
+    "loading": "Loading...",
+
+    "home": {
+        "signIn": "SIGN IN",
+        "signUp": "SIGN UP"
+    },
+
+    "login": {
+        "header": "Login",
+        "email": "E-mail Address",
+        "emailError": "* Please insert valid email id",
+        "password": "Password",
+        "passwordError": "* Please Insert Password",
+        "forgot": "Forgot Password ?",
+        "login": "LOG IN",
+        "msg": "Don't hava an account? Signup Here",
+        "errorMsg": "Either Email Or Password is Invalid"
+    },
+
+    "forgot": {
+        "title": "Forgot Password",
+        "msg": "If you forgot your password ,no worries!.Just enter your email address below and we will send you a link you can use to pick a new password",
+        "email": "Enter your Email",
+        "emailError": "* Please insert valid email id",
+        "resetpassword": "RESET PASSWORD",
+        "otpmsg": "Choose a new password for this user account.This password will replace the old one;everything else about the account remains same",
+        "otp": "otp",
+        "otpError1": "* Please insert otp",
+        "otpError2": "* Please insert valid otp",
+        "newpassword": "New Password",
+        "passwordinsert": "* Please insert password ",
+        "confirmpassword": "Confirm Password",
+        "confirmpasswordinsert": " * Please insert confirm password",
+        "paswordconfirmpassword": "*password and confirm password should be same ",
+        "done": "Done",
+        "checkotp": "Check your inbox for otp",
+        "error":"Unsuccessful",
+        "errorAlert":"Entered Email Address Is Not Registered With Us"
+    },
+
+    "signup": {
+        "title": "Registration",
+        "firstNameError": "* Please Insert First Name",
+        "lastNameError": "* Please Insert Last Name",
+        "emailError": "* Please insert valid email id",
+        "passwordError": "* Please Insert Password",
+        "confirmPasswordError": "* password and confirm password should be same",
+        "signUp": "Sign Up",
+        "alreadyRegistered": "Already hava an account?",
+        "login":"Login Here",
+        "message1": "By creating account ,i agree to the",
+        "termCondition": "Terms & Conditions",
+        "message2": "of Maktbti",
+        "placeholderFirstname": "FirstName",
+        "placeholderLastname": "lastname",
+        "placeholderEmail": "Email",
+        "placeholderPassword": "Password",
+        "placeholderConfPassword": "Confirm Password"
+    },
+
+    "menu": {
+        "titleHome": "Home",
+        "titleMyAccount": "My Account",
+        "titleMyLibrary": "My Library",
+        "titleRecommended": "Recommended",
+        "titleBrowseAll": "BrowseAll",
+        "titleCategory": "Category",
+        "titleAboutUs":"About Us",
+        "titleContactUs":"Contact Us",
+        "logout": "Log out"
+    },
+
+    "message": {
+        "success": "Success",
+        "messageSignup": "Signup Successfull. Please check your email.",
+        "alreadyRegistered": "Already Registered",
+        "messageAlreadyRegistered": "Entered email address is already registered with us.",
+        "error": "error",
+        "somethingWentWrong": "Something went wrong please try again",
+        "ok": "ok",
+        "search":"Search"
+    },
+
+    "listening-time": {
+        "title": "Listening Time",
+        "hours": "Hours",
+        "days": "Days",
+        "minutes": "Minutes",
+        "seconds": "Seconds",
+        "total listening-time": "Total Listening Time"
+    },
+
+    "payment-history": {
+        "title": "Payment History",
+        "paid": "Paid",
+        "oF": "Of",
+        "payment-method": "Payment Method",
+        "ordered-by": "Ordered By",
+        "remaining-balance": "Remaining-Balance",
+        "your-plan": "Your Plan",
+        "starting-date": "Starting Date",
+        "expiry-date": "Expiry Date"
+    },
+
+    "subscription-plan": {
+        "title": "Subscription Plans",
+        "subheader": "Choose a subscription plan that fit best to your requirement",
+        "plan": "Plan",
+        "sar": "SAR",
+        "duration": "Duration",
+        "purchase": "Purchase"
+    },
+
+    "feedback": {
+        "title": "Send FeedBack",
+        "aboutexperience": "How Was Your Experience With Maktbti ?",
+        "subjectvalidationmsg": " *Please insert subject",
+        "descptnvalidationmsg": " * Please insert description",
+        "buttontext": "Submit Feedback",
+        "subject": "Subject",
+        "description": "Description",
+        "alerttitle": "Success",
+        "alertsubtitle": "Thanks for your feed back",
+        "alertok": "ok"
+    },
+
+    "mylibrary": {
+        "title": "My Library",
+        "by": "By",
+        "description": "Description",
+        "alerttitle": "alert",
+        "alertmessage": "Do you agree to remove",
+        "alertagree": "Agree",
+        "alertdisagree": "Disagree"
+    },
+
+    "homepage-category": {
+        "title": "Home Page",
+        "featured": "Featured",
+        "categories": "Categories",
+        "view-more": "View More",
+        "rating": "Rating",
+        "newbooks": "New Books",
+        "booksforsale": "Books For Sale ",
+        "freebook": "Free Books",
+        "by": "By"
+    },
+
+    "listen-library": {
+        "listen": "Listen",
+        "content": "Content",
+        "description": "Description",
+        "similar": "Similar",
+        "add-to-library": "Add To Library",
+        "subscribe-now": "Subscribe Now",
+        "by":"By",
+        "rating":"Rating",
+        "audio-duration": "Audio Duration",
+        "summary": "Summary",
+        "share": "Share",
+        "review-ratings": "Reviews & Ratings",
+        "write-review": "Write a Review",
+        "about-author": "About Author",
+        "download-book": "Download this Book",
+        "table_of_content": "Table Of Content",
+        "alertSuccess":"Success",
+        "alertmessage":"This book added to your library Succesfully",
+        "alertUnsuccess":"Alert",
+        "alertUnsuccessMessage":"You have already added this book.",
+        "alertLogin":"Please Login To Add This Book To Library",
+        "socialSharingMessage":"Look What I Have Found On maktbti"
+    },
+    "recomend": {
+        "title": "recommended",
+        "by": "By",
+        "rating": "Rating"
+    },
+
+    "mybook": {
+        "title": "All Book",
+        "by": "By",
+        "rating": "Rating"
+    },
+
+    "category-books": {
+        "title": "Category Books",
+        "view-more": "View More",
+        "rating": "Rating",
+        "by": "By"
+    },
+
+    "my-account": {
+        "my_account": "My Account",
+        "payment_history": "Payment History",
+        "listening_time": "Listening Time",
+        "subscription_plans": "Subscription Plans",
+        "send_eedback": "Send Feedback",
+        "account_settings": "Account Settings",
+        "pre_order": "Pre Order"
+    },
+
+    "view-more": {
+        "rating": "Rating",
+        "by": "By"
+    },
+
+    "review":{
+        "cancel":"Cancel",
+        "review":"Review",
+        "writeReview":"Write Your Reviews",
+        "reviewField":"Review Field Can Not Empty",
+        "submit":"Submit Review"
+    },
+
+    "contactus":{
+        "description":"Enter Description",
+        "submit":"Submit",
+        "name":"Name",
+        "contactnumber":"Contact Number",
+        "usernameError":"Please Insert Name",
+        "contactnumberError":"Contact Number Must Lies Between 10 to 12 Digits",
+        "descriptionError":"Please Insert Description",
+        "successMessage":"Your query has been submitted. Will get back to you shortly. Thank you"
+    },
+
+    "accountSettings":{
+        "account":"Account Settings",
+        "capture":"Capture image",
+        "select":"Select From Gallery",
+        "editFirstName":"First Name",
+        "editLastName":"Last Name",
+        "changePassword":"Change Password",
+        "newpassword":"New Password",
+        "confirmPassword":"Confirm Password",
+        "submit":"Submit",
+        "updateImage":"Upload Image",
+        "information":"Change Name",
+        "profileSuccess":"Profile Succesfully Updated",
+        "passwordSuccess":"Password Succesfully Updated", 
+        "imageSuccess":"Profile Image Updated Succesfully",
+        "imageError":"Failed to Upload Image Please Try Again Later"
+    }
+}
+

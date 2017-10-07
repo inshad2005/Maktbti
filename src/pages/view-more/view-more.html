@@ -1,0 +1,118 @@
+
+
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title style="float:left">
+            <span class="text-center" *ngIf="appProvider.current.currentLanguage=='en'">{{titleEng}}</span>
+            <span class="text-center" *ngIf="appProvider.current.currentLanguage=='arb'">{{titleArb}}</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="nav">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title style="float:left">
+            <span class="text-center" *ngIf="appProvider.current.currentLanguage=='en'">{{titleEng}}</span>
+            <span class="text-center" *ngIf="appProvider.current.currentLanguage=='arb'">{{titleArb}}</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-grid>
+        <ion-row class="text-center" *ngIf="booklist">
+            <ion-col width:33 *ngFor="let book of booklist">
+                <div class="img-st" (click)="onBook(book)">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}"  >
+                    <div class="div-st">
+                        <span style="white-space: nowrap;" *ngIf="appProvider.current.currentLanguage=='arb'">{{book.book_name_arabic}}</span>
+                        <br>
+                        <span>{{'view-more.by'|translate}}:</span> 
+                      
+                        <span *ngIf="book.author && appProvider.current.currentLanguage=='arb' " style="text-decoration:underline;color:#2ABFDB">{{book.author.author_name_arabic}}</span>
+                        <br>
+                        <div class="star-div" style="" *ngIf="book.average_rating">
+                            <span style="color:white">{{'view-more.rating'|translate}}:</span>
+                            <ion-icon *ngIf ="book.average_rating>=1" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=2" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=3" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=4" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=5" name="star"></ion-icon>
+                        </div>
+                        <div class="star-div" style="" *ngIf="!book.average_rating">
+                            <span style="color:white">{{'view-more.rating'|translate}}:</span>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <div *ngIf="booklist && booklist.length==0">
+            <div class="outer-div">
+                <div class="middle-div">
+                    <div class="inner-div">
+                        <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-grid>
+        <ion-row class="text-center" *ngIf="booklist">
+            <ion-col width:33 *ngFor="let book of booklist">
+                <div class="img-st" (click)="onBook(book)">
+                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}"  >
+                    <div class="div-st">
+                        <br>
+                        <span>{{'view-more.by'|translate}}:</span> 
+                        <span *ngIf="book.author && appProvider.current.currentLanguage=='en' " style="text-decoration:underline;color:#2ABFDB">{{book.author.author_name}}</span>
+                        <br>
+                        <div class="star-div" style="" *ngIf="book.average_rating">
+                            <span style="color:white">{{'view-more.rating'|translate}}:</span>
+                            <ion-icon *ngIf ="book.average_rating>=1" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=2" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=3" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=4" name="star"></ion-icon>
+                            <ion-icon *ngIf ="book.average_rating>=5" name="star"></ion-icon>
+                        </div>
+                        <div class="star-div" style="" *ngIf="!book.average_rating">
+                            <span style="color:white">{{'view-more.rating'|translate}}:</span>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                            <ion-icon  name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <div *ngIf="booklist && booklist.length==0">
+            <div class="outer-div">
+                <div class="middle-div">
+                    <div class="inner-div">
+                        <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-grid>
+</ion-content>
+
+
+
+

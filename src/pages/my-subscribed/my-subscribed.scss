@@ -1,0 +1,140 @@
+page-my-subscribed {
+.toolbar-ios ion-title {
+  height: 100%;
+  left: 0;
+  padding: 0 74px 1px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0px);
+  width: 100%;
+}
+.toolbar-md ion-title {
+  height: 100%;
+  left: 0;
+  padding: 0 74px 1px !important;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0px);
+  width: 100%;
+}
+.toolbar-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+	.icon-st{
+		float: right;
+	}
+	.icon-st ion-icon{
+		font-size: 25px;
+		color:white;
+        padding-right: 15px;
+	}
+    .thumbnail-st{
+        margin: 2px 0px 0px 0px!important;
+    }
+    .item-st {
+        background-color: #fff;
+        border-radius: 0;
+        color: #000;
+        font-size: 1.7rem;
+        padding-left: 0px;
+        position: relative;
+        transition: background-color 200ms linear 0s;
+        margin-bottom: 2px
+        }
+    .item ion-thumbnail ion-img, .item ion-thumbnail img {
+      height: 100px;
+      width: 100px;
+    }
+    .label {
+        margin: 0 0 39px;
+    }
+    .item p {
+    color: #666;
+    font-size: 1.4rem;
+    line-height: normal;
+    margin: 0 10px 2px;
+    overflow: inherit;
+    text-overflow: inherit;
+   }
+   .item h2 {
+        font-size: 1.6rem;
+        font-weight: normal;
+        margin: 2px 10px;
+    }
+    .div-st{
+        position: absolute;
+        bottom: 0;
+        color: white;
+        
+        background-color: #626262;
+        width: 100%;
+        padding-left: 20px
+    }
+    .trash-icon{
+        position: absolute;
+        right: 12px;
+    top: 12px;
+    }
+    .play-icon{
+        position: absolute;
+        right: 8px
+    }
+    .star-div{
+        display: flex;
+        margin-left: 8px;
+        font-size: 12px;
+    }
+    .star-div ion-icon{
+        color: #ECB512
+    }
+    .input-st{
+  background: #2abfdb none repeat scroll 0 0;
+color: white;
+padding: 6px 0 5px 30px;
+
+}
+.text-input::-moz-placeholder {
+    color: white;
+}
+.input-search-icon{
+  color: white;
+  font-size: 23px;
+  left: 6px;
+  position: absolute;
+  top: 16px;
+}
+  .outer-div{
+    display: table;
+    height: 460px;
+    width: 100%;
+  }
+  .middle-div{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .inner-div{
+    display: inline-block;
+  }
+  .span-text-st{
+    color: #555;
+    font-family: poppins-Light;
+    font-size: 20px
+  }
+  .trash-icon-arabic{
+    
+    position: absolute;
+    left: 15px;
+    top: 12px;
+  }
+  .play-icon-arabic{
+    position: absolute;
+    left: 15px;
+  }
+}

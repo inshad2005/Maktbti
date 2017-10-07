@@ -1,0 +1,141 @@
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="myorange">
+        <ion-title >{{"signup.title" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+    <form (ngSubmit)="onSignup()" #registrationForm="ngForm" novalidate >
+      
+        <ion-list  class = "maindiv">
+          <div class="imagecenter">
+            <img src="img/slidelogo.png" class="image1"> 
+        </div>
+            <ion-item class="class2">
+                <ion-input name="firstname" type="text" placeholder= "{{'signup.placeholderFirstname' | translate}}" [(ngModel)]='signupdata.first_name' #firstname="ngModel" required></ion-input>
+                <ion-icon item-left>
+                    <img src="img/mail-2.png"  >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!firstname.touched || firstname.valid"> {{"signup.firstNameError" | translate}} </p>
+            <ion-item class="class2">
+                <ion-input name="lastname" type="text" placeholder= "{{'signup.placeholderLastname' | translate}}" [(ngModel)]='signupdata.last_name' #lastname="ngModel" required></ion-input>
+                <ion-icon item-left>
+                    <img src="img/mail-2.png"  >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!lastname.touched || lastname.valid"> {{"signup.lastNameError" | translate}} </p>
+            <ion-item class="class2">
+                <ion-input name="email" type="text" placeholder= "{{'signup.placeholderEmail' | translate}}" [(ngModel)]='signupdata.email' #email="ngModel" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required ></ion-input>
+                <ion-icon item-left >
+                    <img src="img/message-1.png"   >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="email.valid || !email.touched"> {{"signup.emailError" | translate}} </p>
+            <ion-item class="class2">
+                <ion-input name="password" type="password" placeholder= "{{'signup.placeholderPassword' | translate}}" [(ngModel)]='signupdata.password' #password="ngModel"  required (input)="pass_confirm()"></ion-input>
+                <ion-icon item-left >
+                    <img src="img/key-1.png"  >
+                </ion-icon>
+            </ion-item>
+             <p padding style="color:#D23839" [hidden]="password.valid || !password.touched"> {{"signup.passwordError" | translate}}</p>
+             <ion-item class="class2">
+                <ion-input name="conf_password" type="password" placeholder= "{{'signup.placeholderConfPassword' | translate}}" [(ngModel)]='confirm_password' #conf_password="ngModel" required (input)="confirm()" ></ion-input>
+                <ion-icon item-left >
+                    <img src="img/key-1.png" >
+                </ion-icon>
+            </ion-item>
+          
+             <p padding style="color:#D23839" *ngIf="message==true">{{"signup.confirmPasswordError" | translate}} </p>
+
+            <ion-item text-wrap class="chekboxclass">
+                <ion-label style="font-size: 10px">{{"signup.message1" | translate}} <u style="font-size: 11px">{{"signup.termCondition" | translate}}</u> {{"signup.message2" | translate}}</ion-label>
+                <ion-checkbox name="check" [(ngModel)]="term_condition" #check="ngModel" (ionChange)="term(term_condition)"></ion-checkbox>
+              </ion-item>
+        </ion-list>
+   <div style="width: 100%;float: left;text-align: center;">
+  <div style="width:40%; border-bottom: 1px solid #fff;margin:-4px auto"></div>
+</div>
+   <div style="position:relative;margin-top:18px ">       
+        <div class="signup-div text-center">
+            <button ion-button type="submit"  class="class5" [disabled]="registrationForm.form.invalid || !termcondition || message">{{"signup.signUp" | translate}}
+            </button>
+            <div class="spacer" style="height: 12px"></div>
+          <div style="text-align: center;padding-bottom:8px;color:#fff" (click)="onAlreadyRegistered()"> {{"signup.alreadyRegistered" | translate}} <u style="color: #fff "> {{"signup.login" | translate}}</u></div>
+        </div>
+   </div>
+ </form>
+</ion-content>
+
+
+
+
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="myorange">
+        <ion-title >{{"signup.title" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+    <form (ngSubmit)="onSignup()" #registrationForm="ngForm" novalidate >
+      
+        <ion-list  class = "maindiv">
+          <div class="imagecenter">
+            <img src="img/slidelogo.png" class="image1"> 
+        </div>
+            <ion-item class="class2">
+                <ion-input name="firstname" type="text" placeholder= "{{'signup.placeholderFirstname' | translate}}" [(ngModel)]='signupdata.first_name' #firstname="ngModel"  required></ion-input>
+                <ion-icon item-left>
+                    <img src="img/mail-2.png"  >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!firstname.touched || firstname.valid"> {{"signup.firstNameError" | translate}} </p>
+            <ion-item class="class2">
+                <ion-input name="lastname" type="text" placeholder= "{{'signup.placeholderLastname' | translate}}" [(ngModel)]='signupdata.last_name' #lastname="ngModel" required></ion-input>
+                <ion-icon item-left>
+                    <img src="img/mail-2.png"  >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="!lastname.touched || lastname.valid"> {{"signup.lastNameError" | translate}} </p>
+            <ion-item class="class2">
+                <ion-input name="email" type="text" placeholder= "{{'signup.placeholderEmail' | translate}}" [(ngModel)]='signupdata.email' #email="ngModel" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required ></ion-input>
+                <ion-icon item-left >
+                    <img src="img/message-1.png"   >
+                </ion-icon>
+            </ion-item>
+            <p padding style="color:#D23839" [hidden]="email.valid || !email.touched"> {{"signup.emailError" | translate}} </p>
+            <ion-item class="class2">
+                <ion-input name="password" type="password" placeholder= "{{'signup.placeholderPassword' | translate}}" [(ngModel)]='signupdata.password' #password="ngModel"  required (input)="pass_confirm()"></ion-input>
+                <ion-icon item-left >
+                    <img src="img/key-1.png"  >
+                </ion-icon>
+            </ion-item>
+             <p padding style="color:#D23839" [hidden]="password.valid || !password.touched"> {{"signup.passwordError" | translate}}</p>
+             <ion-item class="class2">
+                <ion-input name="conf_password" type="password" placeholder= "{{'signup.placeholderConfPassword' | translate}}" [(ngModel)]='confirm_password' #conf_password="ngModel" required (input)="confirm()" ></ion-input>
+                <ion-icon item-left >
+                    <img src="img/key-1.png" >
+                </ion-icon>
+            </ion-item>
+          
+             <p padding style="color:#D23839" *ngIf="message==true">{{"signup.confirmPasswordError" | translate}} </p>
+
+            <ion-item text-wrap class="chekboxclass">
+                <ion-label style="font-size: 10px">{{"signup.message1" | translate}} <u style="font-size: 11px">{{"signup.termCondition" | translate}}</u> {{"signup.message2" | translate}}</ion-label>
+                <ion-checkbox name="check" [(ngModel)]="term_condition" #check="ngModel" (ionChange)="term(term_condition)"></ion-checkbox>
+              </ion-item>
+        </ion-list>
+   <div style="width: 100%;float: left;text-align: center;">
+  <div style="width:40%; border-bottom: 1px solid #fff;margin:-4px auto"></div>
+</div>
+   <div style="position:relative;margin-top:18px ">       
+        <div class="signup-div text-center">
+            <button ion-button type="submit"  class="class5" [disabled]="registrationForm.form.invalid || !termcondition || message">{{"signup.signUp" | translate}}
+            </button>
+            <div class="spacer" style="height: 12px"></div>
+          <div style="text-align: center;padding-bottom:8px;color:#fff" (click)="onAlreadyRegistered()"> {{"signup.alreadyRegistered" | translate}} <u style="color: #fff "> {{"signup.login" | translate}}</u></div>
+        </div>
+   </div>
+ </form>
+</ion-content>

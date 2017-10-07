@@ -1,0 +1,39 @@
+page-contact-us {
+	.maindiv{
+   color:#fff;
+   border:1px solid #fff;
+   background-color: #E6EAEA;
+   border-radius: 4px;
+   opacity:0.84;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top:5px;
+  }
+  .imagecenter{
+   text-align: center;
+  }
+  .image1{
+   width: 121px;
+   margin-top: 15px
+  }
+   .class2{
+   background:transparent;
+   color: #666666
+  }
+  .class5{
+	  height: 40px;
+	  padding-left: 12px;
+	  padding-top: 4px;
+	  background-color: #2ABFDB;
+	  width:70%
+  }
+	.list-md .item-input.input-has-focus:last-child {
+	  	border-bottom-color: transparent!important;
+	    box-shadow: none!important;
+	}
+	.list-md :last-child {
+		border-bottom-color: transparent!important;
+		box-shadow: none!important;
+	}
+
+}

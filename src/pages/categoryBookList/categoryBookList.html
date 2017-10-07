@@ -1,0 +1,206 @@
+
+<!-- - - - - -  - - - - - -  - - - - - arabic  -  - - - - - - - - - - - - - - - - - - - -  - - -->
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <ion-navbar color="myorange" >
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title  *ngIf="booklist && !categoryWiseBookList">{{'category-books.title'|translate}}</ion-title>
+         <ion-title  *ngIf="categoryWiseBookList && appProvider.current.currentLanguage=='arb'">{{categoryWiseBookList.category_name_in_arabic}}</ion-title>
+    </ion-navbar>  
+</ion-header>
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+<div *ngIf="booklist && !categoryWiseBookList">
+    <div *ngFor="let data of booklist.category" >
+            <div style=" height: 32px; margin-left: 11px;" >
+                <span *ngIf="appProvider.current.currentLanguage=='arb'" style="color:#000;font-size: 16px">{{data.category_name_in_arabic}}</span>
+                <span style ="float: left;color:#2ABFDB; "  (click)="onViewMore(data.books,data.category_name_in_english,data.category_name_in_arabic)">{{'category-books.view-more'|translate}}>></span>
+            </div>
+            <ion-scroll class="mycustomrow" scrollX="true" *ngIf="data.books.length>0">
+                <ion-row *ngIf="data.books">
+                    <ion-col *ngFor="let databook of data.books;  let i = index" [attr.data-index]="i">
+                        <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb' && i<'15'">
+                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{databook.image}}" (click)="onBook(databook)" class="img-slider" >
+                            <p style="margin-top:2px;color:#000; font-size: 10px" >{{databook.book_name_arabic}}</p>
+                            <p  *ngIf="databook.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'category-books.by'|translate}} : <u style="color:#2ABFDB"> {{databook.author.author_name_arabic}} </u></p>
+                            <div style="display:inline-flex">
+                                <p style="margin-top:3px;color:#000; font-size: 10px" >{{'category-books.rating'|translate}}:</p>
+                                <div class="star-div" style="" *ngIf="databook.average_rating">
+                                    <ion-icon *ngIf ="databook.average_rating>=1" name="star"></ion-icon>
+                                    <ion-icon *ngIf ="databook.average_rating>=2" name="star"></ion-icon>
+                                    <ion-icon *ngIf ="databook.average_rating>=3" name="star"></ion-icon>
+                                    <ion-icon *ngIf ="databook.average_rating>=4" name="star"></ion-icon>
+                                    <ion-icon *ngIf ="databook.average_rating>=5" name="star"></ion-icon>
+                                </div>
+                                <div class="star-div" style="" *ngIf="!databook.average_rating">
+                                    <ion-icon  name="star-outline"></ion-icon>
+                                    <ion-icon  name="star-outline"></ion-icon>
+                                    <ion-icon  name="star-outline"></ion-icon>
+                                    <ion-icon  name="star-outline"></ion-icon>
+                                    <ion-icon  name="star-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-scroll>
+        </div>
+    </div>
+
+    <div *ngIf="categoryWiseBookList">
+       <div *ngFor="let data of categoryWiseBookList.sub_categories" >
+                <div style=" height: 32px; margin-left: 11px;" >
+                    <span *ngIf="appProvider.current.currentLanguage=='arb'" style="color:#000;font-size: 16px">{{data.sub_category_in_arabic}}</span>
+                    <span style ="float: left;margin-right: 2px;color:#2ABFDB;margin-top: 2px "  (click)="onViewMore(data.books,data.sub_category_in_english,data.sub_category_in_arabic)">{{'category-books.view-more'|translate}}>></span>
+                </div>
+                <ion-scroll  class="mycustomrow"scrollX="true" *ngIf="data.books.length>0">
+                    <ion-row *ngIf="data.books">
+                        <ion-col *ngFor="let databook of data.books;  let i = index" [attr.data-index]="i">
+                            <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb' && i<'15'">
+                                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{databook.image}}" (click)="onBook(databook)" class="img-slider" >
+                                 <div class="price-div">
+                                    SAR: <span style="color:#2ABFDB">{{databook.price_arabic}}</span>
+                                </div>
+                                <p style="margin-top:2px;color:#000; font-size: 10px" >{{databook.book_name_arabic}}</p>
+                                <p  *ngIf="databook.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'category-books.by'|translate}} : <u style="color:#2ABFDB"> {{databook.author.author_name_arabic}} </u></p>
+                                <div style="display:inline-flex">
+                                    <p style="margin-top:3px;color:#000; font-size: 10px" >{{'category-books.rating'|translate}}:</p>
+                                    <div class="star-div" style="" *ngIf="databook.average_rating">
+                                        <ion-icon *ngIf ="databook.average_rating>=1" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=2" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=3" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=4" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=5" name="star"></ion-icon>
+                                    </div>
+                                    <div class="star-div" style="" *ngIf="!databook.average_rating">
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                    </div>
+                                </div>  
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-scroll>
+              <div *ngIf="data.books.length==0">
+                <div class="outer-div">
+                    <div class="middle-div">
+                        <div class="inner-div">
+                            <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>          
+</ion-content>
+
+
+<!-- - - - - -  - - - - - -  - - - - - english  -  - - - - - - - - - - - - - - - - - - - -  - - -->
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+    <ion-navbar color="myorange" >
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title  *ngIf="booklist && !categoryWiseBookList">{{'category-books.title'|translate}}</ion-title>
+         <ion-title  *ngIf="categoryWiseBookList && appProvider.current.currentLanguage=='en'">{{categoryWiseBookList.category_name_in_english}}</ion-title> 
+    </ion-navbar>
+</ion-header>
+
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'">
+    <div *ngIf="booklist && !categoryWiseBookList">
+        <div *ngFor="let data of booklist.category" >
+                <div style=" height: 32px; margin-left: 11px;" >
+                    <span *ngIf="appProvider.current.currentLanguage=='en'" style="color:#000;font-size: 16px">{{data.category_name_in_english}}</span>
+                    <span style ="float: right;margin-right: 2px;color:#2ABFDB;margin-top: 2px "  (click)="onViewMore(data.books,data.category_name_in_english,data.category_name_in_arabic)">{{'category-books.view-more'|translate}}>></span>
+                </div>
+                <ion-scroll class="mycustomrow" scrollX="true" *ngIf="data.books.length>0">
+                    <ion-row *ngIf="data.books">
+                        <ion-col *ngFor="let databook of data.books;  let i = index" [attr.data-index]="i">
+                            <div class="smalldiv"  *ngIf="appProvider.current.currentLanguage=='en' && i<'15'">
+                                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{databook.image}}" (click)="onBook(databook)" class="img-slider" >
+                                <div class="price-div">
+                                    SAR: <span style="color:#2ABFDB">{{databook.price}}</span>
+                                </div>
+                                <p style="margin-top:2px;color:#000; font-size: 10px" >{{databook.book_name}}</p>
+                                <p  *ngIf="databook.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'category-books.by'|translate}} : <u style="color:#2ABFDB"> {{databook.author.author_name}} </u></p>
+                                <div style="display:inline-flex">
+                                    <p style="margin-top:3px;color:#000; font-size: 10px" >{{'category-books.rating'|translate}}:</p>
+                                    <div class="star-div" style="" *ngIf="databook.average_rating">
+                                        <ion-icon *ngIf ="databook.average_rating>=1" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=2" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=3" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=4" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=5" name="star"></ion-icon>
+                                    </div>
+                                    <div class="star-div" style="" *ngIf="!databook.average_rating">
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-scroll>
+        </div>
+    </div>
+
+    <div *ngIf="categoryWiseBookList">
+       <div *ngFor="let data of categoryWiseBookList.sub_categories" >
+                <div style=" height: 32px; margin-left: 11px;" >
+                    <span *ngIf="appProvider.current.currentLanguage=='en'" style="color:#000;font-size: 16px">{{data.sub_category_in_english}}</span>
+                    <span style ="float: right;margin-right: 2px;color:#2ABFDB;margin-top: 2px "  (click)="onViewMore(data.books,data.sub_category_in_english,data.sub_category_in_arabic)">{{'category-books.view-more'|translate}}>></span>
+                </div>
+                <ion-scroll  class="mycustomrow" scrollX="true" *ngIf="data.books.length>0">
+                    <ion-row *ngIf="data.books">
+                        <ion-col *ngFor="let databook of data.books;  let i = index" [attr.data-index]="i">
+                            <div class="smalldiv"  *ngIf="appProvider.current.currentLanguage=='en' && i<'15'">
+                                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{databook.image}}" (click)="onBook(databook)" class="img-slider" >
+                                 <div class="price-div">
+                                    SAR: <span style="color:#2ABFDB">{{databook.price}}</span>
+                                </div>
+
+                                <p style="margin-top:2px;color:#000; font-size: 10px" >{{databook.book_name}}</p>
+                                <p  *ngIf="databook.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'category-books.by'|translate}} : <u style="color:#2ABFDB"> {{databook.author.author_name}} </u></p>
+                                
+                                <div style="display:inline-flex">
+                                    <p style="margin-top:3px;color:#000; font-size: 10px" >{{'category-books.rating'|translate}}:</p>
+                                     <div class="star-div" style="" *ngIf="databook.average_rating">
+                                        <ion-icon *ngIf ="databook.average_rating>=1" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=2" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=3" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=4" name="star"></ion-icon>
+                                        <ion-icon *ngIf ="databook.average_rating>=5" name="star"></ion-icon>
+                                    </div>
+                                    <div class="star-div" style="" *ngIf="!databook.average_rating">
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                        <ion-icon  name="star-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+        </ion-scroll>
+        <div *ngIf="data.books.length==0">
+                <div class="outer-div">
+                    <div class="middle-div">
+                        <div class="inner-div">
+                            <p class="span-text-st">{{'message.nothingToShow' | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>         
+</ion-content>
+

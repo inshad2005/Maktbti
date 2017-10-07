@@ -1,0 +1,41 @@
+
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="myorange" hideBackButton>
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title style="text-align:center">{{'message.success' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:#eeee" dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+    <div style="text-align:center;margin-top: 70px">
+        <ion-icon style="height: 44px;width:44px;font-size:11.4rem !important;" name="checkmark"></ion-icon>
+    </div>
+    <p style="  color:#2ABFDB;font-size: 4.4rem;text-align: center;">{{'thanksPage.great' | translate}}</p>
+    <p style=" font-size: 1.6rem;height: 10px;text-align: center;">{{'thanksPage.message1' | translate}}  </p>
+    <p style=" font-size: 1.6rem;height: 10px;text-align: center;">{{'thanksPage.message2' | translate}} </p>
+    <p style=" font-size: 1.6rem;height: 10px;text-align: center;">{{'thanksPage.message3' | translate}}</p>
+    <button ion-button full class="class5" (click)="goBackLogin()">{{'thanksPage.messageSignin' | translate}}</button>
+</ion-content>
+
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="myorange" hideBackButton>
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title style="text-align:center">Success</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:#eeee"  *ngIf="appProvider.current.currentLanguage=='en'">
+    <div style="text-align:center;margin-top: 70px">
+        <ion-icon style="height: 44px;width:44px;font-size:11.4rem !important;" name="checkmark"></ion-icon>
+    </div>
+    <p style="  color:#2ABFDB;font-size: 4.4rem;text-align: center;">{{'thanksPage.great' | translate}}</p>
+    <p style=" font-size: 1.6rem;height: 10px;text-align: center;">{{'thanksPage.message1' | translate}}  </p>
+    <p style=" font-size: 1.6rem; height: 10px;text-align: center;">{{'thanksPage.message2' | translate}} </p>
+    <p style=" font-size: 1.6rem;height: 10px;text-align: center;">{{'thanksPage.message3' | translate}}</p>
+    <button ion-button full class="class5" (click)="goBackLogin()">{{'thanksPage.messageSignin' | translate}}</button>
+</ion-content>

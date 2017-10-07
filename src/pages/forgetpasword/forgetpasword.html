@@ -1,0 +1,204 @@
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="myorange">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >{{"forgot.title"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="myorange">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >{{"forgot.title"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Fpswd.png) no-repeat center;background-size:cover;">
+
+<div *ngIf="show" class = "maindiv" >
+
+<div class="imagecenter">
+  
+<img src="img/design.png" class="image1"> 
+</div>  
+
+<p style="color:#AFAFAF;font-family:Poppins-Light;margin-left:9px"> {{"forgot.msg"|translate}}
+   </p>
+
+
+ <form (ngSubmit)="onEmailValidate()" #emailRequest="ngForm" novalidate >
+
+<ion-item class="class2">
+
+<ion-input type="text" placeholder="{{'forgot.email'|translate}}" name="email" [(ngModel)]="forgot.email" #email="ngModel" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required></ion-input>
+<ion-icon item-left >
+<img src="img/mail-2.png"></ion-icon></ion-item>
+<p padding style="color:#D23839" [hidden]="!email.touched || email.valid"> {{"forgot.emailError"|translate}}</p>
+
+
+
+<hr *ngIf="show" style=" background-color: white;
+    margin-top: 17px;
+    padding-top: 0;
+    width: 125px;">
+<div *ngIf="show" style="position:relative;text-align: center; ">
+<button ion-button type="submit" class="class5"  [disabled]="emailRequest.form.invalid">{{"forgot.resetpassword"|translate}}
+</button>
+</div>
+</form>
+
+
+
+</div>
+<div *ngIf="show1" class = "maindiv1" >
+
+<div class="imagecenter">
+  
+<img src="img/design.png" class="image1"> 
+</div>  
+
+<p style="color:#AFAFAF;font-family: Poppins-Light;margin-left:9px">{{"forgot.otpmsg"|translate}}</p>
+<div *ngIf='unique_codeStatus=="otp"'>
+     <form (ngSubmit)="onOtpValidate()" #otpRequest="ngForm" novalidate >
+    <ion-item class="class6">
+
+    <ion-input type="text" placeholder= "{{'forgot.otp'|translate}}" [(ngModel)]="forgot.otp" name="OTP" #otp="ngModel" required></ion-input>
+    <ion-icon item-left >
+    <img src="img/key-1.png"></ion-icon></ion-item>
+    <p padding style="color:#D23839" [hidden]="!otp.touched || otp.valid">{{"forgot.otpError1"|translate}}</p>
+     <p padding style="color:#D23839" *ngIf="otpstatus=='notvalidate'">{{"forgot.otpError2"|translate}}</p>
+    <div style="position:relative;text-align: center;">
+      <button ion-button type="submit" class="class8"  [disabled]="otpRequest.form.invalid  ">validate Otp</button>
+    </div>
+    
+    </form>
+</div>
+<div *ngIf='unique_codeStatus=="otpvalidated"'>
+ <form (ngSubmit)="onChangePasss()" #passwordRequest="ngForm" novalidate >
+   <ion-item class="class6">
+
+<ion-input type="password" placeholder="{{'forgot.newpassword'|translate}}" [(ngModel)]="forgot.password"  name="pass" #pass="ngModel" (input)="pass_confirm()" required></ion-input>
+<ion-icon item-left >
+<img src="img/key-1.png"></ion-icon></ion-item>
+ <p padding style="color:#D23839" [hidden]="!pass.touched || pass.valid">{{"forgot.passwordinsert"|translate}}</p>
+
+
+
+<ion-item class="class7">
+
+<ion-input type="password" placeholder="{{'forgot.confirmpassword'|translate}}" [(ngModel)]="forgot.confirm"  name="pass_con" #pass_con="ngModel" (input)="confirm()" required></ion-input>
+<ion-icon item-left >
+<img src="img/key-1.png"></ion-icon></ion-item>
+ <p padding style="color:#D23839" [hidden]="!pass_con.touched || pass_con.valid">{{"forgot.confirmpasswordinsert"|translate}}</p>
+  <p padding style="color:#D23839" *ngIf="passconStatus">{{"forgot.paswordconfirmpassword"|translate}}</p>
+<div  style="position:relative;text-align: center;">
+<hr style=" background-color: white;
+    margin-top: 17px;
+    padding-top: 0;
+    width: 125px;">
+<button ion-button type="submit" class="class8" [disabled]="passwordRequest.form.invalid || passconStatus ">{{"forgot.done"|translate}}
+</button>
+</div>
+</form>
+</div>
+
+
+</div>
+</ion-content>
+
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Fpswd.png) no-repeat center;background-size:cover;">
+
+<div *ngIf="show" class = "maindiv" >
+
+<div class="imagecenter">
+  
+<img src="img/design.png" class="image1"> 
+</div>  
+
+<p style="color:#AFAFAF;font-family:Poppins-Light;margin-left:9px"> {{"forgot.msg"|translate}}
+   </p>
+
+
+ <form (ngSubmit)="onEmailValidate()" #emailRequest="ngForm" novalidate >
+
+<ion-item class="class2">
+
+<ion-input type="text" placeholder="{{'forgot.email'|translate}}" name="email" [(ngModel)]="forgot.email" #email="ngModel" pattern="^[a-zA-Z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required></ion-input>
+<ion-icon item-left >
+<img src="img/mail-2.png"></ion-icon></ion-item>
+<p padding style="color:#D23839" [hidden]="!email.touched || email.valid"> {{"forgot.emailError"|translate}}</p>
+
+
+
+<hr *ngIf="show" style=" background-color: white;
+    margin-top: 17px;
+    padding-top: 0;
+    width: 125px;">
+<div *ngIf="show" style="position:relative;text-align: center; ">
+<button ion-button type="submit" class="class5"  [disabled]="emailRequest.form.invalid">{{"forgot.resetpassword"|translate}}
+</button>
+</div>
+</form>
+
+
+
+</div>
+<div *ngIf="show1" class = "maindiv1" >
+
+<div class="imagecenter">
+  
+<img src="img/design.png" class="image1"> 
+</div>  
+
+<p style="color:#AFAFAF;font-family: Poppins-Light;margin-left:9px">{{"forgot.otpmsg"|translate}}</p>
+<div *ngIf='unique_codeStatus=="otp"'>
+     <form (ngSubmit)="onOtpValidate()" #otpRequest="ngForm" novalidate >
+    <ion-item class="class6">
+
+    <ion-input type="text" placeholder= "{{'forgot.otp'|translate}}" [(ngModel)]="forgot.otp" name="OTP" #otp="ngModel" required></ion-input>
+    <ion-icon item-left >
+    <img src="img/key-1.png"></ion-icon></ion-item>
+    <p padding style="color:#D23839" [hidden]="!otp.touched || otp.valid">{{"forgot.otpError1"|translate}}</p>
+     <p padding style="color:#D23839" *ngIf="otpstatus=='notvalidate'">{{"forgot.otpError2"|translate}}</p>
+    <div style="position:relative;text-align: center;">
+      <button ion-button type="submit" class="class8"  [disabled]="otpRequest.form.invalid  ">validate Otp</button>
+    </div>
+    
+    </form>
+</div>
+<div *ngIf='unique_codeStatus=="otpvalidated"'>
+ <form (ngSubmit)="onChangePasss()" #passwordRequest="ngForm" novalidate >
+   <ion-item class="class6">
+
+<ion-input type="password" placeholder="{{'forgot.newpassword'|translate}}" [(ngModel)]="forgot.password"  name="pass" #pass="ngModel" (input)="pass_confirm()" required></ion-input>
+<ion-icon item-left >
+<img src="img/key-1.png"></ion-icon></ion-item>
+ <p padding style="color:#D23839" [hidden]="!pass.touched || pass.valid">{{"forgot.passwordinsert"|translate}}</p>
+
+
+
+<ion-item class="class7">
+
+<ion-input type="password" placeholder="{{'confirmpassword'|translate}}" [(ngModel)]="forgot.confirm"  name="pass_con" #pass_con="ngModel" (input)="confirm()" required></ion-input>
+<ion-icon item-left >
+<img src="img/key-1.png"></ion-icon></ion-item>
+ <p padding style="color:#D23839" [hidden]="!pass_con.touched || pass_con.valid">{{"forgot.confirmpasswordinsert"|translate}}</p>
+  <p padding style="color:#D23839" *ngIf="passconStatus">{{"forgot.paswordconfirmpassword"|translate}}</p>
+<div  style="position:relative;text-align: center;">
+<hr style=" background-color: white;
+    margin-top: 17px;
+    padding-top: 0;
+    width: 125px;">
+<button ion-button type="submit" class="class8" [disabled]="passwordRequest.form.invalid || passconStatus ">{{"forgot.done"|translate}}
+</button>
+</div>
+</form>
+</div>
+
+
+</div>
+</ion-content>

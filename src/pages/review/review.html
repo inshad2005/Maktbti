@@ -1,0 +1,84 @@
+<ion-header dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
+  <ion-navbar color="nav">
+  <button ion-button left clear (click)="oncancel()" style="color:white">
+   {{"review.cancel" | translate}}
+  </button>
+    <ion-title>
+      {{"review.review" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+   <form (ngSubmit)="onSubmitReview()" #reviewForm="ngForm" novalidate >
+          <ion-list  class = "maindiv">
+              <div class="imagecenter">
+                 <img src="img/slidelogo.png" class="image1"> 
+               </div>
+               <div class="star-div" >
+                    <ion-icon id="starFirst" name="star" (click)="onStarClick(1)"></ion-icon>
+                    <ion-icon id="starSecond" name="star" (click)="onStarClick(2)"></ion-icon>
+                    <ion-icon id="starThird" name="star" (click)="onStarClick(3)" ></ion-icon>
+                    <ion-icon id="starFourth" name="star" (click)="onStarClick(4)"></ion-icon>
+                    <ion-icon id="starFifth" name="star" (click)="onStarClick(5)"></ion-icon>
+               </div>
+                <ion-item class="class2">
+                    <ion-textarea name="comments" type="text" placeholder= "{{'review.writeReview' | translate}}" [(ngModel)]='review.review' #comments="ngModel" required></ion-textarea>
+                </ion-item>
+                <p padding style="color:#D23839" [hidden]="!comments.touched || comments.valid"> {{"review.reviewField" | translate}} </p>
+          </ion-list>
+           <div style="width: 100%;float: left;text-align: center;">
+              <div style="width:58%; border-bottom: 1px solid #fff;margin:-4px auto"></div>
+            </div>
+           <div style="position:relative;margin-top:18px ">       
+                <div class="signup-div text-center">
+                    <button ion-button type="submit"  class="class5" [disabled]="reviewForm.form.invalid || count==0">{{"review.submit" | translate}}
+                    </button>
+                </div>
+           </div>
+   </form>
+</ion-content>
+
+
+  
+<ion-header  *ngIf="appProvider.current.currentLanguage=='en'">
+  <ion-navbar color="nav">
+  <button ion-button left clear (click)="oncancel()" style="color:white">
+   {{"review.cancel" | translate}}
+  </button>
+    <ion-title>
+      {{"review.review" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  *ngIf="appProvider.current.currentLanguage=='en'" style="background: url(img/Login.png) no-repeat center;background-size:cover;">
+   <form (ngSubmit)="onSubmitReview()" #reviewForm="ngForm" novalidate >
+          <ion-list  class = "maindiv">
+              <div class="imagecenter">
+                 <img src="img/slidelogo.png" class="image1"> 
+               </div>
+               <div class="star-div" >
+                    <ion-icon id="starFirst" name="star" (click)="onStarClick(1)"></ion-icon>
+                    <ion-icon id="starSecond" name="star" (click)="onStarClick(2)"></ion-icon>
+                    <ion-icon id="starThird" name="star" (click)="onStarClick(3)" ></ion-icon>
+                    <ion-icon id="starFourth" name="star" (click)="onStarClick(4)"></ion-icon>
+                    <ion-icon id="starFifth" name="star" (click)="onStarClick(5)"></ion-icon>
+               </div>
+                <ion-item class="class2">
+                    <ion-textarea name="comments" type="text" placeholder= "{{'review.writeReview' | translate}}" [(ngModel)]='review.review' #comments="ngModel" required></ion-textarea>
+                </ion-item>
+                <p padding style="color:#D23839" [hidden]="!comments.touched || comments.valid"> {{"review.reviewField" | translate}} </p>
+          </ion-list>
+           <div style="width: 100%;float: left;text-align: center;">
+              <div style="width:58%; border-bottom: 1px solid #fff;margin:-4px auto"></div>
+            </div>
+           <div style="position:relative;margin-top:18px ">       
+                <div class="signup-div text-center">
+                    <button ion-button type="submit"  class="class5" [disabled]="reviewForm.form.invalid || count==0">{{"review.submit" | translate}}
+                    </button>
+                </div>
+           </div>
+   </form>
+</ion-content>
