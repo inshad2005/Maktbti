@@ -1,79 +1,75 @@
+
+
 <ion-menu  [content]="content"  [swipeEnabled]="false" *ngIf="appProvider.current.currentLanguage=='arb'" side="right">
-
-  <ion-content dir=rtl >
-   <div class="" style="background: url(img/Dashboard-Drawer.png) no-repeat center;background-size:cover;height: 210px;">
-     
-      <div  class="div-st-user" style="margin-bottom: 10px">
-       <img src="{{imageUrl}}"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="imageUrl" >
-       <img src="img/slide4.jpg"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="!imageUrl" >
-        <div class="spcer" style="height: 1px"></div>
-        <span> {{firstName}} {{lastName}} </span>
-        <div class="spacer" style="height: 2px"></div>
-        <span>{{email}}</span>
-        <!-- <div class="spcer" style="height: 20px"></div> -->
-        </div>
-        </div>
-    <ion-list style="background:transparent" no-lines>
-    <div *ngFor="let p of pages;let i=index " >
-      <button  menuClose ion-item (click)="openPage(p)" class="button-st">
-        <ion-icon>
-          <img src= "{{p.logo}}" style="max-width: 35%;">
-        </ion-icon>
-        {{p.title | translate}}
-      </button>
-      <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;">
-    </div>
-     <div >
-      <button  menuClose ion-item  class="button-st" (click)="onLogOut()">
-        <ion-icon>
-          <img src= "img/logout.png" style="max-width: 35%;">
-        </ion-icon>
-        {{"menu.logout"|translate}}
-      </button>
-     <!--  <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;"> -->
-    </div>
-    </ion-list>
-  </ion-content>
-
-</ion-menu>
-
-<ion-menu [content]="content" [swipeEnabled]="false" *ngIf="appProvider.current.currentLanguage=='en'" >
-
-  <ion-content>
-   <div class="" style="background: url(img/Dashboard-Drawer.png) no-repeat center;background-size:cover;height: 210px;">
-      <div  class="div-st-user" style="margin-bottom: 10px">
-         <img src="{{imageUrl}}"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="imageUrl" >
-         <img src="img/slide4.jpg"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="!imageUrl" >
-         <div class="spcer" style="height: 1px"></div>
-         <span>{{firstName}} {{lastName}}</span>
-         <div class="spacer" style="height: 2px"></div>
-          <span>{{email}}</span>
+<ion-content dir=rtl >
+    <div class="" style="background: url(img/Dashboard-Drawer.png) no-repeat center;background-size:cover;height: 210px;">
+        <div  class="div-st-user" style="margin-bottom: 10px">
+            <img src="{{imageUrl}}"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="imageUrl" >
+            <img src="img/slide4.jpg"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="!imageUrl" >
+            <div class="spcer" style="height: 1px"></div>
+            <span> {{firstName}} {{lastName}} </span>
+            <div class="spacer" style="height: 2px"></div>
+            <span>{{email}}</span>
             <!-- <div class="spcer" style="height: 20px"></div> -->
-         </div>
-      </div>
+        </div>
+    </div>
     <ion-list style="background:transparent" no-lines>
-    <div *ngFor="let p of pages;let i=index " >
-      <button  menuClose ion-item (click)="openPage(p)" class="button-st">
-        <ion-icon>
-          <img src= "{{p.logo}}" style="max-width: 35%;">
-        </ion-icon>
-        {{p.title | translate}}
-      </button>
-      <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;">
-    </div>
-     <div >
-      <button  menuClose ion-item  class="button-st" (click)="onLogOut()">
-        <ion-icon>
-          <img src= "img/logout.png" style="max-width: 35%;">
-        </ion-icon>
-        {{"menu.logout"|translate}}
-      </button>
-     <!--  <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;"> -->
-    </div>
+        <div *ngFor="let p of pages;let i=index " >
+            <button  menuClose ion-item (click)="openPage(p)" class="button-st">
+                <ion-icon>
+                    <img src= "{{p.logo}}" style="max-width: 35%;">
+                </ion-icon>
+                {{p.title | translate}}
+            </button>
+            <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;">
+        </div>
+        <div >
+            <button  menuClose ion-item  class="button-st" (click)="onLogOut()">
+                <ion-icon>
+                    <img src= "img/logout.png" style="max-width: 35%;">
+                </ion-icon>
+                {{"menu.logout"|translate}}
+            </button>
+            <!--  <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;"> -->
+        </div>
     </ion-list>
-  </ion-content>
-
+</ion-content>
 </ion-menu>
-
+<ion-menu [content]="content" [swipeEnabled]="false" *ngIf="appProvider.current.currentLanguage=='en'" >
+<ion-content>
+    <div class="" style="background: url(img/Dashboard-Drawer.png) no-repeat center;background-size:cover;height: 210px;">
+        <div  class="div-st-user" style="margin-bottom: 10px">
+            <img src="{{imageUrl}}"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="imageUrl" >
+            <img src="img/slide4.jpg"  height="125px" width="125px" class="drawer-image" (click)="onImage()" *ngIf="!imageUrl" >
+            <div class="spcer" style="height: 1px"></div>
+            <span>{{firstName}} {{lastName}}</span>
+            <div class="spacer" style="height: 2px"></div>
+            <span>{{email}}</span>
+            <!-- <div class="spcer" style="height: 20px"></div> -->
+        </div>
+    </div>
+    <ion-list style="background:transparent" no-lines>
+        <div *ngFor="let p of pages;let i=index " >
+            <button  menuClose ion-item (click)="openPage(p)" class="button-st">
+                <ion-icon>
+                    <img src= "{{p.logo}}" style="max-width: 35%;">
+                </ion-icon>
+                {{p.title | translate}}
+            </button>
+            <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;">
+        </div>
+        <div >
+            <button  menuClose ion-item  class="button-st" (click)="onLogOut()">
+                <ion-icon>
+                    <img src= "img/logout.png" style="max-width: 35%;">
+                </ion-icon>
+                {{"menu.logout"|translate}}
+            </button>
+            <!--  <hr *ngIf="i==2 || i==5 " style="height:2px;background-color:#646464;"> -->
+        </div>
+    </ion-list>
+</ion-content>
+</ion-menu>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
