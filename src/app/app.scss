@@ -26,11 +26,12 @@
 }
 .drawer-image{
 		 border-radius: 100%;
+     object-fit: cover;
 }
 
 .div-st-user img{
    border: 0 none;
-    margin-top: 36px;
+    margin-top: 39px;
     max-width: 100%;
 }
 .button-st{
@@ -134,6 +135,11 @@
     font-size: 17px;
     font-weight: 600;
     margin-top: 8px;
+}
+.alert-md .alert-message {
+    font-size: 15px;
+    max-height: 240px;
+    text-align: center;
 }
 .alert-md .alert-message:empty {
     padding: 0 0 12px;

@@ -18,11 +18,18 @@
 		<img src="img/slide4.jpg" class="profile-pic-st" *ngIf="!userImage">
 
 	<div class="user-name-st" *ngIf="userDetails">
-		<span class="font-st">
+		<span class="font-st" style="color: #fff"  *ngIf="userImage">
 			{{userDetails.first_name}} {{userDetails.last_name}}
 		</span>
 		<div class="spacer" style="height: 2px"></div>
-		<span class="font-st">
+		<span class="font-st" style="color: #fff" *ngIf="userImage">
+			{{userDetails.email}}
+		</span>
+		<span class="font-st"  style="color: #000" *ngIf="!userImage">
+			{{userDetails.first_name}} {{userDetails.last_name}}
+		</span>
+		<div class="spacer" style="height: 2px"></div>
+		<span class="font-st" style="color: #000" *ngIf="!userImage">
 			{{userDetails.email}}
 		</span>
 	</div>
@@ -95,11 +102,18 @@
 		<img src="{{userImage}}" class="profile-pic-st" *ngIf="userImage">
 		<img src="img/slide4.jpg" class="profile-pic-st" *ngIf="!userImage">
 	<div class="user-name-st" *ngIf="userDetails">
-		<span class="font-st" >
+		<span class="font-st" style="color: #fff"  *ngIf="userImage">
 			{{userDetails.first_name}} {{userDetails.last_name}}
 		</span>
 		<div class="spacer" style="height: 2px"></div>
-		<span class="font-st">
+		<span class="font-st" style="color: #fff" *ngIf="userImage">
+			{{userDetails.email}}
+		</span>
+		<span class="font-st"  style="color: #000" *ngIf="!userImage">
+			{{userDetails.first_name}} {{userDetails.last_name}}
+		</span>
+		<div class="spacer" style="height: 2px"></div>
+		<span class="font-st" style="color: #000" *ngIf="!userImage">
 			{{userDetails.email}}
 		</span>
 	</div>

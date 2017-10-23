@@ -31,10 +31,10 @@ page-my-account {
     max-height: 185px;
     position: relative;
     width: 100%;
+    object-fit: cover;
 }
 .user-name-st{
 	position: absolute;
-	color: #fff;
 	bottom: 20px;
 	text-align: center;
 	font-size: 19px!important;

@@ -10,9 +10,11 @@
 <!-- - - - - - -  - - - - - arabic  -  - - - - - - - - - - - - - - - - - -  - - -->
 <ion-header >
   <ion-navbar  hideBackButton="true" color="nav" dir=rtl *ngIf="appProvider.current.currentLanguage=='arb'">
-       <button  ion-button  style="background-color: transparent;" (click)="onBack()">
+  	<div class="static-back-bu">
+  		<button  ion-button  style="background-color: transparent;" (click)="onBack()">
             <ion-icon name="arrow-back"></ion-icon>
-       </button>
+        </button>
+  	</div>
     <ion-title>{{'accountSettings.account' | translate}}</ion-title>
   </ion-navbar>
 </ion-header>

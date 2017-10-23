@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\Projects\ionic\maktbi\platforms\android\CordovaLib\assets"/><source path="E:\Projects\ionic\maktbi\platforms\android\CordovaLib\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="E:\Projects\ionic\maktbi\platforms\android\CordovaLib\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\GitClone\Maktbti\platforms\android\CordovaLib\assets"/><source path="D:\GitClone\Maktbti\platforms\android\CordovaLib\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="D:\GitClone\Maktbti\platforms\android\CordovaLib\src\release\assets"/></dataSet></merger>

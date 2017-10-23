@@ -38861,11 +38861,12 @@ ion-navbar.toolbar {
 
 .drawer-image {
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .div-st-user img {
   border: 0 none;
-  margin-top: 36px;
+  margin-top: 39px;
   max-width: 100%;
 }
 
@@ -39012,6 +39013,12 @@ ion-navbar.toolbar {
   margin-top: 8px;
 }
 
+.alert-md .alert-message {
+  font-size: 15px;
+  max-height: 240px;
+  text-align: center;
+}
+
 .alert-md .alert-message:empty {
   padding: 0 0 12px;
 }
@@ -39124,6 +39131,21 @@ page-acount-setting .span-text {
 
 page-acount-setting .list {
   margin: 73px 0 5px !important;
+}
+
+page-acount-setting .button-md {
+  background-color: #488aff;
+  border-radius: 2px;
+  box-shadow: none !important;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  height: 3.6rem;
+  margin: 0.4rem 0.2rem;
+  overflow: hidden;
+  padding: 0 1.1em;
+  text-transform: uppercase;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
 page-all-books .toolbar-ios ion-title {
@@ -40931,11 +40953,11 @@ page-my-account .profile-pic-st {
   max-height: 185px;
   position: relative;
   width: 100%;
+  object-fit: cover;
 }
 
 page-my-account .user-name-st {
   position: absolute;
-  color: #fff;
   bottom: 20px;
   text-align: center;
   font-size: 19px !important;
@@ -42253,6 +42275,11 @@ page-signup .chekboxclass {
   color: #666666;
 }
 
+page-signup .chekboxclass .checkbox .checkbox-icon {
+  width: 17px;
+  height: 15px;
+}
+
 page-signup .signup-div {
   float: left;
   width: 100%;
@@ -42266,7 +42293,7 @@ page-signup .list-md .item-input.input-has-focus:last-child {
 }
 
 page-signup .list-md :last-child {
-  border-bottom-color: transparent !important;
+  border-bottom-color: #2abfdb !important;
   box-shadow: none !important;
 }
 

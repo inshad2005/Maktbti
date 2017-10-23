@@ -52,11 +52,12 @@ export class AcountSetting {
 
   onSelectPicture(){
   	const options: CameraOptions = {
-	  	quality: 100,
+	  	quality: 50,
 	  	destinationType: this.camera.DestinationType.DATA_URL,
 	  	encodingType: this.camera.EncodingType.JPEG,
 	  	mediaType: this.camera.MediaType.PICTURE,
-	  	sourceType:2
+	  	sourceType:2,
+	  	correctOrientation:true
 	}
 	this.camera.getPicture(options).then((imageData) => {
 		 let base64Image = 'data:image/jpeg;base64,' + imageData;
@@ -73,7 +74,8 @@ export class AcountSetting {
 		  quality: 50,
 		  destinationType: this.camera.DestinationType.DATA_URL,
 		  encodingType: this.camera.EncodingType.JPEG,
-		  mediaType: this.camera.MediaType.PICTURE
+		  mediaType: this.camera.MediaType.PICTURE,
+		  correctOrientation:true
 		}
 		this.camera.getPicture(options).then((imageData) => {
 			let base64Image = 'data:image/jpeg;base64,' + imageData;

@@ -131,9 +131,12 @@ page-signup {
   .chekboxclass{
       background:transparent;
       color: #666666;
-      
-    }
+  }
 
+  .chekboxclass .checkbox .checkbox-icon{
+    width: 17px;
+    height: 15px;
+  }
   .signup-div{
    float: left;
    width: 100%;
@@ -153,7 +156,7 @@ page-signup {
     box-shadow: none!important;
 }
 .list-md :last-child {
-  border-bottom-color: transparent!important;
+  border-bottom-color: #2abfdb!important;
     box-shadow: none!important;
 }
 

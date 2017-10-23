@@ -55,7 +55,7 @@
         "signUp": "Sign Up",
         "alreadyRegistered": "Already hava an account?",
         "login":"Login Here",
-        "message1": "By creating account ,i agree to the",
+        "message1": "By creating account ,I agree to the",
         "termCondition": "Terms & Conditions",
         "message2": "of Maktbti",
         "placeholderFirstname": "FirstName",
@@ -79,7 +79,7 @@
 
     "message": {
         "success": "Success",
-        "messageSignup": "Signup Successfull. Please check your email.",
+        "messageSignup": "Signup Successfull. Please check your email to activate account.",
         "alreadyRegistered": "Already Registered",
         "messageAlreadyRegistered": "Entered email address is already registered with us.",
         "error": "error",
