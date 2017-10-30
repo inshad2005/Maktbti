@@ -417,7 +417,7 @@ card(number){
         }else{
           let alert=this.alert.create({
             title:this.translateService.instant('message.promo'),
-            subTitle:this.translateService.instant('message.somethingWentWrong'),
+            subTitle:this.translateService.instant(data.message),
             buttons: [
               {
                 text: this.translateService.instant('message.ok'),

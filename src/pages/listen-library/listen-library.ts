@@ -13,6 +13,7 @@ import { SimilarBooks } from '../similar-books/similar-books';
 import { PaymentProvider } from '../../providers/payment-provider';
 import { Payment } from '../payment/payment'
 import { Category } from '../category/category'
+import {  ImagePath} from "../../providers/imagePath";
 /**
  * Generated class for the ListenLibrary page.
  *
@@ -25,7 +26,7 @@ declare var StartCheckout
 @Component({
   selector: 'page-listen-library',
   templateUrl: 'listen-library.html',
-  providers: [AudioBook, SocialSharing,PaymentProvider]
+  providers: [AudioBook, SocialSharing,PaymentProvider,ImagePath]
 })
 export class ListenLibrary {
   segment;
@@ -74,7 +75,8 @@ export class ListenLibrary {
     private events: Events,
     private socialSharing: SocialSharing,
     private paymentProvider:PaymentProvider,
-    private viewCtrl: ViewController
+    private viewCtrl: ViewController,
+    private imagePath:ImagePath
   ) {
     
     // alert(JSON.stringify(StartCheckout))
@@ -89,7 +91,7 @@ export class ListenLibrary {
       if (this.bookdata.author) {
        this.artist = this.bookdata.author.author_name
       }
-      this.cover = 'http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/' + this.bookdata.image;
+      this.cover = 'http://maktbti.com/webroot/images/books/' + this.bookdata.image;
       this.avg_rating=this.bookdata.average_rating;
       // alert(this.avg_rating);
     }
@@ -98,7 +100,7 @@ export class ListenLibrary {
       if (this.bookdata.author) {
         this.artist = this.bookdata.author.author_arabic
       }
-      this.cover = 'http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/' + this.bookdata.image;
+      this.cover = 'http://maktbti.com/webroot/images/books/' + this.bookdata.image;
     }
 
     console.log(JSON.stringify(this.bookdata));
@@ -129,7 +131,7 @@ export class ListenLibrary {
            //        console.log(this.review.main_books_audios[0].main_audio)
  
            //         this.file = new Audio();
-           //         this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
+           //         this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
            //         this.file.load();
            //        // code...
            //      }
@@ -138,7 +140,7 @@ export class ListenLibrary {
            //      // code...
                    
            //          this.file = new Audio();
-           //          this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+           //          this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
            //          this.file.load();
            //    }
           // this.Category=data[1]; 
@@ -148,7 +150,7 @@ export class ListenLibrary {
                   console.log(this.review.main_books_audios[0].main_audio)
  
                    this.file = new Audio();
-                   this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
+                   this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
                    this.file.load();
                   // code...
                 }
@@ -159,7 +161,7 @@ export class ListenLibrary {
                 // code...
                    
                     this.file = new Audio();
-                    this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+                    this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
                     this.file.load();
               }
              if(this.review.subscribe==1 || this.review.subscribe=='1') {
@@ -169,7 +171,7 @@ export class ListenLibrary {
                   console.log(this.review.main_books_audios[0].main_audio)
  
                    this.file = new Audio();
-                   this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
+                   this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
                    this.file.load();
                   // code...
                 }
@@ -178,7 +180,7 @@ export class ListenLibrary {
           else if (this.review.plan_info==null &&  this.bookdata.subscription_book=='yes') {
 
                    this.file = new Audio();
-                   this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+                   this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
                    this.file.load();
     
           }
@@ -188,7 +190,7 @@ export class ListenLibrary {
                 console.log(this.review.main_books_audios[0].main_audio)
 
                  this.file = new Audio();
-                 this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
+                 this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
                  this.file.load();
                 // code...
               }
@@ -439,14 +441,14 @@ export class ListenLibrary {
 
     if(this.review.subscribe==1 || this.review.subscribe=='1') {
      
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[this.letCurrentIndex].main_audio;
+        this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[this.letCurrentIndex].main_audio;
         this.file.load();
         this.musicControls.destroy();
        
 
     }   
     if(this.review.subscribe==0  ||this.review.subscribe=='0') {
-      this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+      this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
       this.file.load();
       this.musicControls.destroy();
      
@@ -466,7 +468,7 @@ export class ListenLibrary {
           //alert(this.letCurrentIndex)
           
            this.file = new Audio();
-           this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[this.letCurrentIndex].main_audio;
+           this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[this.letCurrentIndex].main_audio;
            this.file.load();
             this.onPlayMusic();
           // code...
@@ -484,7 +486,7 @@ export class ListenLibrary {
           this.letCurrentIndex=this.letCurrentIndex-1;
           //alert(this.letCurrentIndex)
            this.file = new Audio();
-           this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[this.letCurrentIndex].main_audio;
+           this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[this.letCurrentIndex].main_audio;
            this.file.load();
            this.onPlayMusic();
           // code...
@@ -653,7 +655,7 @@ export class ListenLibrary {
                   console.log(this.review.main_books_audios[0].main_audio)
              
                    this.file = new Audio();
-                   this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
+                   this.file.src = "http://maktbti.com/audios/main_audio/" + this.review.main_books_audios[0].main_audio;
                    this.file.load();
                   // code...
                 }
@@ -745,6 +747,9 @@ export class ListenLibrary {
  onBack(){
   this.navCtrl.setRoot(Category)
  }
+  onPathGet(path){
+    return this.imagePath.findPath(path)
+  }
 }
 
 

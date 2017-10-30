@@ -23,7 +23,7 @@
     <ion-list no-lines *ngIf="booklist">
         <ion-item class="item-st" *ngFor="let data of booklist;let i = index ">
             <ion-thumbnail item-left class="thumbnail-st" (click)="onBookClick(data.Books)">
-                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.Books.image}}">
+                <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.Books.image)}}">
             </ion-thumbnail>
 
             <h2 *ngIf="appProvider.current.currentLanguage=='arb'">{{data.Books.book_name_arabic}}</h2>
@@ -87,7 +87,7 @@
     <ion-list no-lines *ngIf="booklist">
         <ion-item class="item-st" *ngFor="let data of booklist;let i = index ">
             <ion-thumbnail item-left class="thumbnail-st" (click)="onBookClick(data.Books)">
-                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.Books.image}}">
+                <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.Books.image)}}">
             </ion-thumbnail>
             <h2 *ngIf="appProvider.current.currentLanguage=='en'">{{data.Books.book_name}}</h2>
 

@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserData } from "../../providers/user-data";
 import { ListenLibrary } from '../listen-library/listen-library';
 import { AppProvider } from "../../providers/app";
+import {ImagePath} from "../../providers/imagePath";
 
 /**
  * Generated class for the AllBooks page.
@@ -30,7 +31,8 @@ export class Recommanded {
     private userDataProvider:UserData,
    private loadingCtrl:LoadingController,
    private translateService:TranslateService,
-   private appProvider:AppProvider
+   private appProvider:AppProvider,
+   private imagePath:ImagePath
    ) {
 
   }
@@ -93,5 +95,7 @@ export class Recommanded {
     onContent(){
       this.searchbar='false';
     }
-
+    onPathGet(path){
+    return this.imagePath.findPath(path)
+   }
 }

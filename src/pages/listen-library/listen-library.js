@@ -61,14 +61,14 @@ var ListenLibrary = (function () {
         if (this.appProvider.current.currentLanguage == 'en') {
             this.track = this.bookdata.book_name;
             this.artist = this.bookdata.author.author_name;
-            this.cover = 'http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/' + this.bookdata.image;
+            this.cover = 'http://maktbti.com/webroot/images/books/' + this.bookdata.image;
             this.avg_rating = this.bookdata.average_rating;
             // alert(this.avg_rating);
         }
         if (this.appProvider.current.currentLanguage == 'arb') {
             this.track = this.bookdata.book_name_arabic;
             this.artist = this.bookdata.author.author_arabic;
-            this.cover = 'http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/' + this.bookdata.image;
+            this.cover = 'http://maktbti.com/webroot/images/books/' + this.bookdata.image;
         }
         console.log(JSON.stringify(this.bookdata));
         var loading = this.loadingCtrl.create({
@@ -94,7 +94,7 @@ var ListenLibrary = (function () {
         });
         this.playButton = 'true';
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
         this.file.load();
     };
     // onSubscribed() {
@@ -311,7 +311,7 @@ var ListenLibrary = (function () {
         clearInterval(this.secondInterval);
         this.playButton = 'true';
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
         this.file.load();
         this.musicControls.destroy();
     };

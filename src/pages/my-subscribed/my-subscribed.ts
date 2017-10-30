@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserData } from "../../providers/user-data";
 import { AudioBook } from "../../providers/audio-book"
 import { AppProvider } from "../../providers/app"
+import {ImagePath} from "../../providers/imagePath";
 
 /**
  * Generated class for the MyLibrary page.
@@ -41,7 +42,8 @@ export class MySubscribed {
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private translateService: TranslateService,
-    private appProvider:AppProvider
+    private appProvider:AppProvider,
+    private imagePath:ImagePath
   ) {
     this.userdata={};
   }
@@ -131,7 +133,7 @@ export class MySubscribed {
     // alert(a);
     this.iconIndex = b;
     this.file = new Audio();
-    this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + a;
+    this.file.src = "http://maktbti.com/audios/sample_audio/" + a;
     // alert(this.file.src)
     this.file.load();
     // this.playButton='false';
@@ -174,6 +176,9 @@ export class MySubscribed {
       this.file.currentTime = 0.0;
     }
     this.file = new Audio();
+  }
+  onPathGet(path){
+    return this.imagePath.findPath(path)
   }
 }
 

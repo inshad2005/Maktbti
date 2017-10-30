@@ -116,7 +116,7 @@ var MySubscribed = (function () {
         // alert(a);
         this.iconIndex = b;
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + a;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + a;
         // alert(this.file.src)
         this.file.load();
         // this.playButton='false';

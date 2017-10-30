@@ -28,9 +28,9 @@
     <div [ngSwitch]="segment" class="segment_div">
         <div *ngSwitchCase="'listen'">
             <ion-card id="backid">
-                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 260px; filter: blur(3px);width: 100%;">
+                <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" style="height: 260px; filter: blur(3px);width: 100%;">
                 <div class="card-title image-div-st"> 
-                    <img class="badi-img" src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" >
+                    <img class="badi-img" src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" >
                 </div>
             </ion-card>
             <div>
@@ -166,7 +166,7 @@
         </div>
         <div *ngSwitchCase="'content'"  class="content_div">
             <div id="back-div">
-                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" height="100%" width="100%" class="content-back-st">
+                <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" height="100%" width="100%" class="content-back-st">
                 <div class="left-div">
                     <div class="text-center content-div">    
                         <span>{{'listen-library.table_of_content'|translate}} </span>
@@ -178,7 +178,7 @@
                     </ul>
                 </div>
                 <div  class="right-div-arabic">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}">
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}">
                 </div>
             </div>
         </div>
@@ -186,7 +186,7 @@
             <ion-list>
                 <ion-item>
                     <ion-thumbnail style="margin-top:14px !important  "item-left>
-                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 153px ;width: 123px; margin-left: -7px">
+                        <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" style="height: 153px ;width: 123px; margin-left: -7px">
                     </ion-thumbnail>
                     <p style="font-size:21px;color:#000" *ngIf="appProvider.current.currentLanguage=='arb'">{{bookdata.book_name_arabic}}</p>
                     <p  style="font-size:19px;color:#000;margin-top: 6px" *ngIf="appProvider.current.currentLanguage=='arb' && bookdata.author">{{'listen-library.by'|translate}}:<u style="color:#2ABFDB">{{bookdata.author.author_name_arabic}} </u> </p>
@@ -213,7 +213,7 @@
                 <ion-row class="text-center" *ngIf="similarbook">
                     <ion-col style="width: 33%" *ngFor="let simlarBook of similarbook" (click)="onSimilar(simlarBook)">
                         <div class="img-st">
-                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{simlarBook.image}}">
+                            <img src="http://maktbti.com/webroot/images/books/{{simlarBook.image}}">
                         </div>
                         <div class="div-st">
                             <span style="white-space: nowrap;" *ngIf="appProvider.current.currentLanguage=='arb'">{{simlarBook.book_name_arabic}}</span>
@@ -280,9 +280,9 @@
     <div [ngSwitch]="segment" class="segment_div">
         <div *ngSwitchCase="'listen'">
             <ion-card id="backid">
-                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 260px; filter: blur(3px);width: 100%;">
+                <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" style="height: 260px; filter: blur(3px);width: 100%;">
                 <div class="card-title image-div-st"> 
-                    <img class="badi-img" src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" >
+                    <img class="badi-img" src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" >
                 </div>
             </ion-card>
             <div>
@@ -417,7 +417,7 @@
         </div>
         <div *ngSwitchCase="'content'"  class="content_div">
             <div id="back-div">
-                <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" height="100%" width="100%" class="content-back-st">
+                <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" height="100%" width="100%" class="content-back-st">
                 <div class="left-div">
                     <div class="text-center content-div">    
                         <span>{{'listen-library.table_of_content'|translate}} </span>
@@ -429,7 +429,7 @@
                     </ul>
                 </div>
                 <div  class="right-div">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}">
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}">
                 </div>
             </div>
         </div>
@@ -437,7 +437,7 @@
             <ion-list>
                 <ion-item>
                     <ion-thumbnail style="margin-top:14px !important  "item-left>
-                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{bookdata.image}}" style="height: 153px ;width: 123px; margin-left: -7px">
+                        <img src="http://maktbti.com/webroot/images/books/{{onPathGet(bookdata.image)}}" style="height: 153px ;width: 123px; margin-left: -7px">
                     </ion-thumbnail>
                     <p style="font-size:21px;color:#000" *ngIf="appProvider.current.currentLanguage=='en'">{{bookdata.book_name}}</p>
                     <p  style="font-size:19px;color:#000;margin-top: 6px" *ngIf="appProvider.current.currentLanguage=='en' && bookdata.author">{{'listen-library.by'|translate}}:<u style="color:#2ABFDB">{{bookdata.author.author_name}} </u> </p>
@@ -464,7 +464,7 @@
                 <ion-row class="text-center" *ngIf="similarbook">
                     <ion-col style="width: 33%" *ngFor="let simlarBook of similarbook" (click)="onSimilar(simlarBook)">
                         <div class="img-st">
-                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{simlarBook.image}}">
+                            <img src="http://maktbti.com/webroot/images/books/{{simlarBook.image}}">
                         </div>
                         <div class="div-st">
                             <span style="white-space: nowrap;" *ngIf="appProvider.current.currentLanguage=='en'">{{simlarBook.book_name}}</span>

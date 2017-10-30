@@ -5,6 +5,7 @@ import { ListenLibrary } from '../listen-library/listen-library';
 import { AudioBook } from "../../providers/audio-book"
 import { TranslateService } from '@ngx-translate/core';
 import { AppProvider } from "../../providers/app";
+import {  ImagePath} from "../../providers/imagePath";
 /**
  * Generated class for the AllBooks page.
  *
@@ -15,7 +16,7 @@ import { AppProvider } from "../../providers/app";
 @Component({
   selector: 'page-all-books',
   templateUrl: 'all-books.html',
-  providers:[AudioBook]
+  providers:[AudioBook,ImagePath]
 })
 export class AllBooks {
   language:any;
@@ -26,7 +27,8 @@ export class AllBooks {
   allBookDetails:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private loadingCtrl:LoadingController,private audiobbok:AudioBook,
     private translateService:TranslateService,
-   private appProvider:AppProvider) {
+   private appProvider:AppProvider,
+   private imagePath: ImagePath) {
   }
 
   ngOnInit(){
@@ -80,4 +82,7 @@ onSearch(){
     onContent(){
       this.searchbar='false';
     }
+    onPathGet(path){
+    return this.imagePath.findPath(path)
+  }
 }

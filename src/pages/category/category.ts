@@ -7,6 +7,7 @@ import { ViewMore } from "../view-more/view-more";
 import { CategoryBookList } from "../categoryBookList/categoryBookList";
 import { TranslateService } from '@ngx-translate/core';
 import { AppProvider  } from "../../providers/app";
+import {  ImagePath} from "../../providers/imagePath";
 /**
  * Generated class for the Category page.
  *
@@ -17,7 +18,7 @@ import { AppProvider  } from "../../providers/app";
 @Component({
   selector: 'page-category',
   templateUrl: 'category.html',
-  providers:[AudioBook]
+  providers:[AudioBook,ImagePath]
 })
 export class Category {
   segment;
@@ -42,7 +43,8 @@ export class Category {
     private loadingCtrl:LoadingController,
     private audiobbok:AudioBook,
     private translateService:TranslateService,
-    private appProvider:AppProvider) {
+    private appProvider:AppProvider,
+    private imagePath:ImagePath) {
   	this.segment="featured"
     this.searchIcon='true';
   }
@@ -246,5 +248,8 @@ export class Category {
   }
   showSearchIcon(){
     this.searchIcon='true';
+  }
+  onPathGet(path){
+    return this.imagePath.findPath(path)
   }
 }

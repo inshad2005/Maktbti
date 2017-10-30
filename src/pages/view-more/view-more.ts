@@ -4,6 +4,7 @@ import {ListenLibrary} from '../listen-library/listen-library';
 import { AudioBook } from "../../providers/audio-book";
 import {AppProvider} from "../../providers/app";
 import { TranslateService } from '@ngx-translate/core';
+import {ImagePath} from "../../providers/imagePath";
 
 /**
  * Generated class for the AllBooks page.
@@ -27,7 +28,8 @@ export class ViewMore {
     private loadingCtrl:LoadingController,
     private audiobbok:AudioBook,
      private translateService:TranslateService,
-     private appProvider:AppProvider) {
+     private appProvider:AppProvider,
+     private imagePath:ImagePath) {
     this.booklist=this.navParams.get('bookdata')
     // alert(JSON.stringify(this.booklist))
     this.titleEng=this.navParams.get('titleEng')
@@ -52,4 +54,7 @@ export class ViewMore {
 onBook(bookdata){
  this.navCtrl.push(ListenLibrary,{bookdata:bookdata})
 }
+ onPathGet(path){
+    return this.imagePath.findPath(path)
+  }
 }

@@ -57,7 +57,7 @@ var DeeplinkLibraryPage = (function () {
                 _this.review = _this.bookdata.customer_reviews;
                 // this.Category=data[1]; 
                 _this.file = new Audio();
-                _this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + _this.bookdata.audio_sample;
+                _this.file.src = "http://maktbti.com/audios/sample_audio/" + _this.bookdata.audio_sample;
                 _this.file.load();
             });
         }, function (error) {
@@ -201,7 +201,7 @@ var DeeplinkLibraryPage = (function () {
             if (_this.aa == _this.fullDuration) {
                 _this.playButton = 'true';
                 _this.file = new Audio();
-                _this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + _this.bookdata.audio_sample;
+                _this.file.src = "http://maktbti.com/audios/sample_audio/" + _this.bookdata.audio_sample;
             }
         }, 1000);
         // alert(this.aa)
@@ -272,7 +272,7 @@ var DeeplinkLibraryPage = (function () {
         this.file.pause();
         this.file.currentTime = 0.0;
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
         this.file.load();
         this.musicControls.destroy();
     };

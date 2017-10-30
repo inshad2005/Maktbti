@@ -18,7 +18,7 @@ profile:"http://europa.promaticstechnologies.com/audioLibrary/images/profile/"
 
 export const PROD: Environment = {
 language:LANGUAGE.ENGLISH,
-endPoint:'http://europa.promaticstechnologies.com/audioLibrary/WebServices/' ,
-profile:"http://europa.promaticstechnologies.com/audioLibrary/images/profile/"
+endPoint:'http://maktbti.com/WebServices/' ,
+profile:"http://maktbti.com/images/profile/"
 }
 export const ENV: Environment= PROD;

@@ -30,7 +30,7 @@
         <ion-row class="text-center" *ngIf="booklist">
             <ion-col width:33 *ngFor="let book of booklist">
                 <div class="img-st" (click)="onBook(book)">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}" >
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(book.image)}}" >
                     <div class="div-st">
                         <span style="white-space: nowrap;" *ngIf="appProvider.current.currentLanguage=='en'">{{book.book_name}}</span>
                         
@@ -100,7 +100,7 @@
         <ion-row class="text-center" *ngIf="booklist">
             <ion-col width:33 *ngFor="let book of booklist">
                 <div class="img-st" (click)="onBook(book)">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}" >
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(book.image)}}" >
                     <div class="div-st">
                         
                         <span style="white-space: nowrap;" *ngIf="appProvider.current.currentLanguage=='arb'">{{book.book_name_arabic}}</span>

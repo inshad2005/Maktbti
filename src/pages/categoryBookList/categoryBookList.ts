@@ -6,6 +6,7 @@ import { AudioBook } from "../../providers/audio-book";
 import{ViewMore} from "../view-more/view-more";
 import { TranslateService } from '@ngx-translate/core';
 import {AppProvider} from "../../providers/app";
+import {ImagePath} from "../../providers/imagePath";
 /**
  * Generated class for the Category page.
  *
@@ -32,7 +33,8 @@ searchbar='false';
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private loadingCtrl:LoadingController,private audiobbok:AudioBook,
     private translateService:TranslateService,
-    private appProvider:AppProvider) {
+    private appProvider:AppProvider,
+    private imagePath:ImagePath) {
   	this.segment="featured";
     this.categoryWiseBookList=this.navParams.get('categoryWiseBook')
     // console.log(JSON.stringify(this.categoryWiseBookList));
@@ -84,7 +86,9 @@ onViewMore(data,titleEng,titleArb){
 
  this.navCtrl.push(ViewMore,{bookdata:data,titleEng:titleEng,titleArb:titleArb})
 }
-
+ onPathGet(path){
+    return this.imagePath.findPath(path)
+  }
  // onSearch(){
  //      this.searchbar='true';
 

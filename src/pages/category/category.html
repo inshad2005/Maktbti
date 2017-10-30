@@ -44,7 +44,7 @@
             <ion-row *ngIf="allBooklist">
                 <ion-col *ngFor="let data of allBooklist.recent; let i = index" [attr.data-index]="i">
                 <div class="smalldiv"  *ngIf="appProvider.current.currentLanguage=='arb'">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}" (click)="onBook(data)" class="img-slider" >
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}" (click)="onBook(data)" class="img-slider" >
                     <div class="price-div" *ngIf="data.subscription_book=='no'">
                         SAR: <span style="color:#2ABFDB" >{{data.price_arabic}}</span>
                     </div>
@@ -91,7 +91,7 @@
             <ion-row *ngIf="allBooklist">
                 <ion-col *ngFor="let data of allBooklist.free; let i = index" [attr.data-index]="i">
                 <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb'">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}"  (click)="onBook(data)" class="img-slider" >
                     <p style="margin-top:2px;color:#000; font-size: 12px" >{{data.book_name_arabic}}</p>
                     <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 12px" >{{'homepage-category.by'|translate}}: <u style="color:#2ABFDB"> {{data.author.author_name_arabic}} </u></p>
                     <div style="display:inline-flex">
@@ -132,7 +132,7 @@
             <ion-row *ngIf="allBooklist">
                 <ion-col *ngFor="let data of allBooklist.sale; let i = index" [attr.data-index]="i">
                 <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb'">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}"  (click)="onBook(data)" class="img-slider" >
                     <div class="price-div">
                         SAR: <span style="color:#2ABFDB">{{data.price_arabic}}</span>
                     </div>
@@ -176,7 +176,7 @@
             <ion-row *ngIf="allBooklist">
                 <ion-col *ngFor="let data of allBooklist.bookforsubs; let i = index" [attr.data-index]="i">
                 <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='arb'">
-                    <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                    <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}"  (click)="onBook(data)" class="img-slider" >
                     <div class="price-div" *ngIf="data.subscription_book=='no'">
                         SAR: <span style="color:#2ABFDB" >{{data.price_arabic}}</span>
                     </div>
@@ -219,7 +219,7 @@
                 <ion-row class="text-center-search" *ngIf="dataforSearchAll">
                     <ion-col style="width: 33%" *ngFor="let book of dataforSearchAll" >
                         <div class="img-st-search" (click)="onBook(book)">
-                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}">
+                            <img src="http://maktbti.com/webroot/images/books/{{onPathGet(book.image)}}">
                         </div>
                         <div class="div-st-search">
                             <span style="white-space: nowrap;">{{book.book_name_arabic}}</span>
@@ -318,7 +318,7 @@
                 <ion-row *ngIf="allBooklist">
                     <ion-col *ngFor="let data of allBooklist.recent; let i = index" [attr.data-index]="i">
                     <div class="smalldiv"  *ngIf="appProvider.current.currentLanguage=='en' && i<15">
-                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}" (click)="onBook(data)" class="img-slider" >
+                        <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}" (click)="onBook(data)" class="img-slider" >
                         <div class="price-div" *ngIf="data.subscription_book=='no'">
                             SAR: <span style="color:#2ABFDB" >{{data.price}}</span>
                         </div>
@@ -365,7 +365,7 @@
                 <ion-row *ngIf="allBooklist">
                     <ion-col *ngFor="let data of allBooklist.free; let i = index" [attr.data-index]="i">
                     <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='en' &&  i<15">
-                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                        <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}"  (click)="onBook(data)" class="img-slider" >
                         <p style="margin-top:2px;color:#000; font-size: 10px" >{{data.book_name}}</p>
                         <p *ngIf="data.author" style="margin-top:-8px;color:#000; font-size: 10px" >{{'homepage-category.by'|translate}} : <u style="color:#2ABFDB"> {{data.author.author_name}} </u></p>
                         <div style="display:inline-flex">
@@ -406,7 +406,7 @@
                 <ion-row *ngIf="allBooklist">
                     <ion-col *ngFor="let data of allBooklist.sale; let i = index" [attr.data-index]="i">
                     <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='en' && i<15">
-                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                        <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}"  (click)="onBook(data)" class="img-slider" >
                         <div class="price-div">
                             SAR: <span style="color:#2ABFDB">{{data.price}}</span>
                         </div>
@@ -450,7 +450,7 @@
                 <ion-row *ngIf="allBooklist">
                     <ion-col *ngFor="let data of allBooklist.bookforsubs; let i = index" [attr.data-index]="i">
                     <div class="smalldiv" *ngIf="appProvider.current.currentLanguage=='en' && i<15">
-                        <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{data.image}}"  (click)="onBook(data)" class="img-slider" >
+                        <img src="http://maktbti.com/webroot/images/books/{{onPathGet(data.image)}}"  (click)="onBook(data)" class="img-slider" >
                         <div class="price-div" *ngIf="data.subscription_book=='no'">
                             SAR: <span style="color:#2ABFDB" >{{data.price}}</span>
                         </div>
@@ -492,7 +492,7 @@
                 <ion-row class="text-center-search" *ngIf="dataforSearchAll">
                     <ion-col style="width: 33%" *ngFor="let book of dataforSearchAll" >
                         <div class="img-st-search" (click)="onBook(book)">
-                            <img src="http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/{{book.image}}">
+                            <img src="http://maktbti.com/webroot/images/books/{{onPathGet(book.image)}}">
                         </div>
                         <div class="div-st-search">
                             <span style="white-space: nowrap;">{{book.book_name}}</span>

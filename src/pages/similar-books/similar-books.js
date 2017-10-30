@@ -45,12 +45,12 @@ var SimilarBooks = SimilarBooks_1 = (function () {
         if (this.appProvider.current.currentLanguage == 'en') {
             this.track = this.bookdata.book_name;
             this.artist = this.bookdata.author.author_name;
-            this.cover = 'http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/' + this.bookdata.image;
+            this.cover = 'http://maktbti.com/webroot/images/books/' + this.bookdata.image;
         }
         if (this.appProvider.current.currentLanguage == 'arb') {
             this.track = this.bookdata.book_name_arabic;
             this.artist = this.bookdata.author.author_arabic;
-            this.cover = 'http://europa.promaticstechnologies.com/audioLibrary/webroot/images/books/' + this.bookdata.image;
+            this.cover = 'http://maktbti.com/webroot/images/books/' + this.bookdata.image;
         }
         console.log(JSON.stringify(this.bookdata));
         var loading = this.loadingCtrl.create({ content: this.translateService.instant('loading') });
@@ -163,7 +163,7 @@ var SimilarBooks = SimilarBooks_1 = (function () {
             if (_this.aa == _this.fullDuration) {
                 _this.playButton = 'true';
                 _this.file = new Audio();
-                _this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + _this.bookdata.audio_sample;
+                _this.file.src = "http://maktbti.com/audios/sample_audio/" + _this.bookdata.audio_sample;
             }
         }, 1000);
     };
@@ -190,7 +190,7 @@ var SimilarBooks = SimilarBooks_1 = (function () {
     SimilarBooks.prototype.onPlay = function () {
         this.playButton = 'false';
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
         this.file.load();
         this.file.play();
         this.musicControls.updateIsPlaying(true);
@@ -201,7 +201,7 @@ var SimilarBooks = SimilarBooks_1 = (function () {
         this.file.pause();
         this.file.currentTime = 0.0;
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
         this.file.load();
         this.musicControls.destroy();
     };

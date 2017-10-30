@@ -99,7 +99,7 @@ export class AcountSetting {
 			chunkedMode: false,
 		}
 		const fileTransfer: FileTransferObject = this.transfer.create();
-		fileTransfer.upload(this.imageUrl, 'http://europa.promaticstechnologies.com/audioLibrary/WebServices/updatedUserImage/' + localStorage['user_id'] + '.json', options)
+		fileTransfer.upload(this.imageUrl, 'http://maktbti.com/WebServices/updatedUserImage/' + localStorage['user_id'] + '.json', options)
 			.then((data) =>
 				loading.dismiss().then(() =>  {
 					// alert(JSON.stringify(options));

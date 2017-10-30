@@ -8,6 +8,7 @@ import { AppProvider} from "../../providers/app";
 import { MusicControls } from '@ionic-native/music-controls';
 import { Events } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import {ImagePath} from "../../providers/imagePath";
 
 
 @Component({
@@ -55,7 +56,8 @@ export class DeeplinkLibraryPage {
     private appProvider: AppProvider,
     private musicControls: MusicControls,
     private events: Events,
-    private socialSharing: SocialSharing) {
+    private socialSharing: SocialSharing,
+    private imagePath:ImagePath) {
   	this.book_id=this.navParams.get('book_id');
   	 // alert(this.book_id);
   	 
@@ -81,7 +83,7 @@ export class DeeplinkLibraryPage {
           this.review=this.bookdata.customer_reviews
           // this.Category=data[1]; 
 	        this.file = new Audio();
-	 	      this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+	 	      this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
 	        this.file.load();
         }),
         error =>
@@ -225,7 +227,7 @@ export class DeeplinkLibraryPage {
       if (this.aa == this.fullDuration) {
         this.playButton = 'true';
         this.file = new Audio();
-        this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+        this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
       }
     }, 1000);
     // alert(this.aa)
@@ -302,7 +304,7 @@ export class DeeplinkLibraryPage {
     this.file.pause();
     this.file.currentTime = 0.0;
     this.file = new Audio();
-    this.file.src = "http://europa.promaticstechnologies.com/audioLibrary/audios/sample_audio/" + this.bookdata.audio_sample;
+    this.file.src = "http://maktbti.com/audios/sample_audio/" + this.bookdata.audio_sample;
     this.file.load();
     this.musicControls.destroy();
   }
@@ -344,7 +346,9 @@ export class DeeplinkLibraryPage {
       // Error!
     });
   }
-
+ onPathGet(path){
+    return this.imagePath.findPath(path)
+  }
   
 
 }
