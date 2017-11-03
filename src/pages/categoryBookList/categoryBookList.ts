@@ -17,7 +17,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-categoryBookList',
   templateUrl: 'categoryBookList.html',
-  providers:[AudioBook]
+  providers:[AudioBook,ImagePath]
 })
 export class CategoryBookList {
 segment;

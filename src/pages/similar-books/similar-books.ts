@@ -17,7 +17,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-similar-books',
   templateUrl: 'similar-books.html',
-  providers:[AudioBook, SocialSharing,PaymentProvider]
+  providers:[AudioBook, SocialSharing,PaymentProvider,ImagePath]
 })
 export class SimilarBooks {
 

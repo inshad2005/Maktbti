@@ -14,7 +14,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-deeplink-library-page',
   templateUrl: 'deeplink-library-page.html',
-  providers:[AudioBook,SocialSharing]
+  providers:[AudioBook,SocialSharing,ImagePath]
 })
 export class DeeplinkLibraryPage {
   bookdata;

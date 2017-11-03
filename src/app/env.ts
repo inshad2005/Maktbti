@@ -11,8 +11,8 @@ profile:string;
 
 export const DEV: Environment = {
 language:LANGUAGE.ARABIC,
-endPoint:'http://europa.promaticstechnologies.com/audioLibrary/WebServices/' ,
-profile:"http://europa.promaticstechnologies.com/audioLibrary/images/profile/"
+endPoint:'http://maktbti.com/WebServices/' ,
+profile:"http://maktbti.com/images/profile/"
 
 }
 

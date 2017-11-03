@@ -17,7 +17,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-recommanded',
   templateUrl: 'recommanded.html',
-   providers:[UserData]
+   providers:[UserData,ImagePath]
 })
 export class Recommanded {
   booklist:any;

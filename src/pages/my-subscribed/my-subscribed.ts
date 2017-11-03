@@ -20,7 +20,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-my-subscribed',
   templateUrl: 'my-subscribed.html',
-  providers: [UserData,AudioBook]
+  providers: [UserData,AudioBook,ImagePath]
 })
 export class MySubscribed {
   booklist

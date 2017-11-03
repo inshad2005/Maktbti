@@ -18,7 +18,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-my-library',
   templateUrl: 'my-library.html',
-  providers: [UserData]
+  providers: [UserData,ImagePath]
 })
 export class MyLibrary {
   booklist

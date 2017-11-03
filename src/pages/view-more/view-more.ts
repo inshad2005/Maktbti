@@ -16,7 +16,7 @@ import {ImagePath} from "../../providers/imagePath";
 @Component({
   selector: 'page-view-more',
   templateUrl: 'view-more.html',
-  providers:[AudioBook]
+  providers:[AudioBook,ImagePath]
 })
 export class ViewMore {
   language;
